@@ -212,6 +212,24 @@ ymax : 498
 XML parsing END
 ```
 
-​    
+​        
 
-- load한 xml파일의 값들을 이용해서 Image에 box 그리기
+
+
+### load한 Object Detection label 정보를 이미지에 그리기
+
+이제 위에서 얻은 label 정보를 이용하여 이미지에 Object Detection Box를 그려보도록 하겠습니다.
+
+
+
+Object Detection label 정보를 이미지에 그리는 로직 흐름은 다음과 같습니다.
+
+
+
+- `Annotations`폴더의 파일 리스트를 불러옴
+- 파일 리스트를 순회를 돌면서 파일에서 label 정보를 load함
+- `JPEGImages`폴더에서 해당 파일과 대응되는 이미지를 찾음
+- load된 label 정보를 이용하여 Object Detection 정보를 시각화함
+
+
+
