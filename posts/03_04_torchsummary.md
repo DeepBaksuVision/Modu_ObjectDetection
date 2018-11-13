@@ -78,7 +78,7 @@ import torchsummary.summary as summary
 
 예를들어 torch summary의 `README.md`의 대표적인 예제로 나온 것 처럼 CNN 모델을 작성한다고 가정하면 다음과 같이 모델을 작성할 수 있습니다.
 
-```python3
+```python
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -107,7 +107,7 @@ class Net(nn.Module):
 
 이렇게 작성된 모듈은 다음과 같은 명령어로 객체화 될 수 있고, Device(CPU or GPU)에 할당됩니다.
 
-```python3
+```python
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # PyTorch v0.4.0
 model = Net().to(device)
 ```
@@ -128,7 +128,7 @@ summary 함수를 사용하게 되면 아래와 같은 결과를 확인할 수 �
 
 해당 결과는 기본적인 네트워크 구성뿐만 아니라 `Number of Parameters` `Input size`, `Forward/backward pass size`, `parameters size`, `Estimated Total Size`에 대한 정보를 출력해줍니다.
 
-```python3
+```python
 summary(model, (1, 28, 28))
 
 >>
