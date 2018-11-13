@@ -13,7 +13,7 @@
     * [01). DataLoader](posts/03_01_dataloader.md)
     * [02). Augmentation]()
     * [03). Visdom]()
-    * [04). Torch summary]()
+    * [04). Torch summary](posts/03_04_torchsummary.md)
     * [05). Project Structure]()
   * [04. You Only Look Once: Unified, Real-Time Object Detection](posts/04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.md)
     * [01). You Only Look Once 논문리뷰](posts/04_01_Review_of_YOLO_Paper.md)
