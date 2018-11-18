@@ -8,7 +8,7 @@
   * [01. Object Detection 이란?](posts/01_00_What_is_Object_Detection.md)
   * [02. Datasets for Object Detection](posts/02_00_Datasets_for_Object_Detection.md)
     * [01). PASCAL VOC](posts/02_01_PASCAL_VOC.md)
-    * [02). Convert2Yolo 소개](posts/02_02_Introduction_Convert2Yolo_package.md)
+    * [02). Convert2Yolo 소개](posts/02_02_Convert2Yolo.md)
   * [03. Common Utils](posts/03_00_common_utils.md)
     * [01). Project Structure]()
     * [02). Project Pipeline]()
