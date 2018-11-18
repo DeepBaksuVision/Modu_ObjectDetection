@@ -18,5 +18,4 @@
     * [06). Torch summary](posts/03_04_torchsummary.md)
   * [04. You Only Look Once: Unified, Real-Time Object Detection](posts/04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.md)
     * [01). You Only Look Once 논문리뷰](posts/04_01_Review_of_YOLO_Paper.md)
-    * [02). Model]()
-    * [03). Objective function]()
+    * [02). Model](posts/04_02_Model.md)
