@@ -12,7 +12,7 @@
 
 ## YOLO class
 
-YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 파일을 확인하는 것을 통해서 YOLO의 pytorch model은 다음과 같이 코드로 구현할 수 있습니다. (완전히 똑같지는 않으나, 유사한 모델설계를 했습니다.)
+YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다. (완전히 동일하지는 않으나, 유사하게 모델 설계를 했습니다)
 
 
 
