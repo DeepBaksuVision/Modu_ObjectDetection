@@ -174,7 +174,7 @@ for m in self.modules():
 
 ## Forward
 
-다음과 같이 YOLO model을 작성했다면, Forward 함수는 다음과 같이 작성합니다.
+YOLO model 설계가 완료되었다면, Forward() 함수를 작성합니다.
 
 마지막에 출력 텐서의 0번째, 10~30까지 `Sigmoid`함수를 준 이유는 0번째 인덱스는 `objectness`를 의미하는 엘리먼트고, 10~30까지의 인덱스는 `class probability`를 의미하기 때문에 해당 값은 확률값을 가져야하기 때문입니다.
 
