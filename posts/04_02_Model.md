@@ -149,7 +149,7 @@ class YOLOv1(nn.Module):
 
 - 초기화할 때, `dropout`, `number of class`에 대한 파라미터를 받는 부분 빼고는 일반적인 YOLO model 형태로 작성하였습니다.
 
-- 중요한 부분은 마지막의 `fc2`부분에서 `7 * 7 * ((10) + self.num_classes)`부분입니다. 해당 부분을 통해서 최종으로 7 x 7 x 30 block tensor가 나오게 되고 이를 이용하여 Detection에 필요한 요소들을 뽑아서 학습하거나 결과값을 이용하여 Detection Box를 그리기 때문입니다.
+- 중요한 부분은 모델의 마지막 `fc2`의 `7 * 7 * ((10) + self.num_classes)`입니다. 이 부분은 모델의 최종 출력으로 7 x 7 x 30 block tensor이고, 이를 이용하여 Detection에 필요한 요소들을 뽑아서 학습하거나 결과 값을 이용하여 Detection Box를 그리기 때문입니다.
 
   (여기서 10은 2개의 box값을 의미합니다. : 1 box \rightarrow `objectness`, `point_x_shift`, `point_y_shift`, `width_ratio`,`height_ratio`)
 
