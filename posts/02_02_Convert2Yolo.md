@@ -20,7 +20,7 @@
 
 ### 지원하는 데이터셋
 
-현재 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 다음과 같은 데이터셋을 지원하고있습니다.
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 현재 아래와 같은 데이터셋을 지원합니다. 
 
 - COCO
 - VOC
