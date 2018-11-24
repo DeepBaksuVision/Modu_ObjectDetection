@@ -52,7 +52,7 @@ Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
 ​    
 
-추상클래스인 `Dataset`은 최소한  `__getitem__`, `__len__` 함수 구현을 요구하고 있으므로, 우리는 이를 Object Detection에 맞춰서 Dataset 클래스를 상속받은 `VOC`클래스를 만들어봅시다.
+추상클래스인 `Dataset`은 최소한  `__getitem__`, `__len__` 함수 구현을 요구합니다. 그럼 이제 Dataset 클래스를 상속받아 Object Detection에 적합한 `VOC`클래스를 만들어봅시다.
 
 ​    
 
