@@ -39,7 +39,7 @@ class Dataset(object):
 
 
 
-일반적으로 이러한 pytorch의 Dataset 클래스를 상속받아, `__getitem__`, `__len__`을 overriding해서 필요한 모델에 맞는 커스텀 Dataset 클래스를 만들어서 사용하게 됩니다.
+일반적으로 이렇게 PyTorch의 Dataset 클래스를 상속받아 커스텀 Dataset 클래스를 만들고 `__getitem__`, `__len__`을 overriding해서 사용합니다.
 
 
 
