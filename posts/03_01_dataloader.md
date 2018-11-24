@@ -43,7 +43,7 @@ class Dataset(object):
 
 
 
-자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해보시면 됩니다.
+자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해 보시기 바랍니다. 
 
 Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
