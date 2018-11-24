@@ -58,7 +58,7 @@ Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
 ## VOC class
 
-VOC class는 앞에 설명한 `convert2Yolo`프로젝트를 같이 이용해서 구현됩니다. VOC class는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 `_check_exists()`함수에 대한 구현이 추가되며, 추상클래스에서 요구하는 `__getitem__`, `__len__`함수를 overriding하여 내부 함수를 구현합니다.
+VOC class 구현 시, 앞서 설명한 `convert2Yolo`프로젝트를 이용합니다. VOC class에 구현된 `_check_exists()`는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 함수이며, `__getitem__()`, `__len__()`는 추상클래스인 Dataset이 요구하는 함수를 overriding하여 구현한 함수입니다.
 
 
 
