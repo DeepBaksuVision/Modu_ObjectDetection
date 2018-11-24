@@ -1,6 +1,6 @@
 # 02) Model
 
-이번장에서는 YOLO 모델 구조 및 Objective function에 대해서 설명하고, 해당 내용을 Pytorch 코드레벨로 설명드리도록 하겠습니다.
+이번 장에서는 YOLO 모델 구조 및 objective function을 설명하고, 해당 내용을 PyTorch 코드레벨로 설명하겠습니다.
 
 이전의 논문리뷰에서도 봤듯이 YOLO의 모델 구조는 다음과 같습니다.
 
