@@ -12,7 +12,7 @@
 
 ## YOLO class
 
-YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다. (완전히 동일하지는 않으나, 유사하게 모델 설계를 했습니다)
+YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다. (완전히 동일하지는 않으나, 유사하게 모델을 작성하였습니다)
 
 
 
@@ -147,17 +147,31 @@ class YOLOv1(nn.Module):
         )
 ```
 
-- 초기화 시, `dropout`, `number of class` 파라미터 입력을 제외하면 일반적인 YOLO model 형태입니다. 
 
-- 중요한 부분은 모델의 마지막 `fc2`의 `7 * 7 * ((10) + self.num_classes)`입니다. 이 부분은 모델의 최종 출력으로 7 x 7 x 30 block tensor이고, 이를 이용하여 Detection에 필요한 요소들을 뽑아서 학습하거나 결과 값을 이용하여 Detection Box를 그리기 때문입니다.
 
-  (여기에서 10은 2개의 box값을 의미합니다. : 1 box (`objectness`, `point_x_shift`, `point_y_shift`, `width_ratio`,`height_ratio`)
+본 구현체와 You Only Look Once 논문의 내용과 상이한 점은 다음과 같습니다.
+
+
+
+**초기화**
+
+- You Only Look Once 논문에서는 ImageNet을 이용하여 classification network를 pre-train후 4개의 Convolutional Layer를 4개와 2개의 FC를 추가하면서 이를 randomly initialization을 수행합니다.
+- 본 구현체는 pre-train 과정을 생략하며, 생략된 pre-train으로 인해 네트워크의 수렴 속도 및 안정성이 떨어진 것을 보강하기 위하여 Convolutional Layer는 HE initialization을 채택하며 FC Layer는 논문에 있는 그대로 randomly initialization을 수행합니다.
+
+​        
+
+**Batch Normalization**
+
+- YOLO논문에서는 Batch Normalization에 대한 내용은 언급되어있지 않습니다. 그 당시의  [YOLO 모델](https://github.com/pjreddie/darknet/tree/8c5364f58569eaeb5582a4915b36b24fc5570c76/cfg)을 확인해봐도 Batch Normalization을 확인할 수 없습니다. (arxiv 기준 batch normalization이 15.02, YOLO가 2015.06 입니다. 최근 [Darknet](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg)을 확인해보면 기존 YOLO 모델에는 batch normalization이 적용되어있는 것을 확인할 수 있습니다.)
+- 본 구현체에서는 논문에는 언급되어있지 않지만 수렴 속도 및 안정성을 증가시키기 위해 batch normalization을 적용하였습니다.
 
 ​    
 
 ## Initialization
 
-초기화는 CNN 파트에서 CNN weights initialization는 `HE initialization`을 해주며, Batch Normalization은 **다음과 같이 초기화해줍니다. **(보강 필요)
+위에서 언급했듯이 생략된 pre-train으로 인해 네트워크 수렴 속도 및 안정성 하락을 보강하기 위하여 `He initialization`을 수행합니다. `He initialization`은 Pytorch에서 제공하는 `torch.nn.init.kaiming_normal_`함수를 이용합니다.
+
+Batch Normalization은 $\gamma$ 값을 `1`, $\beta$값을 `0`으로 초기화합니다. 이는 $\gamma$가 scale, $beta$가 shift 값을 의미하기 때문에 초기의 layer 출력값에서 batch normalization layer의해 scale 및 shift가 안일어나는 값으로 설정했습니다.
 
 
 
