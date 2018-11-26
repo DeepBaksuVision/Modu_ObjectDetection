@@ -425,4 +425,51 @@ train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
 
 ### 1. collate_fn
 
-- 이재원님 작성
+  앞서 Dataloader를 살펴보았습니다. YOLOv1의 output tensor의 형태는 S x S x (B * 5 + C) 입니다. Loss를 계산하고 학습하려면 label을 output tensor와 동일한 형태로 구성해야 합니다. 이를 위해서 PyTorch에서는 `torch.utils.data.DataLoader`에서 `collate_fn`라는 파라미터를 이용할 수 있습니다. (`torch.utils.data.DataLoader`에서 제공하는 모든 파라미터는 [이곳](https://pytorch.org/docs/stable/data.html?highlight=dataloader)을 참고하시기 바랍니다) 
+
+
+#### Output tensor 
+우선 YOLOv1 모델의 output tensor를 살펴보도록 하겠습니다. output tensor의 형태는 아래 그림과 같습니다.  
+
+![a](https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png)
+
+output tensor는 S x S grid를 가지고 B개의 bounding box와 C개의 class probabilities를 가지고 있습니다. 각 bounding box마다 x, y, w, h, confidence 이렇게 총 5개의 값을 예측합니다. 가령 S = 7, B = 2 C = 20(Pascal VOC) 인 경우 7 x 7 x 30 tensor의 형태입니다. 이 경우 (5 x 2 + 20)이므로 각 그리드 당 30개의 값을 예측합니다.
+
+
+
+`detection_collate`는 collate_fn의 구현체입니다. 코드는 아래와 같습니다. 
+
+```python
+def detection_collate(batch):
+    targets = []
+    imgs = []
+    sizes = []
+
+    for sample in batch:
+        imgs.append(sample[0])
+        sizes.append(sample[2])
+
+        np_label = np.zeros((7, 7, 6), dtype=np.float32)
+        for object in sample[1]:
+            objectness = 1
+            classes = object[0]
+            x_ratio = object[1]
+            y_ratio = object[2]
+            w_ratio = object[3]
+            h_ratio = object[4]
+
+            scale_factor = (1 / 7)
+            grid_x_index = int(x_ratio // scale_factor)
+            grid_y_index = int(y_ratio // scale_factor)
+            x_offset = (x_ratio / scale_factor) - grid_x_index
+            y_offset = (y_ratio / scale_factor) - grid_y_index
+
+            np_label[grid_x_index][grid_y_index] = np.array([objectness, x_offset, y_offset, w_ratio, h_ratio, classes])
+
+        label = torch.from_numpy(np_label)
+        targets.append(label)
+    return torch.stack(imgs, 0), torch.stack(targets, 0), sizes
+```
+`detection_collate`의 입력 파라미터인 batch는 list로 ``batch[0]``는 이미지, ``batch[1]``는 레이블, ``batch[3]``는 원본 이미지 사이즈입니다. 
+#### Normalized bounding box  
+``batch[1]``는 레이블 정보인 `[x, y, w, h, class]`를 list로 담고 있습니다. output tensor에는 정규화된 bounding box 좌표를 사용합니다. bounding box의 중심점인 (x, y)는 각 그리드 셀에서의 상대적인 위치로 나타내며, 0-1 범위의 값을 가집니다. bounding box의 너비와 높이인 (w, h)는 전체 이미지에 대한 상대적인 위치를 나타내며, 0-1의 범위를 가집니다. 
