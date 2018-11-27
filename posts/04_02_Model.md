@@ -316,21 +316,120 @@ def detection_loss(output, target):
 
 ### Objective function 계산 개념
 
-`Objective function`의 계산 개념은 다음과 같은 개념을 사용했습니다.
+
+
+앞서 dataloader를 설명했던 챕터에서 collate_fn 함수에 대한 설명을 진행하면서 모델의 output tensor에 대해서 언급했었습니다.
 
 
 
-![loss concept](https://user-images.githubusercontent.com/13328380/48621237-3c680500-e9e6-11e8-9e25-e256192c1648.png)
+다시한번 YOLO의 output tensor를 확인해보겠습니다.
+
+![YOLO output tensor](https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png)
+
+- `[x, y, w, h]` : box의 좌표값
+  - `x` : 각 grid cell의 좌상단`(0, 0)`에서 x축 방향 offset 값
+  - `y` : 각 grid ceell의 좌상단 `(0, 0)`에서 y축 방향 offset 값
+  - `w`: 전체 Image의 width와 박스 width의 비율(ratio)값
+  - `h`: 전체 Image의 height와 박스 height의 비율(ratio)값
+- `c` : `objectness` 확률, 해당 grid cell에 Object가 존재하는지 하지 않는지에 대한 확률값
+- `class probabilities` : 해당 grid cell에서 각 class의 확률값
 
 
 
-`objectiveness map`이 나오면, 이를 반전시켜서 `non-objectiveness map`을 생성한 다음에 필요한 조건에 맞춰서 계산한 `Loss`를 계산해 더해줬습니다.
+Cost value는 YOLO model에서 얻은 output tensor값을 이용하여 계산하게됩니다.
+
+Objective function에서 사용되는 몇가지 파라미터들은 다음과 같이 설정했습니다.
+
+- `lambda coord` : 5
+
+- `lambda noobj` : 0.5
+
+- $1^{obj}_{ij}$ : label의 object 센터값에 해당하는 grid 위치는 `1`, 그렇지 않은 위치는 `0`으로 맵핑하여 object map을 생성
+
+  ```python
+  objness_label = target[:, :, :, 0]
+  ```
+
+- $1^{noobj}_{ij}$ :  $1^{obj}_{ij}$의 반대개념이므로, $1^{obj}_{ij}$를 inverse해서 non-object map을 생성
+
+  ```python
+  noobjness_label = torch.neg(torch.add(objness_label, -1))    
+  ```
+
+​    
+
+이제 본격적으로 cost value를 계산해보도록 하겠습니다. 기본적인 개념은 python의 slicing을 이용하여 `[w, h, c]` 형태로 단면들을 자르고 이를 tensor block의 operation으로 연산하는 것입니다.
 
 
+
+**slicing**
+
+```python
+# output tensor slicing
+x_offset1_output = output[:, :, :, 1]
+y_offset1_output = output[:, :, :, 2]
+width_ratio1_output = output[:, :, :, 3]
+height_ratio1_output = output[:, :, :, 4]
+class_output = output[:, :, :, 5:]
+
+# label tensor slicing
+x_offset_label = target[:, :, :, 1]
+y_offset_label = target[:, :, :, 2]
+width_ratio_label = target[:, :, :, 3]
+height_ratio_label = target[:, :, :, 4]
+class_label = one_hot(class_output, target[:, :, :, 5])
+```
+
+
+
+slicing이 완료됬다면 이를 이용하여 cost를 구합니다.
+
+**multi-task cost**
+
+```python
+obj_coord1_loss = lambda_coord * \
+                  torch.sum(objness_label * \
+                  (torch.pow(x_offset1_output - x_offset_label, 2) + \
+                  torch.pow(y_offset1_output - y_offset_label, 2)))
+
+obj_size1_loss = lambda_coord * torch.sum(objness_label * \
+                 (torch.pow(width_ratio1_output - torch.sqrt(width_ratio_label), 2) + \
+                 torch.pow(height_ratio1_output - torch.sqrt(height_ratio_label), 2)))
+
+objectness_cls_map = torch.stack((objness_label, objness_label, objness_label,\
+                                  objness_label, objness_label), 3)
+
+objness1_loss = torch.sum(objness_label * \
+                          torch.pow(objness1_output - objness_label, 2))
+
+noobjness1_loss = lambda_noobj * torch.sum(noobjness_label * \
+                                     torch.pow(objness1_output - objness_label, 2))
+
+obj_class_loss = torch.sum(objectness_cls_map * \
+                           torch.pow(class_output - class_label, 2))
+```
+
+- `objectness_cls_map`을 stack을 class 개수 만큼 해주는 이유는 label이 onehot encoding을 거쳐 각 요소별로 class cost를 계산하기 때문입니다. (`class map` 생성)
+
+
+
+이렇게 각 Multi-task에 대한 cost를 개별적으로 구했다면, 이를 합하여 `total_loss`로 합치고, 이를 반환해주는 함수를 작성합니다.
+
+​    
 
 ### size loss 이슈
 
-YOLO 논문에 나와있는 그대로 `sqrt`를 모두 씌우게 되면, 네트워크 출력값이 `음수`가 되는순간 `Loss`의 값이 `Nan` 혹은 `-Nan`으로 치닫게 됩니다. 따라서 output tensor의 값은 그대로 둔 상태로 `label`의 값을 `sqrt`하여 학습을 시키는게 일종의 트릭이 됩니다.
+
+
+코드를 유심히 본 독자들은 눈치챘을 수도 있겠습니다. YOLO 논문의 Objective function에는 output tensor와 label tensor에 `sqrt`를 적용했지만 코드상에는 label tensor에만 `sqrt`를 놓고 output tensor값은 그대로 사용합니다.
+
+
+
+팀프로젝트를 진행하면서 YOLO를 학습하려고 했을 때 Objective function을 그대로 적용했으나 weights initialization 및 초기 학습시 네트워크가 불안정하면서 output tensor값이 음수가 발생하는 경우가 있습니다. 이 때, Cost값이 `Nan`으로 뜨게되고 학습이 안되는 현상을 발견하였습니다.
+
+
+
+해당 사항에 대해서 팀원끼리 논의 및 원 코드를 확인한 결과 저자 코드에서 위와같이 label에만 `sqrt`값을 사용하고 output tensor에는 `sqrt`를 적용하지 않는 것을 확인하고 원저자 코드의 흐름을 따르게 되었습니다.
 
 
 
