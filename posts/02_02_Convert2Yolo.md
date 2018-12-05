@@ -12,7 +12,7 @@
 
 ## 02-01).사용법
 
-[convert2Yolo](https://github.com/ssaru/convert2Yolo)을 보면 README에 사용법이 간단히 정리되어있습니다. 
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)의 README에 사용법이 간단히 정리되어있습니다. 
 
 해당 내용을 정리해보겠습니다.
 
@@ -20,7 +20,7 @@
 
 ### 지원하는 데이터셋
 
-현재 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 다음과 같은 데이터셋을 지원하고있습니다.
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 현재 아래와 같은 데이터셋을 지원합니다. 
 
 - COCO
 - VOC

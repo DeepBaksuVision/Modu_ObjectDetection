@@ -7,4 +7,3 @@ YOLO(You Only Look Once: Unified, Real-Time Object Detection)는 대표적인 Si
 #https://youtu.be/EJy0EI3hfSg
 **동영상 1 . YOLO Object Detection(YOLOv1)**
 
-----
