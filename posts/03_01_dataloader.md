@@ -39,11 +39,11 @@ class Dataset(object):
 
 
 
-일반적으로 이러한 pytorch의 Dataset 클래스를 상속받아, `__getitem__`, `__len__`을 overriding해서 필요한 모델에 맞는 커스텀 Dataset 클래스를 만들어서 사용하게 됩니다.
+일반적으로 이렇게 PyTorch의 Dataset 클래스를 상속받아 커스텀 Dataset 클래스를 만들고 `__getitem__`, `__len__`을 overriding해서 사용합니다.
 
 
 
-자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해보시면 됩니다.
+자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해 보시기 바랍니다. 
 
 Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
@@ -52,13 +52,13 @@ Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
 ​    
 
-추상클래스인 `Dataset`은 최소한  `__getitem__`, `__len__` 함수 구현을 요구하고 있으므로, 우리는 이를 Object Detection에 맞춰서 Dataset 클래스를 상속받은 `VOC`클래스를 만들어봅시다.
+추상클래스인 `Dataset`은 최소한  `__getitem__`, `__len__` 함수 구현을 요구합니다. 그럼 이제 Dataset 클래스를 상속받아 Object Detection에 적합한 `VOC`클래스를 만들어봅시다.
 
 ​    
 
 ## VOC class
 
-VOC class는 앞에 설명한 `convert2Yolo`프로젝트를 같이 이용해서 구현됩니다. VOC class는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 `_check_exists()`함수에 대한 구현이 추가되며, 추상클래스에서 요구하는 `__getitem__`, `__len__`함수를 overriding하여 내부 함수를 구현합니다.
+VOC class 구현 시, 앞서 설명한 `convert2Yolo`프로젝트를 이용합니다. VOC class에 구현된 `_check_exists()`는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 함수이며, `__getitem__()`, `__len__()`는 추상클래스인 Dataset이 요구하는 함수를 overriding하여 구현한 함수입니다.
 
 
 

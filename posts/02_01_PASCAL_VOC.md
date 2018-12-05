@@ -1,10 +1,10 @@
 # 01). PASCAL VOC Dataset
 
+본 챕터는 Object Detection dataset 중 하나인 PASCAL VOC dataset의 구조와 이를 이용하여 label 데이터와 이미지가 어떻게 그려지는지 설명합니다. 
 
 
-- PASCAL VOC Dataset에 대한 설명 진행
 
-
+이를 이용하면 Object Detection dataloader를 만들 수 있게됩니다.
 
 
 
