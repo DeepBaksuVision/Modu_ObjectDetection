@@ -19,7 +19,9 @@ Object Detection 구현 모임을 기획하였고, 해당 과정에서 facilitat
 ​[[LinkedIn]](https://www.linkedin.com/in/jaewon-lee-3249a312a/)  
 [[Github]](https://github.com/insurgent92/)   
 
-**정찬희**()
+**정찬희** (chjeong530@gmail.com)
+Computer Vision을 전공하였고, Deep Learning을 활용한 문제 해결에 관심이 많습니다. Image Upscaling, Object Tracking, Style Transfer 등 다양한 분야의 프로젝트를 진행하며 경험을 쌓고 있습니다. 최근에는 임베디드 환경에서의 Deep Learning 동작을 위한 네트워크 경량화 연구 개발을 진행 중이며, 파이썬과 딥러닝 프레임워크, 리눅스 등 교육을 진행하고 있습니다. [[LinkedIn]](https://www.linkedin.com/in/chjeong530/)
+
 
 ​    
 
