@@ -393,25 +393,24 @@ slicing이 완료됬다면 이를 이용하여 cost를 구합니다.
 
 ```python
 obj_coord1_loss = lambda_coord * \
-                  torch.sum(objness_label * \
-                  (torch.pow(x_offset1_output - x_offset_label, 2) + \
-                  torch.pow(y_offset1_output - y_offset_label, 2)))
+                      torch.sum(objness_label *
+                        (torch.pow(x_offset1_output - x_offset_label, 2) +
+                                    torch.pow(y_offset1_output - y_offset_label, 2)))
 
-obj_size1_loss = lambda_coord * torch.sum(objness_label * \
-                 (torch.pow(width_ratio1_output - torch.sqrt(width_ratio_label), 2) + \
-                 torch.pow(height_ratio1_output - torch.sqrt(height_ratio_label), 2)))
+obj_size1_loss = lambda_coord * \
+                     torch.sum(objness_label *
+                               (torch.pow(width_ratio1_output - torch.sqrt(width_ratio_label), 2) +
+                                torch.pow(height_ratio1_output - torch.sqrt(height_ratio_label), 2)))
 
-objectness_cls_map = torch.stack((objness_label, objness_label, objness_label,\
-                                  objness_label, objness_label), 3)
+objectness_cls_map = objness_label.unsqueeze(-1)
 
-objness1_loss = torch.sum(objness_label * \
-                          torch.pow(objness1_output - objness_label, 2))
+for i in range(num_cls - 1):
+    objectness_cls_map = torch.cat((objectness_cls_map, objness_label.unsqueeze(-1)), 3)
 
-noobjness1_loss = lambda_noobj * torch.sum(noobjness_label * \
-                                     torch.pow(objness1_output - objness_label, 2))
+obj_class_loss = torch.sum(objectness_cls_map * torch.pow(class_output - class_label, 2))
 
-obj_class_loss = torch.sum(objectness_cls_map * \
-                           torch.pow(class_output - class_label, 2))
+noobjness1_loss = lambda_noobj * torch.sum(noobjness_label * torch.pow(objness1_output - objness_label, 2))
+objness1_loss = torch.sum(objness_label * torch.pow(objness1_output - objness_label, 2))
 ```
 
 - `objectness_cls_map`을 stack을 class 개수 만큼 해주는 이유는 label이 onehot encoding을 거쳐 각 요소별로 class cost를 계산하기 때문입니다. (`class map` 생성)
