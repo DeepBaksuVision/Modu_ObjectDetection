@@ -365,19 +365,24 @@ Objective function에서 사용되는 몇가지 파라미터들은 다음과 같
 **slicing**
 
 ```python
-# output tensor slicing
+# output tensor slice
+# output tensor shape is [batch, 7, 7, 5 + classes]
+objness1_output = output[:, :, :, 0]
 x_offset1_output = output[:, :, :, 1]
 y_offset1_output = output[:, :, :, 2]
 width_ratio1_output = output[:, :, :, 3]
 height_ratio1_output = output[:, :, :, 4]
 class_output = output[:, :, :, 5:]
 
-# label tensor slicing
+num_cls = class_output.shape[-1]
+
+# label tensor slice
+objness_label = target[:, :, :, 0]
 x_offset_label = target[:, :, :, 1]
 y_offset_label = target[:, :, :, 2]
 width_ratio_label = target[:, :, :, 3]
 height_ratio_label = target[:, :, :, 4]
-class_label = one_hot(class_output, target[:, :, :, 5])
+class_label = one_hot(class_output, target[:, :, :, 5], device)
 ```
 
 
