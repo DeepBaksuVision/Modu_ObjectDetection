@@ -388,13 +388,14 @@ class VOC(data.Dataset):
         target = self.data[index][key]
 
         if self.transform is not None:
-            img = self.transform(img)
+            img, aug_target = self.transform([img, target])
+            img = torchvision.transforms.ToTensor()(img)
 
         if self.target_transform is not None:
             # Future works
             pass
 
-        return img, target, current_shape
+        return img, aug_target, current_shape
 ```
 
 ​    
