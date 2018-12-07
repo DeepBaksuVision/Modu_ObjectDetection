@@ -190,7 +190,7 @@ for m in self.modules():
 
 YOLO model 설계가 완료되었다면, Forward() 함수를 작성합니다.
 
-마지막에 출력 텐서의 0번째, 10~30까지 `Sigmoid`함수를 준 이유는 0번째 인덱스는 `objectness`를 의미하는 엘리먼트고, 10~30까지의 인덱스는 `class probability`를 의미하기 때문에 해당 값은 확률값을 가져야하기 때문입니다.
+마지막에 출력 텐서의 0번째, 10~30까지 `Sigmoid`함수를 준 이유는 0번째 인덱스는 `objectness`를 의미하는 엘리먼트고, 5~25까지의 인덱스는 `class probability`를 의미하기 때문에 해당 값은 확률값을 가져야하기 때문입니다.
 
 
 
@@ -224,8 +224,8 @@ def forward(self, x):
     out = self.fc1(out)
     out = self.fc2(out)
     out = out.reshape((-1, 7, 7, ((5) + self.num_classes)))
-    out[:, :, :, 0] = torch.sigmoid(out[:, :, :, 0])
-    out[:, :, :, 10:] = torch.sigmoid(out[:, :, :, 10:])
+    out[:, :, :, 0] = torch.sigmoid(out[:, :, :, 0])  # sigmoid to objness1_output
+    out[:, :, :, 5:] = torch.sigmoid(out[:, :, :, 5:])  # sigmoid to class_output
 
     return out
 ```
