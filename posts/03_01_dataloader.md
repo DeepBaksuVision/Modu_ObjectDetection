@@ -475,7 +475,7 @@ def detection_collate(batch):
 
 ![image](https://user-images.githubusercontent.com/15168540/49686629-81d9a700-fb3a-11e8-94dc-cd4da8c1b353.png)
 
-#### Normalized bounding box  
-``batch[1]``는 레이블 정보인 `[x, y, w, h, class]`를 list로 담고 있습니다. output tensor에는 정규화된 bounding box 좌표를 사용합니다. bounding box의 중심점인 (x, y)는 각 그리드 셀에서의 상대적인 위치로 나타내며, 0-1 범위의 값을 가집니다. bounding box의 너비와 높이인 (w, h)는 전체 이미지에 대한 상대적인 위치를 나타내며, 0-1의 범위를 가집니다. 
+#### Normalized Bounding Box
+``batch[1]``는 list로 레이블 정보인 `[class, x, y, w, h]`를 담고 있습니다. YOLO는 정규화된 바운딩 박스를 사용합니다. 바운딩 박스의 중심점인 (x, y)는 (x, y)가 속한 그리드 셀에서의 상대적인 위치로 나타내며, 정규화시킨 값이므로 범위는 [0-1) 입니다. 바운딩박스의 너비와 높이인 (w, h)는 이미지 사이즈로 정규화시킨 값이며, 범위는 [0,1)입니다.
 
 ![image](https://user-images.githubusercontent.com/15168540/49686609-42ab5600-fb3a-11e8-9430-5e1f04d5b94c.png)
