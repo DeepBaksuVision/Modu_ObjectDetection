@@ -44,7 +44,7 @@ Feature Extraction 후, 주어진 영상 내에서 얻은 Feature를 이용하�
 
 Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 같이 작동합니다.
 
-- pre-processing
+- Pre-processing
 - Feature Extraction
 - Classifier
 
