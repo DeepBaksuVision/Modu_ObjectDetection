@@ -20,7 +20,7 @@ Computer Vision 대회에서 주로 다루는 Task들의 카테고리를 확인�
 
 ​    
 
-Computer Vision에서는 Detection, Recognization, Tracking 세 가지 용어가 혼재되어 사용됩니다. 여기서 Object Detection이란 주어진 대상에서 찾고자 하는 Object의 유무만 판단하며, Recognization보다 더 작은 범위로 사용됩니다. Recognization식은 Object가 어떤 것인지까지 구분 할 수 있고, Object Detection은 대상 유무만 판단합니다. Object Recognization을 하기 위해서는 Object Detection이 선행되어야 합니다. 
+Computer Vision에서는 Object Detection, Object Recognition, Object Tracking 세 가지 용어가 혼재되어 사용됩니다. 여기서 Object Detection이란 주어진 대상에서 찾고자 하는 Object의 유무만 판단하며, Recognition보다 더 작은 범위로 사용됩니다. Recognition식은 Object가 어떤 것인지까지 구분 할 수 있고, Object Detection은 대상 유무만 판단합니다. Object Recognition을 하기 위해서는 Object Detection이 선행되어야 합니다. 
 
 
 
