@@ -14,7 +14,7 @@ Computer Vision 대회에서 주로 다루는 Task들의 카테고리를 확인�
 
 - Classification
 - Single Classification & Localization & Detection
-- Multi Object Detection & Localization & Classification
+- Multiple Object Detection & Localization & Classification
 
 ![computer_vision_task](https://user-images.githubusercontent.com/13328380/49785251-48d04b00-fd63-11e8-94ee-f9d9d9f30fe9.png)
 
