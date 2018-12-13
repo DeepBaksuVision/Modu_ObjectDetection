@@ -1,4 +1,4 @@
-# 02). Revision
+# Revision
 
 주요 변경 이력
 
@@ -18,6 +18,3 @@
 | 10   | [04. You Only Look Once: Unified, Real-Time Object Detection](posts/04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.md) | 이재원 |        | 2018.11.22 |
 | 11   | [04-01). You Only Look Once 논문 리뷰](posts/04_01_Review_of_YOLO_Paper.md) | 이재원 |        | 2018.11.22 |
 | 12   | [04-02). Model](posts/04_02_Model.md)                        | 황동현 |        | 2018.11.22 |
-
-
-

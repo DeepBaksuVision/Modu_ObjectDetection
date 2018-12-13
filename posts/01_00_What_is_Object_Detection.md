@@ -1,4 +1,4 @@
-# 1. Object Detection이란?
+# Object Detection이란?
 
 ![object_detection](https://user-images.githubusercontent.com/13328380/49785835-250e0480-fd65-11e8-87b9-fd74459ade47.jpg)
 
@@ -6,7 +6,7 @@
 
 
 
-Object Detection은 Computer Vision과 Image Processing과 관계가 깊은 컴퓨터 기술입니다. 
+Object Detection은 컴퓨터 비젼(Computer vision), 영상 처리(image processing)와 관계가 깊은 컴퓨터 기술입니다.
 
 
 
@@ -20,13 +20,13 @@ Computer Vision 대회에서 주로 다루는 Task들의 카테고리를 확인�
 
 ​    
 
-Computer Vision에서는 Object Detection, Object Recognition, Object Tracking 세 가지 용어가 혼재되어 사용됩니다. 여기서 Object Detection이란 주어진 대상에서 찾고자 하는 Object의 유무만 판단하며, Recognition보다 더 작은 범위로 사용됩니다. Recognition식은 Object가 어떤 것인지까지 구분 할 수 있고, Object Detection은 대상 유무만 판단합니다. Object Recognition을 하기 위해서는 Object Detection이 선행되어야 합니다. 
+Computer Vision에서는 객체 검출(Object Detection), 객체 인식(Object Recognition), 객체 추적(Object Tracking) 세 가지 용어가 혼재되어 사용됩니다. 여기서 Object Detection이란 주어진 대상에서 찾고자 하는 Object의 유무만 판단하며, Recognition보다 더 작은 범위로 사용됩니다. Recognition식은 Object가 어떤 것인지까지 구분 할 수 있고, Object Detection은 대상 유무만 판단합니다. Object Recognition을 하기 위해서는 Object Detection이 선행되어야 합니다.
 
 
 
-Object Detection 알고리즘은 찾고자하는 Object의 Feature를 사전에 추출하고 주어진 영상 내에서 해당 Feature를 Detection하는 접근을 주로 사용하게 됩니다. 
+Object Detection 알고리즘은 찾고자하는 Object의 특징(feature)를 사전에 추출하고 주어진 영상 내에서 해당 특징를 검출(detection)하는 접근을 주로 사용하게 됩니다.
 
-전통적으로 사용하는 Feature Extraction 하는 방법은 Haar-like feature, HOG(Histogram of Oriented Gradient), SIFT(Scale Invariant Feature Transform), LBP(Local Binary Pattern), MCT(Modified Census Transform) 등이 있습니다.
+전통적으로 사용하는 특징 추출(Feature Extraction) 하는 방법은 Haar-like feature, HOG(Histogram of Oriented Gradient), SIFT(Scale Invariant Feature Transform), LBP(Local Binary Pattern), MCT(Modified Census Transform) 등이 있습니다.
 
 
 
@@ -38,7 +38,7 @@ Feature Extraction 후, 주어진 영상 내에서 얻은 Feature를 이용하�
 
 
 
-결론적으로 Object Detection Algorithms은 영상에서 노이즈나, 이미지를 선명하게 만든 후에 해당 이미지에서 특징들을 추출하고, 이 특징들을 이용하여 Object Detection에 대해 분류(Classifier)하는 것으로 작동합니다.
+결론적으로 Object Detection Algorithms은 영상에서 노이즈나, 이미지를 선명하게 만든 후에 해당 이미지에서 특징들을 추출하고, 이 특징들을 이용하여 Object Detection에 대해 분류(classifier)하는 것으로 작동합니다.
 
 
 
@@ -50,7 +50,7 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 
 
 
-최근에는 딥 러닝 중 CNN(Convolutional Neural Network)을 기반으로한 다양한 Detection 및 Reconization 알고리즘이 발전되어왔습니다. 본 ebook에서는 고전의 Object Detection Algorithms을 다루는 것보다, 현재 트렌드인 딥러닝을 이용한 Object Detection에 대해서 소개할 예정이며, 해당 Object Detection Algorithm의 구현체를 공개할 예정입니다. 
+최근에는 딥 러닝 중 CNN(Convolutional Neural Network)을 기반으로한 다양한 Detection 및 Reconization 알고리즘이 발전되어왔습니다. 본 ebook에서는 고전의 Object Detection Algorithms을 다루는 것보다, 현재 트렌드인 딥러닝을 이용한 Object Detection에 대해서 소개할 예정이며, 해당 Object Detection Algorithm의 구현체를 공개할 예정입니다.
 
 
 

@@ -1,4 +1,4 @@
-# 02) Model
+# Model
 
 이번 장에서는 YOLO 모델 구조 및 objective function을 설명하고, 해당 내용을 PyTorch 코드레벨로 설명하겠습니다.
 
@@ -10,7 +10,7 @@
 
 ​    
 
-## YOLO class
+## 01. YOLO class
 
 YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다. (완전히 동일하지는 않으나, 유사하게 모델을 작성하였습니다)
 
@@ -167,7 +167,7 @@ class YOLOv1(nn.Module):
 
 ​    
 
-## Initialization
+## 02. Initialization
 
 위에서 언급했듯이 생략된 pre-train으로 인해 네트워크 수렴 속도 및 안정성 하락을 보강하기 위하여 `He initialization`을 수행합니다. `He initialization`은 Pytorch에서 제공하는 `torch.nn.init.kaiming_normal_`함수를 이용합니다.
 
@@ -186,7 +186,7 @@ for m in self.modules():
 
 ​    
 
-## Forward
+## 03. Forward
 
 YOLO model 설계가 완료되었다면, Forward() 함수를 작성합니다.
 
@@ -234,7 +234,7 @@ def forward(self, x):
 
 ​    
 
-## Objective function
+## 04. Objective function
 
 이제 마지막으로 남은 `Objective function`에 대해서 설명하도록 하겠습니다. `Objective function`은 `Cost function` 혹은 `Loss function`이라고 불립니다.
 
@@ -443,4 +443,3 @@ obj_size1_loss = lambda_coord * \
                  (torch.pow(width_ratio1_output - torch.sqrt(width_ratio_label), 2) +
                  torch.pow(height_ratio1_output - torch.sqrt(height_ratio_label), 2)))
 ```
-

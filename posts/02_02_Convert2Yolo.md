@@ -1,4 +1,4 @@
-# 02). convert2Yolo 소개
+# convert2Yolo 소개
 
 
 
@@ -10,17 +10,17 @@
 
 ​    
 
-## 02-01).사용법
+## 01. 사용법
 
-[convert2Yolo](https://github.com/ssaru/convert2Yolo)의 README에 사용법이 간단히 정리되어있습니다. 
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)의 README에 사용법이 간단히 정리되어있습니다.
 
 해당 내용을 정리해보겠습니다.
 
 ​    
 
-### 지원하는 데이터셋
+### 01.01) 지원하는 데이터셋
 
-[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 현재 아래와 같은 데이터셋을 지원합니다. 
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 현재 아래와 같은 데이터셋을 지원합니다.
 
 - COCO
 - VOC
@@ -33,9 +33,9 @@
 
 ​    
 
-### 의존성 패키지 설치
+### 01.02) 의존성 패키지 설치
 
-먼저 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 여러 의존성 패키지 툴을 필요로합니다. 
+먼저 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 여러 의존성 패키지 툴을 필요로합니다.
 
 해당 코드를 클론한 다음 다음과 같은 명령어를 이용하여 의존성 패키지를 설치해줍니다.
 
@@ -43,8 +43,8 @@
 
 ```bash
 $ mkdir convert2Yolo
-$ cd convert2Yolo 
-$ git init 
+$ cd convert2Yolo
+$ git init
 $ git remote add origin https://github.com/ssaru/convert2Yolo.git
 $ git pull origin master
 $ pip3 install -r requirements.txt
@@ -52,9 +52,9 @@ $ pip3 install -r requirements.txt
 
 ​    
 
-### 파라미터
+### 01.03) 파라미터
 
-[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 여러가지 파라미터를 받습니다. 
+[convert2Yolo](https://github.com/ssaru/convert2Yolo)는 여러가지 파라미터를 받습니다.
 
 파라미터 종류는 아래와 같습니다.
 
@@ -134,7 +134,7 @@ $ --cls_list_file voc.names
 
 ​    
 
-### 예제 코드
+### 01.04) 예제 코드
 
 파라미터에 대한 내용을 숙지했다면, 다음과 같은 명령어로 특정 dataset을 [darknet 프레임워크](https://pjreddie.com/darknet/)에서 필요로하는 레이블 포맷으로 변환할 수 있습니다.
 
@@ -148,7 +148,7 @@ $ python3 example.py --datasets [COCO/VOC/KITTI/UDACITY] --img_path <image_path>
 
 ​    
 
-## 02-02) 변환 방식
+## 02. 변환 방식
 
 [convert2Yolo](https://github.com/ssaru/convert2Yolo)의 변환방식은 기본적으로 다음과 같은 방식을 따릅니다.
 
@@ -173,7 +173,7 @@ $ python3 example.py --datasets [COCO/VOC/KITTI/UDACITY] --img_path <image_path>
                                     "height" : <string>
                                     "depth" : <string>
                                 }
-                
+
                     "objects" :
                                 {
                                     "num_obj" : <int>
@@ -189,8 +189,8 @@ $ python3 example.py --datasets [COCO/VOC/KITTI/UDACITY] --img_path <image_path>
                                                                 }
                                                 }
                                     ...
-                
-                
+
+
                                 }
                 }
 ...
@@ -251,6 +251,3 @@ else:
 ​    
 
 해당 내용의 사용은 3장 `Common utils`의 `dataloader`에서 사용할 예정이므로, 코드의 흐름이 맞는지 한번 직접 코드를 수정하면서 이해해보시기 바랍니다.
-
-
-
