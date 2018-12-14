@@ -1,6 +1,6 @@
 # Dataloader
 
-이번장에서는 Pytorch에서 모델을 작성할 때, 데이터를 feeding 역활을 하는 Dataloder를 작성해보도록 하겠습니다.
+이번 장에서는 Pytorch에서 모델을 작성할 때, 데이터를 feeding 역할을 하는 Dataloder를 작성해보도록 하겠습니다.
 
 해당 챕터의 목록은 다음과 같습니다.
 
@@ -8,7 +8,7 @@
 
 ## 01. Pytorch Dataset class
 
-해당 프로젝트에서는 Pytorch Dataset class를 상속받아 data를 parsing하고 있습니다. 따라서 pytorch의 dataset class를 먼저 알아야합니다.
+해당 프로젝트에서는 Pytorch Dataset class를 상속받아 data를 parsing하고 있습니다. 따라서 pytorch의 dataset class를 먼저 알아야 합니다.
 
 
 
@@ -39,11 +39,11 @@ class Dataset(object):
 
 
 
-일반적으로 이렇게 PyTorch의 Dataset 클래스를 상속받아 커스텀 Dataset 클래스를 만들고 `__getitem__`, `__len__`을 overriding해서 사용합니다.
+일반적으로 이렇게 PyTorch의 Dataset 클래스를 상속받아 커스텀 Dataset 클래스를 만들고 `__getitem__`, `__len__`을 overriding 해서 사용합니다.
 
 
 
-자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해 보시기 바랍니다.
+자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 참고하시기 바랍니다.
 
 Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
@@ -58,7 +58,7 @@ Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
 ## 02. VOC class
 
-VOC class 구현 시, 앞서 설명한 `convert2Yolo`프로젝트를 이용합니다. VOC class에 구현된 `_check_exists()`는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 함수이며, `__getitem__()`, `__len__()`는 추상클래스인 Dataset이 요구하는 함수를 overriding하여 구현한 함수입니다.
+VOC class 구현 시, 앞서 설명한 `convert2Yolo`프로젝트를 이용합니다. VOC class에 구현된 `_check_exists()`는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 함수이며, `__getitem__()`, `__len__()`는 추상클래스인 Dataset이 요구하는 함수를 overriding 하여 구현한 함수입니다.
 
 
 
@@ -115,7 +115,7 @@ def __init__(self, root, train=True, transform=None, target_transform=None, resi
 
 - `class_path`  : class name이 적혀있는 리스트 파일의 경로입니다.
 
-  (해당 인자의 구조는 `convert2Yolo`와 의존성이 있습니다. 자세한 내용은 [02. convert2Yolo 소개](posts/02_02_Convert2Yolo.md)에서 확인할 수 있습니다.)
+  (해당 인자의 구조는 `convert2Yolo`와 의존성이 있습니다. 자세한 내용은 [02. convert2Yolo 소개](posts/02_02_Convert2Yolo.md)을 참고하시기 바랍니다.)
 
 ​    
 
@@ -123,7 +123,7 @@ def __init__(self, root, train=True, transform=None, target_transform=None, resi
 
 해당 함수는 Dataset이 파라미터로 받은 root 경로에 존재하는지 확인합니다.
 
-구현 내용은 다음과 같이 해당 경로의 존재유무를 확인합니다.
+구현 내용은 다음과 같이 해당 경로의 존재 여부를 확인합니다.
 
 ```python3
 def _check_exists(self):
@@ -138,7 +138,7 @@ def _check_exists(self):
 
 ### 02.03) `cvtData()`
 
-해당 함수는 본격적으로 데이터를 파싱하는 함수입니다. 해당 구현은 `convert2Yolo` 프로젝트의 일부를 그대로 사용합니다.
+해당 함수는 본격적으로 데이터를 파싱하는 함수입니다. 해당 구현은 `convert2Yolo` 프로젝트 일부를 그대로 사용합니다.
 
 
 
@@ -262,7 +262,7 @@ def __getitem__(self, index):
 
 
 
-위에서 언급했듯이, 최종적응로 파싱된 data의 구조는 다음과 같습니다.
+위에서 언급했듯이, 최종적으로 파싱된 data의 구조는 다음과 같습니다.
 
 ```bash
 [{'.../datasets/JPEGImages/2008_008490.jpg': [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]},
@@ -402,7 +402,7 @@ class VOC(data.Dataset):
 
 ## 03. Dataloader
 
-Object Detection을 위한 커스텀 Dataset을 정의했으니, 이를 이용하여 Dataloader 클래스의 인자로 주면 사용이 가능해집니다.
+Object Detection을 위한 커스텀 Dataset을 정의했으니, 이를 이용하여 Dataloader 클래스의 인자로 주면 사용할 수 있습니다.
 
 
 
@@ -434,7 +434,7 @@ train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
 
 ![a](https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png)
 
-output tensor는 S x S grid를 가지고 B개의 bounding box와 C개의 class probabilities를 가지고 있습니다. 각 bounding box마다 x, y, w, h, confidence 이렇게 총 5개의 값을 예측합니다. 가령 S = 7, B = 2 C = 20(Pascal VOC) 인 경우 7 x 7 x 30 tensor의 형태입니다. 이 경우 (5 x 2 + 20)이므로 각 그리드 당 30개의 값을 예측합니다.
+output tensor는 S x S grid를 가지고 B개의 bounding box와 C개의 class probabilities를 가지고 있습니다. 각 bounding box마다 x, y, w, h, confidence 이렇게 총 5개의 값을 예측합니다. 가령 S = 7, B = 2 C = 20(Pascal VOC)인 경우 7 x 7 x 30 tensor의 형태입니다. 이 경우 (5 x 2 + 20)이므로 각 그리드 당 30개의 값을 예측합니다.
 
 
 

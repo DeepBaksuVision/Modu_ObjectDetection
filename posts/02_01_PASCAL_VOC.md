@@ -4,13 +4,13 @@
 
 
 
-이를 이용하면 Object Detection에서 사용 가능한 dataloader를 만들 수 있게됩니다.
+이를 이용하면 Object Detection에서 사용 가능한 dataloader를 만들 수 있습니다.
 
 
 
 ## 01. Object Detection Label 이미지에 시각화하기
 
-해당 챕터에서는 Object Detection label을 이미지에 시각화하여 실제로 Object detection label이 어떻게 구성되어있는지 잘펴보도록 하겠습니다.
+해당 챕터에서는 Object Detection label을 이미지에 시각화하여 실제로 Object detection label이 어떻게 구성되어있는지 살펴보도록 하겠습니다.
 
 ​    
 
@@ -26,7 +26,7 @@
 
 ## 02. PASCAL VOC 폴더 계층 구조
 
-PASCAL VOC Dataset을 다운받아 압축을 풀게되면 다음과 같은 구조를 확인할 수 있습니다.
+PASCAL VOC Dataset을 다운받아 압축을 풀면 다음과 같은 구조를 확인할 수 있습니다.
 
 ```bash
 VOC20XX
@@ -45,15 +45,15 @@ VOC20XX
 
 ​    
 
-Object Detection을 할때는 주로 `Annotations`, `JPEGImages`폴더가 사용됩니다. 모델에 입력으로 넣는 `입력데이터`인 경우 그냥 load해서 사용하면 되나,  지도학습에 핵심이 되는 `정답 데이터`의 경우는 parsing이 필요한 경우가 있으므로 `Annotations`의 `*.xml` 구조는 잘 알아두는 것이 중요합니다.
+Object Detection을 할 때는 주로 `Annotations`, `JPEGImages`폴더가 사용됩니다. 모델에 입력으로 넣는 `입력데이터`인 경우 그냥 load 해서 사용하면 되나, 지도학습에 핵심이 되는 `정답 데이터`의 경우는 parsing이 필요한 경우가 있으므로 `Annotations`의 `*.xml` 구조는 잘 알아두는 것이 중요합니다.
 
 ​    
 
 ## 03. Image 시각화
 
-이제부터 본격적으로 Object Detection을 위한 데이터셋을 시각화하는 방법에 대해서 설명하도록 하겠습니다.
+이제부터 본격적으로 Object Detection을 위한 데이터셋을 시각화하는 방법에 관해서 설명하도록 하겠습니다.
 
-먼저 `입력 데이터`인 이미지 파일을 python에서 로드하고, 이를 시각화하는 방법에 대해서 소개하도록 하겠습니다.
+먼저 `입력 데이터`인 이미지 파일을 python에서 로드하고, 이를 시각화하는 방법을 소개하도록 하겠습니다.
 
 ​    
 
@@ -104,7 +104,7 @@ $ python3 load_image.py <image file path>
 
 ## 04. XML 파일 구조
 
-xml 파일 안에는 수많은 tag들이 존재하지만 Object Detection 모델을 학습하기 위해 사용되는 tag들은 정해져있습니다. 따라서 해당 섹션에서는 필요한 tag들이 어떤 의미를 갖는지 설명하고 해당 xml을 읽어들여서 해당 tag의 값을 가져오는 python 예제 코드에 대해서 설명하도록 하겠습니다.
+xml 파일 안에는 수많은 tag들이 존재하지만, Object Detection 모델을 학습하기 위해 사용되는 tag들은 정해져 있습니다. 따라서 해당 섹션에서는 필요한 tag들이 어떤 의미가 있는지 설명하고 해당 xml을 읽어 들여서 해당 tag의 값을 가져오는 python 예제 코드에 관해서 설명하도록 하겠습니다.
 
 ​    
 

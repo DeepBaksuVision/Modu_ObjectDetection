@@ -29,7 +29,7 @@
 
 
 
-해당 데이터셋이 아닌 다른 데이터셋을 사용하려면 직접 파싱코드를 작성하는 방법, [convert2Yolo](https://github.com/ssaru/convert2Yolo)에 해당 데이터셋을 파싱하는 코드를 작성, 새로운 툴을 사용하는 방법으로 이를 해결해야합니다.
+해당 데이터셋이 아닌 다른 데이터셋을 사용하려면 직접 파싱코드를 작성하는 방법, [convert2Yolo](https://github.com/ssaru/convert2Yolo)에 해당 데이터셋을 파싱하는 코드를 작성, 새로운 툴을 사용하는 방법으로 이를 해결해야 합니다.
 
 ​    
 
@@ -68,7 +68,7 @@ $ pip3 install -r requirements.txt
 
 ​    
 
-**`--datasets`** : 해당 파라미터는 어떤 dataset에 대해서 데이터셋 파싱을 진행할건지에 대한 mode flag입니다. 위에서도 언급했듯이 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 `COCO`, `VOC`, `UDACITY`, `KITTI` 데이터셋을 지원하므로 해당 파라미터도  `COCO`, `VOC`, `UDACITY`, `KITTI`중에 하나를 입력하면 됩니다.
+**`--datasets`** : 해당 파라미터는 어떤 dataset에 대해서 데이터셋 파싱을 진행할 건지에 대한 mode flag입니다. 위에서도 언급했듯이 [convert2Yolo](https://github.com/ssaru/convert2Yolo)는 `COCO`, `VOC`, `UDACITY`, `KITTI` 데이터셋을 지원하므로 해당 파라미터도  `COCO`, `VOC`, `UDACITY`, `KITTI`중에 하나를 입력하면 됩니다.
 
 ```bash
 $ --datasets VOC
@@ -76,7 +76,7 @@ $ --datasets VOC
 
 ​    
 
-**`--img_path`** : 데이터셋의 이미지 폴더 경로입니다. 예를들어 데이터셋이 `PASCAL VOC`라고 가정했을 때, 이미지 폴더는 `VOC20XX/JPEGImages`에 있을테니 다음과 같이 파라미터를 입력하면 됩니다.
+**`--img_path`** : 데이터셋의 이미지 폴더 경로입니다. 예를 들어 데이터셋이 `PASCAL VOC`라고 가정했을 때, 이미지 폴더는 `VOC20XX/JPEGImages`에 있을 테니 다음과 같이 파라미터를 입력하면 됩니다.
 
 ```bash
 $ --img_path VOC20XX/JPEGImages/
@@ -84,7 +84,7 @@ $ --img_path VOC20XX/JPEGImages/
 
 ​    
 
-**`--label`** : 데이터셋의 레이블 폴더 경로입니다. 예를들어 데이터셋이 `PASCAL VOC`라고 가정했을 때, 레이블 폴더는 `VOC20XX/Annotations`에 있을테니 다음과 같이 파라미터를 입력하면 됩니다.
+**`--label`** : 데이터셋의 레이블 폴더 경로입니다. 예를 들어 데이터셋이 `PASCAL VOC`라고 가정했을 때, 레이블 폴더는 `VOC20XX/Annotations`에 있을 테니 다음과 같이 파라미터를 입력하면 됩니다.
 
 ```bash
 $ --label VOC20XX/Annotations/
@@ -100,7 +100,7 @@ $ --label ./UDACITY/label.csv
 
 ​    
 
-**`--convert_output_path`** : 변환된 레이블파일이 저장될 폴더 경로를 의미합니다. 사용자가 원하는 폴더를 생성하거나 이미 있는 폴더를 지정해주면 됩니다.
+**`--convert_output_path`** : 변환된 레이블 파일이 저장될 폴더 경로를 의미합니다. 사용자가 원하는 폴더를 생성하거나 이미 있는 폴더를 지정해주면 됩니다.
 
 ```bash
 $ --convert_output_path ./
@@ -118,7 +118,7 @@ $ --img_type ".png"
 
 ​    
 
-**`--manipast_path`** : [darknet 프레임워크](https://pjreddie.com/darknet/)을 이용하여 학습할 경우에는 데이터셋의 이미지가 어디있는지 각 이미지마다 파일 경로가 적혀있는 `*.txt`파일을 요구하게됩니다. 해당 파라미터는 [darknet 프레임워크](https://pjreddie.com/darknet/)를 위한 파라미터이지만, 불필요한 경우에 생략할 수 없으므로 무조건 적어주어야 합니다.
+**`--manipast_path`** : [darknet 프레임워크](https://pjreddie.com/darknet/)을 이용하여 학습할 경우에는 데이터셋의 이미지가 어디 있는지 이미지마다 파일 경로가 적혀있는 `*.txt`파일을 요구하게 됩니다. 해당 파라미터는 [darknet 프레임워크](https://pjreddie.com/darknet/)를 위한 파라미터이지만, 불필요한 경우에 생략할 수 없으므로 무조건 적어주어야 합니다.
 
 ```bash
 $ --minipast_path ./
@@ -126,8 +126,7 @@ $ --minipast_path ./
 
 ​     
 
-**`--cls_list_file`** :  해당 파라미터 또한 [darknet 프레임워크](https://pjreddie.com/darknet/)에서 필요한 파일입니다. [darknet 프레임워크](https://pjreddie.com/darknet/)에서는 클래스 목록을 `*.names`파일을 참조하여 학습하고, 추론하게됩니다. 해당 파일의 포맷은 [링크](https://github.com/pjreddie/darknet/blob/master/data/voc.names)를 참조하시면 됩니다.
-
+**`--cls_list_file`** :  해당 파라미터 또한 [darknet 프레임워크](https://pjreddie.com/darknet/)에서 필요한 파일입니다. [darknet 프레임워크](https://pjreddie.com/darknet/)에서는 클래스 목록을 `*.names`파일을 참조하여 학습하고, 추론하게 됩니다. 해당 파일의 포맷은 [링크](https://github.com/pjreddie/darknet/blob/master/data/voc.names)를 참조하시기 바랍니다.
 ```bash
 $ --cls_list_file voc.names
 ```
@@ -136,7 +135,7 @@ $ --cls_list_file voc.names
 
 ### 01.04) 예제 코드
 
-파라미터에 대한 내용을 숙지했다면, 다음과 같은 명령어로 특정 dataset을 [darknet 프레임워크](https://pjreddie.com/darknet/)에서 필요로하는 레이블 포맷으로 변환할 수 있습니다.
+파라미터에 대한 내용을 숙지했다면, 다음과 같은 명령어로 특정 dataset을 [darknet 프레임워크](https://pjreddie.com/darknet/)에서 요구하는 레이블 포맷으로 변환할 수 있습니다.
 
 
 
