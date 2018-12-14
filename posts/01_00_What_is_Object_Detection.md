@@ -87,9 +87,12 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 
 
 
-​![rcnn](https://user-images.githubusercontent.com/13328380/49786581-aa92b400-fd67-11e8-9b74-374ecc6f9740.png)    <center>
+![rcnn](https://user-images.githubusercontent.com/13328380/49786581-aa92b400-fd67-11e8-9b74-374ecc6f9740.png)    
 
-​	[딥러닝 기반의 Object Detection 알고리즘 (R-CNN)]    
+<center>
+
+[딥러닝 기반의 Object Detection 알고리즘 (R-CNN)]    
+
 </center>
 
 
@@ -110,7 +113,6 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 [7. Wider Perspective on the Progress in Object Detection](https://techburst.io/wider-perspective-on-the-progress-in-object-detection-aac42dc98083)
 
 [8. A Step-by-Step Introduction to the Basic Object Detection Algorithms(Part 1)](https://techburst.io/wider-perspective-on-the-progress-in-object-detection-aac42dc98083)
-
 
 ----
 
