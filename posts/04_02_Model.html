@@ -535,7 +535,7 @@
 <p>&#x200B;    </p>
 <h2 id="02-initialization">02. Initialization</h2>
 <p>&#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774; &#xC0DD;&#xB7B5;&#xB41C; pre-train&#xC73C;&#xB85C; &#xC778;&#xD574; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC218;&#xB834; &#xC18D;&#xB3C4; &#xBC0F; &#xC548;&#xC815;&#xC131; &#xD558;&#xB77D;&#xC744; &#xBCF4;&#xAC15;&#xD558;&#xAE30; &#xC704;&#xD558;&#xC5EC; <code>He initialization</code>&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. <code>He initialization</code>&#xC740; Pytorch&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; <code>torch.nn.init.kaiming_normal_</code>&#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>Batch Normalization&#xC740; $\gamma$ &#xAC12;&#xC744; <code>1</code>, $\beta$&#xAC12;&#xC744; <code>0</code>&#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; $\gamma$&#xAC00; scale, $beta$&#xAC00; shift &#xAC12;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xCD08;&#xAE30;&#xC758; layer &#xCD9C;&#xB825;&#xAC12;&#xC5D0;&#xC11C; batch normalization layer&#xC758;&#xD574; scale &#xBC0F; shift&#xAC00; &#xC548;&#xC77C;&#xC5B4;&#xB098;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Batch Normalization&#xC740; <script type="math/tex; "> \gamma </script> &#xAC12;&#xC744; <code>1</code>, <script type="math/tex; "> \beta </script>&#xAC12;&#xC744; <code>0</code>&#xC73C;&#xB85C; &#xCD08;&#xAE30;&#xD654;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; <script type="math/tex; "> \gamma </script>&#xAC00; scale, <script type="math/tex; "> \beta </script>&#xAC00; shift &#xAC12;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xCD08;&#xAE30;&#xC758; layer &#xCD9C;&#xB825;&#xAC12;&#xC5D0;&#xC11C; batch normalization layer&#xC758;&#xD574; scale &#xBC0F; shift&#xAC00; &#xC548;&#xC77C;&#xC5B4;&#xB098;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-python"><span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> self.modules():
     <span class="hljs-keyword">if</span> isinstance(m, nn.Conv2d):
         nn.init.kaiming_normal_(m.weight, mode=<span class="hljs-string">&apos;fan_out&apos;</span>, nonlinearity=<span class="hljs-string">&quot;leaky_relu&quot;</span>)
@@ -667,11 +667,11 @@
 </li>
 <li><p><code>lambda noobj</code> : 0.5</p>
 </li>
-<li><p>$1^{obj}_{ij}$ : label&#xC758; object &#xC13C;&#xD130;&#xAC12;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; grid &#xC704;&#xCE58;&#xB294; <code>1</code>, &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xC704;&#xCE58;&#xB294; <code>0</code>&#xC73C;&#xB85C; &#xB9F5;&#xD551;&#xD558;&#xC5EC; object map&#xC744; &#xC0DD;&#xC131;</p>
+<li><p><script type="math/tex; "> 1^{obj}_{ij} </script> : label&#xC758; object &#xC13C;&#xD130;&#xAC12;&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; grid &#xC704;&#xCE58;&#xB294; <code>1</code>, &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xC704;&#xCE58;&#xB294; <code>0</code>&#xC73C;&#xB85C; &#xB9F5;&#xD551;&#xD558;&#xC5EC; object map&#xC744; &#xC0DD;&#xC131;</p>
 <pre><code class="lang-python">objness_label = target[:, :, :, <span class="hljs-number">0</span>]
 </code></pre>
 </li>
-<li><p>$1^{noobj}<em>{ij}$ :  $1^{obj}</em>{ij}$&#xC758; &#xBC18;&#xB300;&#xAC1C;&#xB150;&#xC774;&#xBBC0;&#xB85C;, $1^{obj}_{ij}$&#xB97C; inverse&#xD574;&#xC11C; non-object map&#xC744; &#xC0DD;&#xC131;</p>
+<li><p><script type="math/tex; "> 1^{noobj}_{ij} </script> :  <script type="math/tex; "> 1^{obj}_{ij} </script>&#xC758; &#xBC18;&#xB300;&#xAC1C;&#xB150;&#xC774;&#xBBC0;&#xB85C;, <script type="math/tex; "> 1^{obj}_{ij} </script>&#xB97C; inverse&#xD574;&#xC11C; non-object map&#xC744; &#xC0DD;&#xC131;</p>
 <pre><code class="lang-python">noobjness_label = torch.neg(torch.add(objness_label, <span class="hljs-number">-1</span>))
 </code></pre>
 </li>
@@ -775,7 +775,7 @@ objness1_loss = torch.sum(objness_label * torch.pow(objness1_output - objness_la
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02). Model","level":"1.1.5.2","depth":3,"previous":{"title":"01). You Only Look Once 논문리뷰","level":"1.1.5.1","depth":3,"path":"posts/04_01_Review_of_YOLO_Paper.md","ref":"posts/04_01_Review_of_YOLO_Paper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/04_02_Model.md","mtime":"2018-12-14T08:57:08.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T09:10:01.679Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02). Model","level":"1.1.5.2","depth":3,"previous":{"title":"01). You Only Look Once 논문리뷰","level":"1.1.5.1","depth":3,"path":"posts/04_01_Review_of_YOLO_Paper.md","ref":"posts/04_01_Review_of_YOLO_Paper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/04_02_Model.md","mtime":"2018-12-14T11:46:43.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T11:47:11.975Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -783,6 +783,14 @@ objness1_loss = torch.sum(objness_label * torch.pow(objness1_output - objness_la
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
