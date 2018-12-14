@@ -1,10 +1,10 @@
-# 04). Torch summary
+# Torch summary
 
 이번장에서는 Pytorch에서 모델을 작성할 때, `Keras`에서 제공하는 model summary 처럼 pytorch 모델을 summary해주는 Torch summary module에 대해서 알아보도록 하겠습니다.
 
 
 
-이러한 summary 모듈은 해당 네트워크의 구성, 파라미터의 개수, 파라미터의 용량, 연산수을 확인하는데 매우 유용합니다. Torch summary의 원코드는 다음 링크를 참조하시면 됩니다. 
+이러한 summary 모듈은 해당 네트워크의 구성, 파라미터의 개수, 파라미터의 용량, 연산수을 확인하는데 매우 유용합니다. Torch summary의 원코드는 다음 링크를 참조하시면 됩니다.
 
 - [github : Torch Summary Module](https://github.com/sksq96/pytorch-summary)
 
@@ -14,13 +14,13 @@
 
 
 
-## 1. Installing Torch summary
+## 01. Installing Torch summary
 
 torch summary 모듈을 설치하는 방법법은 원 코드를 github에서 `clone`하는 방법과 `pip`를 이용하여 설치하는 방법으로 설치할 수 있습니다.
 
 
 
-### 1-1. using pip
+### 01.01) using pip
 
 pip를 이용하여 torch summary를 설치하는 방법은 아래와 같은 명령어를 사용하면 됩니다.
 
@@ -36,7 +36,7 @@ $ pip3 install torchsummary
 
 
 
-### 1-2. using clone
+### 01.02) using clone
 
 해당 깃허브의 원코드를 클론받아서 설치하는 방법은 다음과 같습니다.
 
@@ -48,13 +48,13 @@ $ git clone https://github.com/sksq96/pytorch-summary
 
 
 
-## 2. How to use torch summary
+## 02. How to use torch summary
 
 torch summary를 import하고 사용하는 방법에 대해서 설명하도록 하겠습니다.
 
 
 
-### 2-1. import
+### 02.01) import
 
 torch summary 모듈은 다음과 같은 방법으로 import하면 됩니다.
 
@@ -70,7 +70,7 @@ import torchsummary.summary as summary
 
 
 
-### 2-2. use torch summary
+### 02.02) use torch summary
 
 이렇게 import된 torch summary는 정의된 모델에 빈 입력을 넣는 것을 통해서 작동시킬 수 있습니다.
 
@@ -151,6 +151,3 @@ Params size (MB): 0.08
 Estimated Total Size (MB): 0.15
 ----------------------------------------------------------------
 ```
-
-
-

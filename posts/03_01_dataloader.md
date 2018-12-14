@@ -1,4 +1,4 @@
-# 01). Dataloader
+# Dataloader
 
 이번장에서는 Pytorch에서 모델을 작성할 때, 데이터를 feeding 역활을 하는 Dataloder를 작성해보도록 하겠습니다.
 
@@ -6,7 +6,7 @@
 
 ​    
 
-## Pytorch Dataset class
+## 01. Pytorch Dataset class
 
 해당 프로젝트에서는 Pytorch Dataset class를 상속받아 data를 parsing하고 있습니다. 따라서 pytorch의 dataset class를 먼저 알아야합니다.
 
@@ -43,7 +43,7 @@ class Dataset(object):
 
 
 
-자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해 보시기 바랍니다. 
+자세한 내용은 [Pytorch Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)을 확인해 보시기 바랍니다.
 
 Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
@@ -56,13 +56,13 @@ Dataset의 `__getitem__`, `__len__`는 다음과 같은 역활을 합니다.
 
 ​    
 
-## VOC class
+## 02. VOC class
 
 VOC class 구현 시, 앞서 설명한 `convert2Yolo`프로젝트를 이용합니다. VOC class에 구현된 `_check_exists()`는 추상클래스인 `Dataset`에서 Object Detection data parsing  파일 존재 여부를 확인하는 함수이며, `__getitem__()`, `__len__()`는 추상클래스인 Dataset이 요구하는 함수를 overriding하여 구현한 함수입니다.
 
 
 
-### 1. `__init__()`
+### 02.01) `__init__()`
 
 `__init__()`함수는 VOC class가 초기화될 때, dataloader에서 사용할 수 있도록 최소한의 준비를 하도록 합니다.
 
@@ -119,7 +119,7 @@ def __init__(self, root, train=True, transform=None, target_transform=None, resi
 
 ​    
 
-### 2. `_check_exists()`
+### 02.02) `_check_exists()`
 
 해당 함수는 Dataset이 파라미터로 받은 root 경로에 존재하는지 확인합니다.
 
@@ -136,7 +136,7 @@ def _check_exists(self):
 
 ​    
 
-### 3. `cvtData()`
+### 02.03) `cvtData()`
 
 해당 함수는 본격적으로 데이터를 파싱하는 함수입니다. 해당 구현은 `convert2Yolo` 프로젝트의 일부를 그대로 사용합니다.
 
@@ -183,7 +183,7 @@ def cvtData(self):
 
 
 
-여기서는 [02). convert2Yolo 소개](posts/02_02_Convert2Yolo.md)에서 설명했듯이, `dictionary` 형태의 공통된 파일 포맷에서 yolo format으로 변환 된 `dictionary`형태의 포맷까지 추출하게 됩니다. 
+여기서는 [02). convert2Yolo 소개](posts/02_02_Convert2Yolo.md)에서 설명했듯이, `dictionary` 형태의 공통된 파일 포맷에서 yolo format으로 변환 된 `dictionary`형태의 포맷까지 추출하게 됩니다.
 
 ​    
 
@@ -214,13 +214,13 @@ yolo format으로 변환된 데이터는 다음과 같은 형태입니다.
   결과값의 구조는 다음과 같습니다.
 
   ```json
-  [{'.../datasets/JPEGImages/2008_008490.jpg': [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]}, 
+  [{'.../datasets/JPEGImages/2008_008490.jpg': [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]},
   {'.../datasets/JPEGImages/2008_008500.jpg': [[4.0, 0.217, 0.348, 0.062, 0.12]]}, {'.../datasets/JPEGImages/2008_008506.jpg': [[0.0, 0.369, 0.668, 0.41, 0.246]]}, {'.../datasets/JPEGImages/2008_008519.jpg': [[4.0, 0.812, 0.643, 0.032, 0.025]]}, {'.../datasets/JPEGImages/2008_008523.jpg': [[0.0, 0.448, 0.553, 0.892, 0.893]]}, ...]
   ```
 
 ​    
 
-### 4. `__len__()`
+### 02.04) `__len__()`
 
 해당 함수는 위에서  `cvtData()`함수를 이용하여 얻은 학습데이터 리스트의 길이를 확인합니다.
 
@@ -233,7 +233,7 @@ def __len__(self):
 
 ​    
 
-### 5. `__getitem__()`
+### 02.05) `__getitem__()`
 
 해당 함수는 학습 데이터의 일부를 슬라이싱해서 리턴합니다.
 
@@ -265,7 +265,7 @@ def __getitem__(self, index):
 위에서 언급했듯이, 최종적응로 파싱된 data의 구조는 다음과 같습니다.
 
 ```bash
-[{'.../datasets/JPEGImages/2008_008490.jpg': [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]}, 
+[{'.../datasets/JPEGImages/2008_008490.jpg': [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]},
 {'.../datasets/JPEGImages/2008_008500.jpg': [[4.0, 0.217, 0.348, 0.062, 0.12]]}, {'.../datasets/JPEGImages/2008_008506.jpg': [[0.0, 0.369, 0.668, 0.41, 0.246]]}, {'.../datasets/JPEGImages/2008_008519.jpg': [[4.0, 0.812, 0.643, 0.032, 0.025]]}, {'.../datasets/JPEGImages/2008_008523.jpg': [[0.0, 0.448, 0.553, 0.892, 0.893]]}, ...]
 ```
 
@@ -273,7 +273,7 @@ def __getitem__(self, index):
 
 `__getitem__`함수가 실행되면, 데이터셋의 `index`값이 넘어오게 되는데, 해당 `index`값을 사용하여, `image file path`를 읽어옵니다.
 
-- `list(self.data[index].keys())`를 실행하게 되면, 다음과 같은 결과값을 얻습니다. 
+- `list(self.data[index].keys())`를 실행하게 되면, 다음과 같은 결과값을 얻습니다.
 
   ```json
   ['.../datasets/JPEGImages/2010_002546.jpg']
@@ -287,11 +287,11 @@ def __getitem__(self, index):
 
 - 로드된 이미지와 label값을 인자로 받은 `transform`함수를 이용해 Augmentation을 진행합니다.
 
-- 반환값으론 Augmentation이 완료된 image, target 그리고 원본 이미지의 크기가 반환됩니다. 
+- 반환값으론 Augmentation이 완료된 image, target 그리고 원본 이미지의 크기가 반환됩니다.
 
 ​    
 
-### 6. VOC Class
+### 02.06) VOC Class
 
 최종 VOC class 코드는 다음과 같습니다.
 
@@ -400,7 +400,7 @@ class VOC(data.Dataset):
 
 ​    
 
-## Dataloader
+## 03. Dataloader
 
 Object Detection을 위한 커스텀 Dataset을 정의했으니, 이를 이용하여 Dataloader 클래스의 인자로 주면 사용이 가능해집니다.
 
@@ -409,8 +409,8 @@ Object Detection을 위한 커스텀 Dataset을 정의했으니, 이를 이용�
 실제로 train시 Dataset, Dataloader는 다음과 같은 방법으로 사용할 수 있습니다.
 
 ```python
-train_dataset = VOC(root=data_path, 
-                    transform=transforms.ToTensor(), 
+train_dataset = VOC(root=data_path,
+                    transform=transforms.ToTensor(),
                     class_path=class_path)
 
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
@@ -424,12 +424,12 @@ train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
 
 ​    
 
-### 1. collate_fn
+### 03.01) collate_fn
 
-  앞서 Dataloader를 살펴보았습니다. YOLOv1의 output tensor의 형태는 S x S x (B * 5 + C) 입니다. Loss를 계산하고 학습하려면 label을 output tensor와 동일한 형태로 구성해야 합니다. 이를 위해서 PyTorch에서는 `torch.utils.data.DataLoader`에서 `collate_fn`라는 파라미터를 이용할 수 있습니다. (`torch.utils.data.DataLoader`에서 제공하는 모든 파라미터는 [이곳](https://pytorch.org/docs/stable/data.html?highlight=dataloader)을 참고하시기 바랍니다) 
+  앞서 Dataloader를 살펴보았습니다. YOLOv1의 output tensor의 형태는 S x S x (B * 5 + C) 입니다. Loss를 계산하고 학습하려면 label을 output tensor와 동일한 형태로 구성해야 합니다. 이를 위해서 PyTorch에서는 `torch.utils.data.DataLoader`에서 `collate_fn`라는 파라미터를 이용할 수 있습니다. (`torch.utils.data.DataLoader`에서 제공하는 모든 파라미터는 [이곳](https://pytorch.org/docs/stable/data.html?highlight=dataloader)을 참고하시기 바랍니다)
 
 
-#### Output tensor 
+#### 03.01.01) Output tensor
 우선 YOLOv1 모델의 output tensor를 살펴보도록 하겠습니다. output tensor의 형태는 아래 그림과 같습니다.  
 
 ![a](https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png)
@@ -438,7 +438,7 @@ output tensor는 S x S grid를 가지고 B개의 bounding box와 C개의 class p
 
 
 
-`detection_collate`는 collate_fn의 구현체입니다. 코드는 아래와 같습니다. 
+`detection_collate`는 collate_fn의 구현체입니다. 코드는 아래와 같습니다.
 
 ```python
 def detection_collate(batch):
@@ -471,6 +471,12 @@ def detection_collate(batch):
         targets.append(label)
     return torch.stack(imgs, 0), torch.stack(targets, 0), sizes
 ```
+
 `detection_collate`의 입력 파라미터인 batch는 list로 ``batch[0]``는 이미지, ``batch[1]``는 레이블, ``batch[3]``는 원본 이미지 사이즈입니다. 
-#### Normalized bounding box  
-``batch[1]``는 레이블 정보인 `[x, y, w, h, class]`를 list로 담고 있습니다. output tensor에는 정규화된 bounding box 좌표를 사용합니다. bounding box의 중심점인 (x, y)는 각 그리드 셀에서의 상대적인 위치로 나타내며, 0-1 범위의 값을 가집니다. bounding box의 너비와 높이인 (w, h)는 전체 이미지에 대한 상대적인 위치를 나타내며, 0-1의 범위를 가집니다. 
+
+![image](https://user-images.githubusercontent.com/15168540/49686629-81d9a700-fb3a-11e8-94dc-cd4da8c1b353.png)
+
+#### Normalized Bounding Box
+``batch[1]``는 list로 레이블 정보인 `[class, x, y, w, h]`를 담고 있습니다. YOLO는 정규화된 바운딩 박스를 사용합니다. 바운딩 박스의 중심점인 (x, y)는 (x, y)가 속한 그리드 셀에서의 상대적인 위치로 나타내며, 정규화시킨 값이므로 범위는 [0-1) 입니다. 바운딩박스의 너비와 높이인 (w, h)는 이미지 사이즈로 정규화시킨 값이며, 범위는 [0,1)입니다.
+
+![image](https://user-images.githubusercontent.com/15168540/49686609-42ab5600-fb3a-11e8-9430-5e1f04d5b94c.png)
