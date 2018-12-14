@@ -251,3 +251,8 @@ else:
 ​    
 
 해당 내용의 사용은 3장 `Common utils`의 `dataloader`에서 사용할 예정이므로, 코드의 흐름이 맞는지 한번 직접 코드를 수정하면서 이해해보시기 바랍니다.
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+>>>>>>> master

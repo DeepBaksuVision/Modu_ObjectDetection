@@ -20,10 +20,31 @@
 
 ​    
 
+**기여(Contribution)**
+
+프로젝트에 참가하기는 어려우나, 해당 ebook 및 ebook에서 참고하는 코드에 대해서 기여하고싶으신 분들은 [프로젝트 각 저장소](https://github.com/DeepBaksuVision)의 Issue란을 적극적으로 활용하여 피드백 주시면, 프로젝트에서 적극적으로 해당 내용을 반영하도록 하겠습니다.
+
+​    
+
+**라이센스 (License)**
+
+본 ebook의 저작물은 **CC BY-NC-SA**를 따릅니다.
+
+> *이 저작물은 크리에이티브 커먼즈 [저작자표시-비영리 2.0 대한민국 라이선스]에 따라 이용할 수 있습니다.*
+
+> *저작자를 밝히면 자유로운 이용이 가능하며, 저작물의 변경도 가능하지만 영리목적으로 이용할 수 없고 2차적 저작물에는 원 저작물과 동일한 라이센스를 적용해야합니다.*
+
+​    
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+
+​        
+
 **참가자 모집(진행 중)**
 
 본 프로젝트에 참가해서 Object Detection 모델을 실제로 직접 구현해보고, 초심자를 위한 문서 작성을 통해 성장하고자 하는 분들께서는 아래 메일 주소로 참여 의사를 전달해주세요. 프로젝트가 종료되는 2019년 06월 말까지 유효합니다. 현재 프로젝트의 최대 인원은 4~5명으로 제안하고 있으며, 현재 1~2명의 인원을 충원 예정입니다. [2018-12-11일 기준]
 
 
+    
+dhhwang89@gmail.com / 황동현 (모두의 연구소) 
 
-dhhwang89@gmail.com / 황동현 (모두의 연구소)

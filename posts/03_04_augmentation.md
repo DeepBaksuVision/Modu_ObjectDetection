@@ -4,7 +4,7 @@
 
 ## imgaug library
 [imgaug](https://imgaug.readthedocs.io/en/latest/index.html)는 기계학습 모델 학습 시 Image augmentation 기법을 제공하는 아주 강력한 파이썬 라이브러리입니다. 기본적인 image augmentation과 keypoints, bounding boxes, heatmaps등 다양한 문제에 data augmentation을 적용할 수 있도록 편리한 기능들을 제공합니다. 
- 
+
 ![imageaug](https://imgaug.readthedocs.io/en/latest/_images/heavy.jpg)
 
 ## Install imgaug
@@ -112,4 +112,9 @@ class Augmenter(object):
 ```
 
 
+----
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
 

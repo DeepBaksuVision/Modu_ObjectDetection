@@ -529,3 +529,9 @@ $ python3 searchNload.py <directory>
 실행하게 되면, 다음과 같은 화면을 볼 수 있습니다.
 
 ![object detection label visualization](https://user-images.githubusercontent.com/13328380/48310215-071a7c00-e5ce-11e8-855e-c60651251f69.png)
+
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+

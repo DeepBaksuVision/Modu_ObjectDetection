@@ -6,6 +6,8 @@
 
 **황동현** (dhhwang89@gmail.com)
 
+> *"성장 지향적 사고와 선순환 피드백 루프를 이용한 급속성장"*
+
 Object Detection 구현 모임을 기획하였고, 해당 과정에서 facilitator로 활동중입니다. Object Detection 모델이 다양한 비전문제에서 활용이 되어 많은 논문을 읽고 토의를 하였으나, 논문을 읽고 토의를 한 것으로 Object Detection을 잘 안다고 이야기할 수 있나 회의감이 들어 Object Detection 구현 프로젝트를 제안하게 되었습니다. 현재는 딥러닝을 이용한 생체신호 처리 및 FaaS(Function as a Service )관련 업무를 수행하고 있으며, 경량화 네트워크(Quantization Network) 에 큰 관심을 가지고 있습니다.
 
 [[LinkedIn]](https://www.linkedin.com/in/martin-hwang/)  
@@ -32,5 +34,20 @@ Computer Vision을 전공하였고, Deep Learning을 활용한 문제 해결에 
 
 [[LinkedIn]](https://www.linkedin.com/in/chjeong530/)  
 [[Github]](https://github.com/chjeong530)
+
+
+## Sponsor
+
+**[모두의 연구소](http://www.modulabs.co.kr/)**
+
+
+
+<img src="https://user-images.githubusercontent.com/13328380/49987108-85938080-ffb5-11e8-97c5-562281d5189d.jpg" width="100", height="100">
+
+
+
+----
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
 
 ​    
