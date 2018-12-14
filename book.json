@@ -1,3 +1,9 @@
 {
-    "plugins" : ["mathjax"]
+    "plugins" : ["katex@git+https://github.com/allenyllee/plugin-katex.git"],
+
+    "pluginsConfig" : {
+        "mathjax" : {
+	    "forceSVG" : true
+	}
+    }
 }
