@@ -2,6 +2,8 @@
 
 이번 장에서는 YOLO 모델 구조 및 objective function을 설명하고, 해당 내용을 PyTorch 코드레벨로 설명하겠습니다.
 
+**실제 코드는 [DeepBaksuVision/You_Only_Look_Once](https://github.com/DeepBaksuVision/You_Only_Look_Once)에서 확인할 수 있습니다.**
+
 앞서 살펴보았듯이 YOLO의 모델 구조는 다음과 같습니다.
 
 
