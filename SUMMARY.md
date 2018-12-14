@@ -1,7 +1,7 @@
 # Summary
 
 * [모두를 위한 Object Detection(Object Detection for All)](README.md)
-  * [00. preface](posts/00_00_preface.md)
+  * [00. Preface](posts/00_00_preface.md)
     * [01). Author](posts/00_01_Author.md)
     * [02). Revision](posts/00_02_Revision.md)
     * [03). Table of contents](posts/00_03_Table_of_contents.md)
@@ -17,3 +17,4 @@
   * [04. You Only Look Once: Unified, Real-Time Object Detection](posts/04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.md)
     * [01). You Only Look Once 논문리뷰](posts/04_01_Review_of_YOLO_Paper.md)
     * [02). Model](posts/04_02_Model.md)
+
