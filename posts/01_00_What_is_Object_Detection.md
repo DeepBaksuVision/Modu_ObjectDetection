@@ -6,7 +6,7 @@
 
 
 
-Object Detection은 컴퓨터 비젼(Computer vision), 영상 처리(image processing)와 관계가 깊은 컴퓨터 기술입니다.
+Object Detection은 컴퓨터비전(Computer vision), 영상처리(image processing)와 관계가 깊은 컴퓨터 기술입니다.
 
 
 
