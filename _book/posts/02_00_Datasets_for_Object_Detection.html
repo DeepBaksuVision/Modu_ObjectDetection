@@ -1,0 +1,486 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02. Datasets for Object Detection · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02_01_PASCAL_VOC.html" />
+    
+    
+    <link rel="prev" href="01_00_What_is_Object_Detection.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >02. Datasets for Object Detection</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="datasets-for-object-detection">Datasets for Object Detection</h1>
+<p>&#xD574;&#xB2F9; &#xCC55;&#xD130;&#xC5D0;&#xC11C;&#xB294; Object Detection&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACF5;&#xACF5; &#xB370;&#xC774;&#xD130;&#xC14B;&#xACFC; &#xC774;&#xB97C; Object Detection&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; Data Parsing&#xC744; &#xB3C4;&#xC640;&#xC8FC;&#xB294; Convert2Yolo &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC18C;&#xAC1C;&#xD560; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="http://host.robots.ox.ac.uk/pascal/VOC/" target="_blank">PASCAL VOC Dataset</a></li>
+<li><a href="http://cocodataset.org/#home" target="_blank">COCO Dataset</a></li>
+<li><a href="https://github.com/udacity/self-driving-car/tree/master/annotations" target="_blank">Udacity Dataset</a></li>
+<li><a href="http://www.cvlibs.net/datasets/kitti/" target="_blank">KITTI 2D Dataset</a></li>
+<li><a href="https://github.com/openimages/dataset" target="_blank">OpenImages Dataset</a></li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/13328380/49796068-0452a880-fd7f-11e8-8f75-66c7de454ca7.PNG" alt="kitti"><center>
+    [KITTI 2D Object Detection Dataset]    
+</center></p>
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xB77C;&#xC774;&#xC120;&#xC2A4;" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>&#xC774; &#xC800;&#xC791;&#xBB3C;&#xC740; <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xC800;&#xC791;&#xC790;&#xD45C;&#xC2DC;-&#xBE44;&#xC601;&#xB9AC;-&#xB3D9;&#xC77C;&#xC870;&#xAC74;&#xBCC0;&#xACBD;&#xD5C8;&#xB77D; 4.0 &#xAD6D;&#xC81C; &#xB77C;&#xC774;&#xC120;&#xC2A4;</a>&#xC5D0; &#xB530;&#xB77C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_00_What_is_Object_Detection.html" class="navigation navigation-prev " aria-label="Previous page: 01. Object Detection 이란?">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02_01_PASCAL_VOC.html" class="navigation navigation-next " aria-label="Next page: 01). PASCAL VOC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02. Datasets for Object Detection","level":"1.1.3","depth":2,"next":{"title":"01). PASCAL VOC","level":"1.1.3.1","depth":3,"path":"posts/02_01_PASCAL_VOC.md","ref":"posts/02_01_PASCAL_VOC.md","articles":[]},"previous":{"title":"01. Object Detection 이란?","level":"1.1.2","depth":2,"path":"posts/01_00_What_is_Object_Detection.md","ref":"posts/01_00_What_is_Object_Detection.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/02_00_Datasets_for_Object_Detection.md","mtime":"2018-12-14T08:33:44.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T08:29:41.739Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,844 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>01). DataLoader · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_04_augmentation.html" />
+    
+    
+    <link rel="prev" href="03_00_common_utils.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >01). DataLoader</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dataloader">Dataloader</h1>
+<p>&#xC774;&#xBC88;&#xC7A5;&#xC5D0;&#xC11C;&#xB294; Pytorch&#xC5D0;&#xC11C; &#xBAA8;&#xB378;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;, &#xB370;&#xC774;&#xD130;&#xB97C; feeding &#xC5ED;&#xD65C;&#xC744; &#xD558;&#xB294; Dataloder&#xB97C; &#xC791;&#xC131;&#xD574;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD574;&#xB2F9; &#xCC55;&#xD130;&#xC758; &#xBAA9;&#xB85D;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h2 id="01-pytorch-dataset-class">01. Pytorch Dataset class</h2>
+<p>&#xD574;&#xB2F9; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; Pytorch Dataset class&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC544; data&#xB97C; parsing&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; pytorch&#xC758; dataset class&#xB97C; &#xBA3C;&#xC800; &#xC54C;&#xC544;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>pytorch&#xC758; dataset class&#xB294; <a href="https://pytorch.org/docs/stable/data.html" target="_blank"><code>torch.utils.data</code></a>&#xC5D0; &#xC788;&#xC73C;&#xBA70;, &#xD574;&#xB2F9; &#xC18C;&#xC2A4;&#xB294; <a href="https://pytorch.org/docs/stable/_modules/torch/utils/data/dataset.html#Dataset" target="_blank">&#xB9C1;&#xD06C;</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC18C;&#xC2A4;&#xC758; &#xC6D0;&#xD615;&#xC744; &#xBCF4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dataset</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;An abstract class representing a Dataset.
+
+    All other datasets should subclass it. All subclasses should override
+    ``__len__``, that provides the size of the dataset, and ``__getitem__``,
+    supporting integer indexing in range from 0 to len(self) exclusive.
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, index)</span>:</span>
+        <span class="hljs-keyword">raise</span> NotImplementedError
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__len__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">raise</span> NotImplementedError
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add__</span><span class="hljs-params">(self, other)</span>:</span>
+        <span class="hljs-keyword">return</span> ConcatDataset([self, other])
+</code></pre>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xB807;&#xAC8C; PyTorch&#xC758; Dataset &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC544; &#xCEE4;&#xC2A4;&#xD140; Dataset &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; <code>__getitem__</code>, <code>__len__</code>&#xC744; overriding&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://pytorch.org/tutorials/beginner/data_loading_tutorial.html" target="_blank">Pytorch Tutorial</a>&#xC744; &#xD655;&#xC778;&#xD574; &#xBCF4;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
+<p>Dataset&#xC758; <code>__getitem__</code>, <code>__len__</code>&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5ED;&#xD65C;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li><code>__getitem__</code> :  &#xB85C;&#xB4DC;&#xD55C; data&#xB97C; &#xCC28;&#xB840;&#xCC28;&#xB840; &#xB3CC;&#xB824;&#xC90C;</li>
+<li><code>__len__</code> : &#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130;&#xC758; &#xAE38;&#xC774;&#xB97C; &#xACC4;&#xC0B0;&#xD568;</li>
+</ol>
+<p>&#x200B;    </p>
+<p>&#xCD94;&#xC0C1;&#xD074;&#xB798;&#xC2A4;&#xC778; <code>Dataset</code>&#xC740; &#xCD5C;&#xC18C;&#xD55C;  <code>__getitem__</code>, <code>__len__</code> &#xD568;&#xC218; &#xAD6C;&#xD604;&#xC744; &#xC694;&#xAD6C;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7FC; &#xC774;&#xC81C; Dataset &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC544; Object Detection&#xC5D0; &#xC801;&#xD569;&#xD55C; <code>VOC</code>&#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xBD05;&#xC2DC;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h2 id="02-voc-class">02. VOC class</h2>
+<p>VOC class &#xAD6C;&#xD604; &#xC2DC;, &#xC55E;&#xC11C; &#xC124;&#xBA85;&#xD55C; <code>convert2Yolo</code>&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC774;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. VOC class&#xC5D0; &#xAD6C;&#xD604;&#xB41C; <code>_check_exists()</code>&#xB294; &#xCD94;&#xC0C1;&#xD074;&#xB798;&#xC2A4;&#xC778; <code>Dataset</code>&#xC5D0;&#xC11C; Object Detection data parsing  &#xD30C;&#xC77C; &#xC874;&#xC7AC; &#xC5EC;&#xBD80;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xD568;&#xC218;&#xC774;&#xBA70;, <code>__getitem__()</code>, <code>__len__()</code>&#xB294; &#xCD94;&#xC0C1;&#xD074;&#xB798;&#xC2A4;&#xC778; Dataset&#xC774; &#xC694;&#xAD6C;&#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; overriding&#xD558;&#xC5EC; &#xAD6C;&#xD604;&#xD55C; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="0201-init">02.01) <code>__init__()</code></h3>
+<p><code>__init__()</code>&#xD568;&#xC218;&#xB294; VOC class&#xAC00; &#xCD08;&#xAE30;&#xD654;&#xB420; &#xB54C;, dataloader&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xCD5C;&#xC18C;&#xD55C;&#xC758; &#xC900;&#xBE44;&#xB97C; &#xD558;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>__init__()</code>&#xD568;&#xC218;&#xC758; &#xB85C;&#xC9C1;&#xD750;&#xB984;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xC778;&#xC790;&#xB97C; &#xBC1B;&#xC544; &#xBCC0;&#xC218;&#xC5D0; &#xD560;&#xB2F9;</li>
+<li>class name list &#xD30C;&#xC77C;&#xC744; &#xBC1B;&#xC544; load</li>
+<li>Dataset &#xC874;&#xC7AC; &#xC720;&#xBB34; &#xD655;&#xC778;</li>
+<li>Dataset parsing</li>
+</ul>
+<pre><code class="lang-python3">IMAGE_FOLDER = &quot;JPEGImages&quot;
+LABEL_FOLDER = &quot;Annotations&quot;
+IMG_EXTENSIONS = &apos;.jpg&apos;
+
+def __init__(self, root, train=True, transform=None, target_transform=None, resize=448, class_path=&apos;./voc.names&apos;):
+    self.root = root
+    self.transform = transform
+    self.target_transform = target_transform
+    self.train = train
+    self.resize_factor = resize
+    self.class_path = class_path
+
+    with open(class_path) as f:
+        self.classes = f.read().splitlines()
+
+    if not self._check_exists():
+        raise RuntimeError(&quot;Dataset not found.&quot;)
+
+    self.data = self.cvtData()
+</code></pre>
+<p>&#xBA3C;&#xC800; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><p><code>root</code> : &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; &#xACBD;&#xB85C;&#xC785;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; PASCAL VOC &#xB370;&#xC774;&#xD130;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; root&#xACBD;&#xB85C;&#xC5D0;&#xC11C; <code>JPEGImages</code>, <code>Annotations</code>&#xD3F4;&#xB354;&#xB85C; &#xBD84;&#xAE30;&#xD574;&#xC11C; &#xB4E4;&#xC5B4;&#xAC08; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xD574;&#xB2F9; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; &#xD3F4;&#xB354; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xACBD;&#xB85C;&#xAC00; <code>root</code>&#xB85C; &#xB4E4;&#xC5B4;&#xAC00;&#xBA74; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>train</code> : &#xC0DD;&#xC131;&#xB420; &#xAC1D;&#xCCB4;&#xC758; &#xC6A9;&#xB3C4;&#xAC00; train&#xC6A9;&#xC778;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; flag &#xC778;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>transform</code> : &#xCD94;&#xD6C4; &#xC124;&#xBA85;&#xD560; Augmentation &#xC778;&#xC790;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; <code>&#xC785;&#xB825; &#xB370;&#xC774;&#xD130;</code>&#xC5D0; &#xB300;&#xD55C; &#xBCC0;&#xD658;&#xD568;&#xC218; &#xADF8; &#xC790;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>target_transform</code> : &#xCD94;&#xD6C4; &#xC124;&#xBA85;&#xD560; Augmentation &#xC778;&#xC790;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; <code>&#xC815;&#xB2F5; &#xB370;&#xC774;&#xD130;</code>&#xC5D0; &#xB300;&#xD55C; &#xBCC0;&#xD658;&#xD568;&#xC218; &#xADF8; &#xC790;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>resize</code> : <code>&#xC785;&#xB825; &#xB370;&#xC774;&#xD130;</code>&#xC5D0; &#xB300;&#xD55C; resize&#xD06C;&#xAE30;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>class_path</code>  : class name&#xC774; &#xC801;&#xD600;&#xC788;&#xB294; &#xB9AC;&#xC2A4;&#xD2B8; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>(&#xD574;&#xB2F9; &#xC778;&#xC790;&#xC758; &#xAD6C;&#xC870;&#xB294; <code>convert2Yolo</code>&#xC640; &#xC758;&#xC874;&#xC131;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="posts/02_02_Convert2Yolo.md">02. convert2Yolo &#xC18C;&#xAC1C;</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.)</p>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<h3 id="0202-checkexists">02.02) <code>_check_exists()</code></h3>
+<p>&#xD574;&#xB2F9; &#xD568;&#xC218;&#xB294; Dataset&#xC774; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xBC1B;&#xC740; root &#xACBD;&#xB85C;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAD6C;&#xD604; &#xB0B4;&#xC6A9;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xB2F9; &#xACBD;&#xB85C;&#xC758; &#xC874;&#xC7AC;&#xC720;&#xBB34;&#xB97C; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python3">def _check_exists(self):
+    print(&quot;Image Folder : {}&quot;.format(os.path.join(self.root, self.IMAGE_FOLDER)))
+    print(&quot;Label Folder : {}&quot;.format(os.path.join(self.root, self.LABEL_FOLDER)))
+
+    return os.path.exists(os.path.join(self.root, self.IMAGE_FOLDER)) and \
+           os.path.exists(os.path.join(self.root, self.LABEL_FOLDER))
+</code></pre>
+<p>&#x200B;    </p>
+<h3 id="0203-cvtdata">02.03) <code>cvtData()</code></h3>
+<p>&#xD574;&#xB2F9; &#xD568;&#xC218;&#xB294; &#xBCF8;&#xACA9;&#xC801;&#xC73C;&#xB85C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD30C;&#xC2F1;&#xD558;&#xB294; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; &#xAD6C;&#xD604;&#xC740; <code>convert2Yolo</code> &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xC77C;&#xBD80;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python3">def cvtData(self):
+
+    result = []
+    voc = cvtVOC()
+
+    yolo = cvtYOLO(os.path.abspath(self.class_path))
+    flag, self.dict_data =voc.parse(os.path.join(self.root, self.LABEL_FOLDER))
+
+    try:
+
+        if flag:
+            flag, data =yolo.generate(self.dict_data)
+
+            keys = list(data.keys())
+            keys = sorted(keys, key=lambda key: int(key.split(&quot;_&quot;)[-1]))
+
+            for key in keys:
+                contents = list(filter(None, data[key].split(&quot;\n&quot;)))
+                target = []
+                for i in range(len(contents)):
+                    tmp = contents[i]
+                    tmp = tmp.split(&quot; &quot;)
+                    for j in range(len(tmp)):
+                        tmp[j] = float(tmp[j])
+                    target.append(tmp)
+
+                result.append({os.path.join(self.root, self.IMAGE_FOLDER, &quot;&quot;.join([key, self.IMG_EXTENSIONS])) : target})
+
+            return result
+
+    except Exception as e:
+        raise RuntimeError(&quot;Error : {}&quot;.format(e))
+</code></pre>
+<ul>
+<li>VOC data&#xB97C; &#xBA3C;&#xC800; parsing&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>parsing&#xB41C; VOC data&#xB97C; yolo&#xC758; label &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBCC0;&#xACBD;&#xB41C; yolo label &#xD3EC;&#xB9F7;&#xC744; &#xB9AC;&#xC2A4;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xC5EC;&#xAE30;&#xC11C;&#xB294; <a href="posts/02_02_Convert2Yolo.md">02). convert2Yolo &#xC18C;&#xAC1C;</a>&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD588;&#xB4EF;&#xC774;, <code>dictionary</code> &#xD615;&#xD0DC;&#xC758; &#xACF5;&#xD1B5;&#xB41C; &#xD30C;&#xC77C; &#xD3EC;&#xB9F7;&#xC5D0;&#xC11C; yolo format&#xC73C;&#xB85C; &#xBCC0;&#xD658; &#xB41C; <code>dictionary</code>&#xD615;&#xD0DC;&#xC758; &#xD3EC;&#xB9F7;&#xAE4C;&#xC9C0; &#xCD94;&#xCD9C;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p><strong>parsing&#xB41C; VOC data&#xB97C; yolo&#xC758; label &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;</strong></p>
+<p>yolo format&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{<span class="hljs-string">&apos;2008_003829&apos;</span>: <span class="hljs-string">&apos;1 0.989 0.331 0.022 0.096\n&apos;</span>, <span class="hljs-string">&apos;2010_004263&apos;</span>: <span class="hljs-string">&apos;1 0.056 0.544 0.048 0.052\n&apos;</span>, <span class="hljs-string">&apos;2010_005284&apos;</span>: <span class="hljs-string">&apos;1 0.887 0.55 0.082 0.12\n4 0.983 0.553 0.03 0.204\n4 0.029 0.517 0.042 0.18\n&apos;</span>, <span class="hljs-string">&apos;2010_004133&apos;</span>: <span class="hljs-string">&apos;2 0.61 0.537 0.776 0.659\n&apos;</span>, <span class="hljs-string">&apos;2009_003238&apos;</span>: <span class="hljs-string">&apos;1 0.781 0.508 0.438 0.431\n&apos;</span>, <span class="hljs-string">&apos;2008_004646&apos;</span>: <span class="hljs-string">&apos;4 0.786 0.595 0.028 0.066\n&apos;</span>, ...}
+</code></pre>
+<p>&#xC704;&#xC640; &#xAC19;&#xC774; <code>image file name : label</code>&#xD615;&#xD0DC;&#xC758; key-value &#xC30D;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xC774; &#xB418;&#xC5B4;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><p><code>image file name</code>&#xC744; <code>key()</code>&#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;&#xD55C; &#xB2E4;&#xC74C;&#xC5D0;,  <code>image file name</code> &#xAE30;&#xBC18;&#xC73C;&#xB85C; sorting&#xC744; &#xC9C4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>sorting&#xB41C; <code>image file name</code>&#xB4E4;&#xC758; list&#xD30C;&#xC77C;&#xC744; &#xC21C;&#xD68C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>dictionary</code>&#xD615;&#xD0DC;&#xC758; yolo format&#xC5D0;&#xC11C; &#xC21C;&#xD68C; &#xC911;&#xC778; key&#xC774;&#xB984;&#xC73C;&#xB85C; label &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xAC00;&#xC838;&#xC628; label &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC1C;&#xD589;&#xBB38;&#xC790;(<code>\n</code>)&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; list &#xAD6C;&#xC870;&#xB85C; split&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>split&#xB41C; string &#xAD6C;&#xC870;&#xC758; label&#xB370;&#xC774;&#xD130;&#xB97C; &#xD559;&#xC2B5;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; float &#xB370;&#xC774;&#xD130;&#xB85C; &#xBCC0;&#xD658;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xC774;&#xB97C; <code>Image file paht : label list structure</code>&#xD615;&#xD0DC;&#xB85C; &#xBCC0;&#xD658;&#xD55C; &#xD6C4;, &#xACB0;&#xACFC; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xACB0;&#xACFC;&#xAC12;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">[{<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008490.jpg&apos;</span>: [[<span class="hljs-number">0.0</span>, <span class="hljs-number">0.364</span>, <span class="hljs-number">0.267</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.228</span>], [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.485</span>, <span class="hljs-number">0.508</span>, <span class="hljs-number">0.246</span>, <span class="hljs-number">0.258</span>]]},
+{<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008500.jpg&apos;</span>: [[<span class="hljs-number">4.0</span>, <span class="hljs-number">0.217</span>, <span class="hljs-number">0.348</span>, <span class="hljs-number">0.062</span>, <span class="hljs-number">0.12</span>]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008506.jpg&apos;</span>: [[<span class="hljs-number">0.0</span>, <span class="hljs-number">0.369</span>, <span class="hljs-number">0.668</span>, <span class="hljs-number">0.41</span>, <span class="hljs-number">0.246</span>]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008519.jpg&apos;</span>: [[<span class="hljs-number">4.0</span>, <span class="hljs-number">0.812</span>, <span class="hljs-number">0.643</span>, <span class="hljs-number">0.032</span>, <span class="hljs-number">0.025</span>]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008523.jpg&apos;</span>: [[<span class="hljs-number">0.0</span>, <span class="hljs-number">0.448</span>, <span class="hljs-number">0.553</span>, <span class="hljs-number">0.892</span>, <span class="hljs-number">0.893</span>]]}, ...]
+</code></pre>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<h3 id="0204-len">02.04) <code>__len__()</code></h3>
+<p>&#xD574;&#xB2F9; &#xD568;&#xC218;&#xB294; &#xC704;&#xC5D0;&#xC11C;  <code>cvtData()</code>&#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC5BB;&#xC740; &#xD559;&#xC2B5;&#xB370;&#xC774;&#xD130; &#xB9AC;&#xC2A4;&#xD2B8;&#xC758; &#xAE38;&#xC774;&#xB97C; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python3">def __len__(self):
+    return len(self.data)
+</code></pre>
+<p>&#x200B;    </p>
+<h3 id="0205-getitem">02.05) <code>__getitem__()</code></h3>
+<p>&#xD574;&#xB2F9; &#xD568;&#xC218;&#xB294; &#xD559;&#xC2B5; &#xB370;&#xC774;&#xD130;&#xC758; &#xC77C;&#xBD80;&#xB97C; &#xC2AC;&#xB77C;&#xC774;&#xC2F1;&#xD574;&#xC11C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>Object Detection data&#xB97C; load&#xD55C; VOC class&#xC758; <code>__getitem__()</code>&#xD568;&#xC218;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAD6C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python3">def __getitem__(self, index):
+
+    key = list(self.data[index].keys())[0]
+
+    img = Image.open(key).convert(&apos;RGB&apos;)
+    current_shape = img.size
+    img = img.resize((self.resize_factor, self.resize_factor))
+
+    target = self.data[index][key]
+
+    if self.transform is not None:
+        img = self.transform(img)
+
+    if self.target_transform is not None:
+        # Future works
+        pass
+
+    return img, target, current_shape
+</code></pre>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774;, &#xCD5C;&#xC885;&#xC801;&#xC751;&#xB85C; &#xD30C;&#xC2F1;&#xB41C; data&#xC758; &#xAD6C;&#xC870;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">[{<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008490.jpg&apos;</span>: [[0.0, 0.364, 0.267, 0.2, 0.228], [0.0, 0.485, 0.508, 0.246, 0.258]]},
+{<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008500.jpg&apos;</span>: [[4.0, 0.217, 0.348, 0.062, 0.12]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008506.jpg&apos;</span>: [[0.0, 0.369, 0.668, 0.41, 0.246]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008519.jpg&apos;</span>: [[4.0, 0.812, 0.643, 0.032, 0.025]]}, {<span class="hljs-string">&apos;.../datasets/JPEGImages/2008_008523.jpg&apos;</span>: [[0.0, 0.448, 0.553, 0.892, 0.893]]}, ...]
+</code></pre>
+<p><code>__getitem__</code>&#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74;, &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; <code>index</code>&#xAC12;&#xC774; &#xB118;&#xC5B4;&#xC624;&#xAC8C; &#xB418;&#xB294;&#xB370;, &#xD574;&#xB2F9; <code>index</code>&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;, <code>image file path</code>&#xB97C; &#xC77D;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><p><code>list(self.data[index].keys())</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB418;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xAC12;&#xC744; &#xC5BB;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">[<span class="hljs-string">&apos;.../datasets/JPEGImages/2010_002546.jpg&apos;</span>]
+</code></pre>
+</li>
+<li><p><code>image file path</code>&#xB9CC; &#xAC00;&#xC838;&#xC624;&#xAE30; &#xC704;&#xD574;&#xC11C; <code>0</code>&#xBC88;&#xC9F8; &#xC778;&#xB371;&#xC2A4; &#xAC12;&#xC744; &#xCDE8;&#xD558;&#xC5EC;, <code>Image</code>&#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; PIL &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xB85C;&#xB4DC;&#xD55C; &#xC774;&#xBBF8;&#xC9C0;&#xC758; size&#xB97C; &#xD655;&#xC778; &#xD6C4;&#xC5D0;, class &#xC120;&#xC5B8;&#xC2DC; &#xBC1B;&#xC740; <code>resize</code>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; reszie&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>label &#xAC12;&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xB85C;&#xB4DC;&#xB41C; &#xC774;&#xBBF8;&#xC9C0;&#xC640; label&#xAC12;&#xC744; &#xC778;&#xC790;&#xB85C; &#xBC1B;&#xC740; <code>transform</code>&#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; Augmentation&#xC744; &#xC9C4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>&#xBC18;&#xD658;&#xAC12;&#xC73C;&#xB860; Augmentation&#xC774; &#xC644;&#xB8CC;&#xB41C; image, target &#xADF8;&#xB9AC;&#xACE0; &#xC6D0;&#xBCF8; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<h3 id="0206-voc-class">02.06) VOC Class</h3>
+<p>&#xCD5C;&#xC885; VOC class &#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python3">import sys
+import os
+import torch
+import torch.utils.data as data
+import numpy as np
+
+from PIL import Image
+from convertYolo.Format import YOLO as cvtYOLO
+from convertYolo.Format import VOC as cvtVOC
+
+sys.path.insert(0, os.path.dirname(__file__))
+
+class VOC(data.Dataset):
+
+    IMAGE_FOLDER = &quot;JPEGImages&quot;
+    LABEL_FOLDER = &quot;Annotations&quot;
+    IMG_EXTENSIONS = &apos;.jpg&apos;
+
+    def __init__(self, root, train=True, transform=None, target_transform=None, resize=448, class_path=&apos;./voc.names&apos;):
+        self.root = root
+        self.transform = transform
+        self.target_transform = target_transform
+        self.train = train
+        self.resize_factor = resize
+        self.class_path = class_path
+
+        with open(class_path) as f:
+            self.classes = f.read().splitlines()
+
+        if not self._check_exists():
+            raise RuntimeError(&quot;Dataset not found.&quot;)
+
+        self.data = self.cvtData()
+
+    def _check_exists(self):
+        print(&quot;Image Folder : {}&quot;.format(os.path.join(self.root, self.IMAGE_FOLDER)))
+        print(&quot;Label Folder : {}&quot;.format(os.path.join(self.root, self.LABEL_FOLDER)))
+
+        return os.path.exists(os.path.join(self.root, self.IMAGE_FOLDER)) and \
+               os.path.exists(os.path.join(self.root, self.LABEL_FOLDER))
+
+    def cvtData(self):
+
+        result = []
+        voc = cvtVOC()
+
+        yolo = cvtYOLO(os.path.abspath(self.class_path))
+        flag, self.dict_data =voc.parse(os.path.join(self.root, self.LABEL_FOLDER))
+
+        try:
+
+            if flag:
+                flag, data =yolo.generate(self.dict_data)
+
+                keys = list(data.keys())
+                keys = sorted(keys, key=lambda key: int(key.split(&quot;_&quot;)[-1]))
+
+                for key in keys:
+                    contents = list(filter(None, data[key].split(&quot;\n&quot;)))
+                    target = []
+                    for i in range(len(contents)):
+                        tmp = contents[i]
+                        tmp = tmp.split(&quot; &quot;)
+                        for j in range(len(tmp)):
+                            tmp[j] = float(tmp[j])
+                        target.append(tmp)
+
+                    result.append({os.path.join(self.root, self.IMAGE_FOLDER, &quot;&quot;.join([key, self.IMG_EXTENSIONS])) : target})
+
+                return result
+
+        except Exception as e:
+            raise RuntimeError(&quot;Error : {}&quot;.format(e))
+
+
+    def __len__(self):
+        return len(self.data)
+
+
+    def __getitem__(self, index):
+
+        key = list(self.data[index].keys())[0]
+
+        img = Image.open(key).convert(&apos;RGB&apos;)
+        current_shape = img.size
+        img = img.resize((self.resize_factor, self.resize_factor))
+
+        target = self.data[index][key]
+
+        if self.transform is not None:
+            img, aug_target = self.transform([img, target])
+            img = torchvision.transforms.ToTensor()(img)
+
+        if self.target_transform is not None:
+            # Future works
+            pass
+
+        return img, aug_target, current_shape
+</code></pre>
+<p>&#x200B;    </p>
+<h2 id="03-dataloader">03. Dataloader</h2>
+<p>Object Detection&#xC744; &#xC704;&#xD55C; &#xCEE4;&#xC2A4;&#xD140; Dataset&#xC744; &#xC815;&#xC758;&#xD588;&#xC73C;&#xB2C8;, &#xC774;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; Dataloader &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC790;&#xB85C; &#xC8FC;&#xBA74; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC2E4;&#xC81C;&#xB85C; train&#xC2DC; Dataset, Dataloader&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python">train_dataset = VOC(root=data_path,
+                    transform=transforms.ToTensor(),
+                    class_path=class_path)
+
+train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
+                                           batch_size=batch_size,
+                                           shuffle=<span class="hljs-keyword">True</span>,
+                                           collate_fn=detection_collate)
+</code></pre>
+<ul>
+<li>&#xC815;&#xC758;&#xD55C; VOC class&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; <code>torch.utils.data.DataLoader</code>&#xC758; &#xC778;&#xC790;&#xB85C; &#xC90D;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<h3 id="0301-collatefn">03.01) collate_fn</h3>
+<p>  &#xC55E;&#xC11C; Dataloader&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. YOLOv1&#xC758; output tensor&#xC758; &#xD615;&#xD0DC;&#xB294; S x S x (B * 5 + C) &#xC785;&#xB2C8;&#xB2E4;. Loss&#xB97C; &#xACC4;&#xC0B0;&#xD558;&#xACE0; &#xD559;&#xC2B5;&#xD558;&#xB824;&#xBA74; label&#xC744; output tensor&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xD615;&#xD0DC;&#xB85C; &#xAD6C;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; PyTorch&#xC5D0;&#xC11C;&#xB294; <code>torch.utils.data.DataLoader</code>&#xC5D0;&#xC11C; <code>collate_fn</code>&#xB77C;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. (<code>torch.utils.data.DataLoader</code>&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; <a href="https://pytorch.org/docs/stable/data.html?highlight=dataloader" target="_blank">&#xC774;&#xACF3;</a>&#xC744; &#xCC38;&#xACE0;&#xD558;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;)</p>
+<h4 id="030101-output-tensor">03.01.01) Output tensor</h4>
+<p>&#xC6B0;&#xC120; YOLOv1 &#xBAA8;&#xB378;&#xC758; output tensor&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. output tensor&#xC758; &#xD615;&#xD0DC;&#xB294; &#xC544;&#xB798; &#xADF8;&#xB9BC;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<p><img src="https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png" alt="a"></p>
+<p>output tensor&#xB294; S x S grid&#xB97C; &#xAC00;&#xC9C0;&#xACE0; B&#xAC1C;&#xC758; bounding box&#xC640; C&#xAC1C;&#xC758; class probabilities&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC01; bounding box&#xB9C8;&#xB2E4; x, y, w, h, confidence &#xC774;&#xB807;&#xAC8C; &#xCD1D; 5&#xAC1C;&#xC758; &#xAC12;&#xC744; &#xC608;&#xCE21;&#xD569;&#xB2C8;&#xB2E4;. &#xAC00;&#xB839; S = 7, B = 2 C = 20(Pascal VOC) &#xC778; &#xACBD;&#xC6B0; 7 x 7 x 30 tensor&#xC758; &#xD615;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0; (5 x 2 + 20)&#xC774;&#xBBC0;&#xB85C; &#xAC01; &#xADF8;&#xB9AC;&#xB4DC; &#xB2F9; 30&#xAC1C;&#xC758; &#xAC12;&#xC744; &#xC608;&#xCE21;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>detection_collate</code>&#xB294; collate_fn&#xC758; &#xAD6C;&#xD604;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xCF54;&#xB4DC;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">detection_collate</span><span class="hljs-params">(batch)</span>:</span>
+    targets = []
+    imgs = []
+    sizes = []
+
+    <span class="hljs-keyword">for</span> sample <span class="hljs-keyword">in</span> batch:
+        imgs.append(sample[<span class="hljs-number">0</span>])
+        sizes.append(sample[<span class="hljs-number">2</span>])
+
+        np_label = np.zeros((<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>), dtype=np.float32)
+        <span class="hljs-keyword">for</span> object <span class="hljs-keyword">in</span> sample[<span class="hljs-number">1</span>]:
+            objectness = <span class="hljs-number">1</span>
+            classes = object[<span class="hljs-number">0</span>]
+            x_ratio = object[<span class="hljs-number">1</span>]
+            y_ratio = object[<span class="hljs-number">2</span>]
+            w_ratio = object[<span class="hljs-number">3</span>]
+            h_ratio = object[<span class="hljs-number">4</span>]
+
+            scale_factor = (<span class="hljs-number">1</span> / <span class="hljs-number">7</span>)
+            grid_x_index = int(x_ratio // scale_factor)
+            grid_y_index = int(y_ratio // scale_factor)
+            x_offset = (x_ratio / scale_factor) - grid_x_index
+            y_offset = (y_ratio / scale_factor) - grid_y_index
+
+            np_label[grid_x_index][grid_y_index] = np.array([objectness, x_offset, y_offset, w_ratio, h_ratio, classes])
+
+        label = torch.from_numpy(np_label)
+        targets.append(label)
+    <span class="hljs-keyword">return</span> torch.stack(imgs, <span class="hljs-number">0</span>), torch.stack(targets, <span class="hljs-number">0</span>), sizes
+</code></pre>
+<p><code>detection_collate</code>&#xC758; &#xC785;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC778; batch&#xB294; list&#xB85C; <code>batch[0]</code>&#xB294; &#xC774;&#xBBF8;&#xC9C0;, <code>batch[1]</code>&#xB294; &#xB808;&#xC774;&#xBE14;, <code>batch[3]</code>&#xB294; &#xC6D0;&#xBCF8; &#xC774;&#xBBF8;&#xC9C0; &#xC0AC;&#xC774;&#xC988;&#xC785;&#xB2C8;&#xB2E4;. </p>
+<p><img src="https://user-images.githubusercontent.com/15168540/49686629-81d9a700-fb3a-11e8-94dc-cd4da8c1b353.png" alt="image"></p>
+<h4 id="normalized-bounding-box">Normalized Bounding Box</h4>
+<p><code>batch[1]</code>&#xB294; list&#xB85C; &#xB808;&#xC774;&#xBE14; &#xC815;&#xBCF4;&#xC778; <code>[class, x, y, w, h]</code>&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. YOLO&#xB294; &#xC815;&#xADDC;&#xD654;&#xB41C; &#xBC14;&#xC6B4;&#xB529; &#xBC15;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xBC14;&#xC6B4;&#xB529; &#xBC15;&#xC2A4;&#xC758; &#xC911;&#xC2EC;&#xC810;&#xC778; (x, y)&#xB294; (x, y)&#xAC00; &#xC18D;&#xD55C; &#xADF8;&#xB9AC;&#xB4DC; &#xC140;&#xC5D0;&#xC11C;&#xC758; &#xC0C1;&#xB300;&#xC801;&#xC778; &#xC704;&#xCE58;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xBA70;, &#xC815;&#xADDC;&#xD654;&#xC2DC;&#xD0A8; &#xAC12;&#xC774;&#xBBC0;&#xB85C; &#xBC94;&#xC704;&#xB294; [0-1) &#xC785;&#xB2C8;&#xB2E4;. &#xBC14;&#xC6B4;&#xB529;&#xBC15;&#xC2A4;&#xC758; &#xB108;&#xBE44;&#xC640; &#xB192;&#xC774;&#xC778; (w, h)&#xB294; &#xC774;&#xBBF8;&#xC9C0; &#xC0AC;&#xC774;&#xC988;&#xB85C; &#xC815;&#xADDC;&#xD654;&#xC2DC;&#xD0A8; &#xAC12;&#xC774;&#xBA70;, &#xBC94;&#xC704;&#xB294; [0,1)&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://user-images.githubusercontent.com/15168540/49686609-42ab5600-fb3a-11e8-9430-5e1f04d5b94c.png" alt="image"></p>
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xB77C;&#xC774;&#xC120;&#xC2A4;" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>&#xC774; &#xC800;&#xC791;&#xBB3C;&#xC740; <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xC800;&#xC791;&#xC790;&#xD45C;&#xC2DC;-&#xBE44;&#xC601;&#xB9AC;-&#xB3D9;&#xC77C;&#xC870;&#xAC74;&#xBCC0;&#xACBD;&#xD5C8;&#xB77D; 4.0 &#xAD6D;&#xC81C; &#xB77C;&#xC774;&#xC120;&#xC2A4;</a>&#xC5D0; &#xB530;&#xB77C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_00_common_utils.html" class="navigation navigation-prev " aria-label="Previous page: 03. Common Utils">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_04_augmentation.html" class="navigation navigation-next " aria-label="Next page: 02). Augmentation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"01). DataLoader","level":"1.1.4.1","depth":3,"next":{"title":"02). Augmentation","level":"1.1.4.2","depth":3,"path":"posts/03_04_augmentation.md","ref":"posts/03_04_augmentation.md","articles":[]},"previous":{"title":"03. Common Utils","level":"1.1.4","depth":2,"path":"posts/03_00_common_utils.md","ref":"posts/03_00_common_utils.md","articles":[{"title":"01). DataLoader","level":"1.1.4.1","depth":3,"path":"posts/03_01_dataloader.md","ref":"posts/03_01_dataloader.md","articles":[]},{"title":"02). Augmentation","level":"1.1.4.2","depth":3,"path":"posts/03_04_augmentation.md","ref":"posts/03_04_augmentation.md","articles":[]},{"title":"03). Visdom","level":"1.1.4.3","depth":3,"path":"posts/03_05_visdom.md","ref":"posts/03_05_visdom.md","articles":[]},{"title":"04). Torch summary","level":"1.1.4.4","depth":3,"path":"posts/03_04_torchsummary.md","ref":"posts/03_04_torchsummary.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/03_01_dataloader.md","mtime":"2018-12-14T08:34:52.259Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T08:29:41.739Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
