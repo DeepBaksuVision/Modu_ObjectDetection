@@ -173,7 +173,7 @@ class YOLOv1(nn.Module):
 
 위에서 언급했듯이 생략된 pre-train으로 인해 네트워크 수렴 속도 및 안정성 하락을 보강하기 위하여 `He initialization`을 수행합니다. `He initialization`은 Pytorch에서 제공하는 `torch.nn.init.kaiming_normal_`함수를 이용합니다.
 
-Batch Normalization은 $ \gamma $ 값을 `1`, $ \beta $값을 `0`으로 초기화합니다. 이는 $ \gamma $가 scale, $ \beta $가 shift 값을 의미하기 때문에 초기의 layer 출력값에서 batch normalization layer의해 scale 및 shift가 안일어나는 값으로 설정했습니다.
+Batch Normalization은 $$ \gamma $$ 값을 `1`, $$ \beta $$값을 `0`으로 초기화합니다. 이는 $$ \gamma $$가 scale, $$ \beta $$가 shift 값을 의미하기 때문에 초기의 layer 출력값에서 batch normalization layer의해 scale 및 shift가 안일어나는 값으로 설정했습니다.
 
 
 
@@ -346,19 +346,13 @@ Objective function에서 사용되는 몇 가지 파라미터들은 다음과 �
 
 - `lambda noobj` : 0.5
 
-- $ 1^{obj}_{ij} $ 
-
-  : label의 object 센터값에 해당하는 grid 위치는 `1`, 그렇지 않은 위치는 `0`으로 맵핑하여 object map을 생성
+- $$ 1^{obj}_{ij} $$: label의 object 센터값에 해당하는 grid 위치는 `1`, 그렇지 않은 위치는 `0`으로 맵핑하여 object map을 생성
 
   ```python
   objness_label = target[:, :, :, 0]
   ```
 
-- $ 1^{noobj}_{ij} $ 
-
-  :  $1^{obj}_{ij}$의 반대개념이므로, 
-
-     $1^{obj}_{ij}$를 inverse해서 non-object map을 생성
+- $$ 1^{noobj}_{ij} $$ :  $$1^{obj}_{ij}$$의 반대개념이므로, $$ 1^{obj}_{ij} $$를 inverse해서 non-object map을 생성
 
   ```python
   noobjness_label = torch.neg(torch.add(objness_label, -1))    
