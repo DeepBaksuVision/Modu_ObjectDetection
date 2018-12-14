@@ -1,10 +1,10 @@
 # Common Utils
 
-Common Utils에서는 모든 Object Detection 알고리즘을 구현하는데 있어서 공통적으로 사용되는 모듈에 대해서 설명합니다.
+Common Utils에서는 모든 Object Detection 알고리즘을 구현하는 데 있어서 공통으로 사용하는 모듈에 관해서 설명합니다.
 
 
 
-Object Detection 알고리즘응ㄹ 구현하는데 있어서 공통적으로 사용되는 모듈은 다음과 같습니다.
+Object Detection 알고리즘을 구현하는 데 있어서 공통으로 사용하는 모듈은 다음과 같습니다.
 
 - DataLoader
 - Augmentation Toolkit
