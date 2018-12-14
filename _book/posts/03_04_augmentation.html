@@ -1,0 +1,557 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02). Augmentation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_05_visdom.html" />
+    
+    
+    <link rel="prev" href="03_01_dataloader.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >02). Augmentation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="04-augmentation">04). Augmentation</h1>
+<p>&#xC774;&#xBC88; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; Object Detection &#xBAA8;&#xB378; &#xD559;&#xC2B5; &#xC2DC; &#xD544;&#xC694;&#xD55C; Data Augmentation &#xAE30;&#xBC95;&#xC744; &#xAE30;&#xC220;&#xD569;&#xB2C8;&#xB2E4;. &#xAE30;&#xC874;&#xC758; Image Classification &#xBB38;&#xC81C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB2E4;&#xC591;&#xD55C; Data Augmentation &#xBC29;&#xBC95;&#xC744; &#xAC70;&#xC758; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. Object Detection &#xBB38;&#xC81C;&#xC5D0;&#xC11C;&#xB294; &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xBBF8;&#xC9C0; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; Bounding Box&#xB3C4; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xBCC0;&#xD658;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. </p>
+<h2 id="imgaug-library">imgaug library</h2>
+<p><a href="https://imgaug.readthedocs.io/en/latest/index.html" target="_blank">imgaug</a>&#xB294; &#xAE30;&#xACC4;&#xD559;&#xC2B5; &#xBAA8;&#xB378; &#xD559;&#xC2B5; &#xC2DC; Image augmentation &#xAE30;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC544;&#xC8FC; &#xAC15;&#xB825;&#xD55C; &#xD30C;&#xC774;&#xC36C; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC778; image augmentation&#xACFC; keypoints, bounding boxes, heatmaps&#xB4F1; &#xB2E4;&#xC591;&#xD55C; &#xBB38;&#xC81C;&#xC5D0; data augmentation&#xC744; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD3B8;&#xB9AC;&#xD55C; &#xAE30;&#xB2A5;&#xB4E4;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. </p>
+<p><img src="https://imgaug.readthedocs.io/en/latest/_images/heavy.jpg" alt="imageaug"></p>
+<h2 id="install-imgaug">Install imgaug</h2>
+<p>pip &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; imgaug&#xB97C; &#xC124;&#xCE58;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-console"># install requrements
+pip install six numpy scipy Pillow matplotlib scikit-image opencv-python imageio Shapely
+</code></pre>
+<pre><code class="lang-console">pip install imgaug
+</code></pre>
+<h2 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;-&#xC801;&#xC6A9;">&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC801;&#xC6A9;</h2>
+<p>&#xC544;&#xB798;&#xB294; train.py&#xC758; &#xC77C;&#xBD80; &#xCF54;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-python">seq = iaa.SomeOf(<span class="hljs-number">2</span>, [
+    iaa.Multiply((<span class="hljs-number">1.2</span>, <span class="hljs-number">1.5</span>)),  <span class="hljs-comment"># change brightness, doesn&apos;t affect BBs</span>
+    iaa.Affine(
+            translate_px={<span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">10</span>},
+            scale=(<span class="hljs-number">0.9</span>, <span class="hljs-number">0.9</span>)
+    ),  <span class="hljs-comment"># translate by 40/60px on x/y axis, and scale to 50-70%, affects BBs</span>
+    iaa.AdditiveGaussianNoise(scale=<span class="hljs-number">0.1</span> * <span class="hljs-number">255</span>),
+    iaa.CoarseDropout(<span class="hljs-number">0.02</span>, size_percent=<span class="hljs-number">0.15</span>, per_channel=<span class="hljs-number">0.5</span>),
+    iaa.Affine(rotate=<span class="hljs-number">45</span>),
+    iaa.Sharpen(alpha=<span class="hljs-number">0.5</span>)
+</code></pre>
+<p>imgaug&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; object detection &#xBAA8;&#xB378;&#xC744; &#xD559;&#xC2B5; &#xC2DC; data augmentation&#xC744; &#xC544;&#xC8FC; &#xC190;&#xC27D;&#xAC8C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. Multiply, Affine, AdditiveGaussianNoise&#xB4F1; &#xB2E4;&#xC591;&#xD55C; augmenation &#xBC29;&#xBC95;&#xC744; &#xAC04;&#xB2E8;&#xD788; &#xB9AC;&#xC2A4;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. (&#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD55C; augmentation &#xBA85;&#xC138;&#xB294; <a href="https://imgaug.readthedocs.io/en/latest/source/api.html" target="_blank">imgaug API</a>&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;) </p>
+<pre><code class="lang-python">composed = transforms.Compose([Augmenter(seq)])
+train_dataset = VOC(root=data_path, transform=composed, class_path=class_path)
+train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
+                                            batch_size=batch_size,
+                                            shuffle=<span class="hljs-keyword">True</span>,
+                                            collate_fn=detection_collate)
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; <code>Dataset</code> &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC778; <code>transform</code>&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; <code>DataLoader</code>&#xAC00; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xB54C; augmentation&#xC774; &#xC801;&#xC6A9;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; augmentation.py&#xC758; &#xC77C;&#xBD80; &#xCF54;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">augmentImage</span><span class="hljs-params">(image, normed_lxywhs, image_width, image_height, seq)</span>:</span>
+    bbs = GetImgaugStyleBBoxes(normed_lxywhs, image_width, image_height)
+    seq_det = seq.to_deterministic()
+    image_aug = seq_det.augment_images([image])[<span class="hljs-number">0</span>]
+    bbs_aug = seq_det.augment_bounding_boxes([bbs])[<span class="hljs-number">0</span>]
+    bbs_aug = bbs_aug.remove_out_of_image().cut_out_of_image()
+    normed_bbs_aug = GetYoloStyleBBoxes(normed_lxywhs, bbs_aug, image_width, image_height)    
+
+    <span class="hljs-keyword">return</span> image_aug, normed_bbs_aug
+</code></pre>
+<p><code>augmentImage()</code> &#xD568;&#xC218;&#xB294; &#xC6D0;&#xBCF8; &#xC774;&#xBBF8;&#xC9C0;&#xC640; &#xC6D0;&#xBCF8; &#xB808;&#xC774;&#xBE14;&#xC744; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xBC1B;&#xC544; augmentation&#xC774; &#xC801;&#xC6A9;&#xB41C; &#xC774;&#xBBF8;&#xC9C0;&#xC640; &#xB808;&#xC774;&#xBE14;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. augmentation &#xC758; &#xC885;&#xB958;&#xB294; <code>seq</code>&#xC5D0; &#xAE30;&#xC220;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA70;, <code>augment_images()</code> &#xD568;&#xC218;&#xAC00; &#xC774;&#xBBF8;&#xC9C0;&#xB97C;, <code>augment_bounding_boxes()</code>&#xAC00; &#xB808;&#xC774;&#xBE14;&#xC778; bounding box&#xC758; augmentation&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. augmentation &#xC218;&#xD589; &#xC2DC; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xBC97;&#xC5B4;&#xB098;&#xB294; &#xB808;&#xC774;&#xBE14;&#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xB294;&#xB370;, <code>remove_out_of_image().cut_out_of_image()</code> &#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xBC97;&#xC5B4;&#xB098;&#xB294; &#xB808;&#xC774;&#xBE14;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xAC70;&#xB098; &#xC218;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;(&#xC544;&#xB798; &#xADF8;&#xB9BC;).</p>
+<p><img src="https://user-images.githubusercontent.com/15168540/49096223-7c17d200-f2ad-11e8-9c3c-a982d0ace5c8.png" alt="image"></p>
+<p><code>VOC</code> &#xD074;&#xB798;&#xC2A4;&#xC758; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC778; transform&#xC740; &#xB370;&#xC774;&#xD130; &#xC804;&#xCC98;&#xB9AC;&#xB97C; &#xB2F9;&#xB2F4;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. transform&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC544;&#xB798;&#xC758; &#xC608;&#xC2DC;&#xCC98;&#xB7FC; <code>torchvision.transforms</code>&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB2E4;&#xC591;&#xD55C; &#xC804;&#xCC98;&#xB9AC; &#xAE30;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torchvision.transforms <span class="hljs-keyword">as</span> transforms
+
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>), (<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>))])
+</code></pre>
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xC6B0;&#xB9AC;&#xB294; &#xADF8;&#xAC83;&#xBCF4;&#xB2E4; &#xD6E8;&#xC52C; &#xB354; &#xAC15;&#xB825;&#xD55C; <code>imgaug</code> &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. <code>Augmenter(seq)</code>&#xB294; seq&#xC5D0;&#xC11C; &#xBA85;&#xC138;&#xD55C; data augmentation&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; <code>Augmenter</code> &#xD074;&#xB798;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;. <code>dataloader</code> &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; <code>transform</code> &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB420;&#xB54C;&#xB9C8;&#xB2E4; <code>Augmenter</code> &#xD074;&#xB798;&#xC2A4;&#xB294; Decorator&#xB85C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-python"><span class="hljs-comment"># train.py</span>
+composed = transforms.Compose([Augmenter(seq)])
+train_dataset = VOC(root=data_path, transform=composed, class_path=class_path)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># dataloader.py </span>
+<span class="hljs-keyword">if</span> self.transform <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+            img, aug_target = self.transform([img, target])
+            img = torchvision.transforms.ToTensor()(img)
+</code></pre>
+<p>&#xB370;&#xC774;&#xD130;&#xB97C; &#xD559;&#xC2B5;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &#xBC18;&#xB4DC;&#xC2DC; <code>ToTensor()</code>&#xB97C; &#xD1B5;&#xD574; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; PyTorch Tensor&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-python"><span class="hljs-comment"># augmentation.py</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Augmenter</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, seq)</span>:</span>
+        self.seq = seq
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self, sample)</span>:</span>
+
+        image = sample[<span class="hljs-number">0</span>]  <span class="hljs-comment"># PIL image</span>
+        normed_lxywhs = sample[<span class="hljs-number">1</span>]
+        image_width, image_height = image.size
+
+        image = np.array(image)  <span class="hljs-comment"># PIL image to numpy array</span>
+
+        image_aug, normed_bbs_aug = augmentImage(image, normed_lxywhs, image_width, image_height, self.seq)
+
+        image_aug = Image.fromarray(image_aug)  <span class="hljs-comment"># numpy array to PIL image Again!</span>
+        <span class="hljs-keyword">return</span> image_aug, normed_bbs_aug3
+</code></pre>
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xB77C;&#xC774;&#xC120;&#xC2A4;" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>&#xC774; &#xC800;&#xC791;&#xBB3C;&#xC740; <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">&#xD06C;&#xB9AC;&#xC5D0;&#xC774;&#xD2F0;&#xBE0C; &#xCEE4;&#xBA3C;&#xC988; &#xC800;&#xC791;&#xC790;&#xD45C;&#xC2DC;-&#xBE44;&#xC601;&#xB9AC;-&#xB3D9;&#xC77C;&#xC870;&#xAC74;&#xBCC0;&#xACBD;&#xD5C8;&#xB77D; 4.0 &#xAD6D;&#xC81C; &#xB77C;&#xC774;&#xC120;&#xC2A4;</a>&#xC5D0; &#xB530;&#xB77C; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_01_dataloader.html" class="navigation navigation-prev " aria-label="Previous page: 01). DataLoader">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_05_visdom.html" class="navigation navigation-next " aria-label="Next page: 03). Visdom">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02). Augmentation","level":"1.1.4.2","depth":3,"next":{"title":"03). Visdom","level":"1.1.4.3","depth":3,"path":"posts/03_05_visdom.md","ref":"posts/03_05_visdom.md","articles":[]},"previous":{"title":"01). DataLoader","level":"1.1.4.1","depth":3,"path":"posts/03_01_dataloader.md","ref":"posts/03_01_dataloader.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/03_04_augmentation.md","mtime":"2018-12-14T08:45:11.897Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T08:29:41.739Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

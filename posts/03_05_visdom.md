@@ -23,7 +23,11 @@ if USE_VISDOM:
     objectness1_plot = create_vis_plot(viz, 'Iteration', 'objectness1', vis_title, vis_legend)
     obj_cls_plot = create_vis_plot(viz, 'Iteration', 'obj_cls', vis_title, vis_legend)
 };
+<<<<<<< HEAD
+```  
+=======
 ```
+>>>>>>> master
 여기에서는 visdom 객체를 생성합니다. 그 다음 사용법은 matplotlib와 같은 다른 시각화 툴과 아주 유사합니다. title, legend를 정의하고, 각 로스를 출력한 plot 객체를 선언합니다. plot 객체를 create_vis_plot() 함수를 사용합니다.   
 
 ![image](https://user-images.githubusercontent.com/15168540/49014603-08e66100-f1c4-11e8-9fdc-bbf79db994b0.png)
@@ -47,8 +51,7 @@ update_vis_plot()을 실행하면 Visdom 서버에서 loss가 지속적으로 �
 # REFERENCES
 [1] https://github.com/facebookresearch/visdom
 
-
-
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+

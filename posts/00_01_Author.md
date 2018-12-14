@@ -36,7 +36,6 @@ Computer Vision을 전공하였고, Deep Learning을 활용한 문제 해결에 
 [[Github]](https://github.com/chjeong530)
 
 
-
 ## Sponsor
 
 **[모두의 연구소](http://www.modulabs.co.kr/)**

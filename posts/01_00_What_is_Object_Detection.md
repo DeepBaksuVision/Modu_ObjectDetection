@@ -18,6 +18,7 @@ Computer Vision 대회에서 주로 다루는 Task들의 카테고리를 확인�
 
 ![computer_vision_task](https://user-images.githubusercontent.com/13328380/49785251-48d04b00-fd63-11e8-94ee-f9d9d9f30fe9.png)
 
+
 <center>
 	[컴퓨터 비전에서 다루는 3가지 주요 Task]    
 </center>
@@ -86,10 +87,14 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 
 
 
-​![rcnn](https://user-images.githubusercontent.com/13328380/49786581-aa92b400-fd67-11e8-9b74-374ecc6f9740.png)    <center>
+![rcnn](https://user-images.githubusercontent.com/13328380/49786581-aa92b400-fd67-11e8-9b74-374ecc6f9740.png)    
 
-​	[딥러닝 기반의 Object Detection 알고리즘 (R-CNN)]    
+<center>
+
+[딥러닝 기반의 Object Detection 알고리즘 (R-CNN)]    
+
 </center>
+
 
 ## Reference
 
@@ -109,8 +114,7 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 
 [8. A Step-by-Step Introduction to the Basic Object Detection Algorithms(Part 1)](https://techburst.io/wider-perspective-on-the-progress-in-object-detection-aac42dc98083)
 
-
-
 ----
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+
