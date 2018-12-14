@@ -1,14 +1,14 @@
-# 01). PASCAL VOC Dataset
+# PASCAL VOC Dataset
 
-본 챕터는 Object Detection dataset 중 하나인 PASCAL VOC dataset의 구조와 이를 이용하여 label 데이터와 이미지가 어떻게 그려지는지 설명합니다. 
-
-
-
-이를 이용하면 Object Detection dataloader를 만들 수 있게됩니다.
+본 챕터는 Object Detection dataset 중 하나인 PASCAL VOC dataset의 구조와 이를 이용하여 label 데이터와 이미지가 어떻게 그려지는지 설명합니다.
 
 
 
-## Object Detection Label 이미지에 시각화하기
+이를 이용하면 Object Detection에서 사용 가능한 dataloader를 만들 수 있게됩니다.
+
+
+
+## 01. Object Detection Label 이미지에 시각화하기
 
 해당 챕터에서는 Object Detection label을 이미지에 시각화하여 실제로 Object detection label이 어떻게 구성되어있는지 잘펴보도록 하겠습니다.
 
@@ -24,7 +24,7 @@
 
 ​    
 
-### 1. PASCAL VOC 폴더 계층 구조
+## 02. PASCAL VOC 폴더 계층 구조
 
 PASCAL VOC Dataset을 다운받아 압축을 풀게되면 다음과 같은 구조를 확인할 수 있습니다.
 
@@ -38,7 +38,7 @@ VOC20XX
 ```
 
 - `Annotations` : `JPEGImages` 폴더 속 원본 이미지와 같은 이름들의 `xml`파일들이 존재합니다. Object Detection을 위한 `정답 데이터`이 됩니다.
-- `ImageSets` : 어떤 이미지 그룹을 `test`, `train`, `trainval`, `val`로 사용할 것인지, 특정 클래스가 어떤 이미지에 있는지 등에 대한 정보들을 포함하고 있는 폴더입니다. 
+- `ImageSets` : 어떤 이미지 그룹을 `test`, `train`, `trainval`, `val`로 사용할 것인지, 특정 클래스가 어떤 이미지에 있는지 등에 대한 정보들을 포함하고 있는 폴더입니다.
 - `JPEGImages` : `*.jpg`확장자를 가진 이미지 파일들이 모여있는 폴더입니다. Object Detection에서 `입력 데이터`가 됩니다.
 - `SegmentationClass` :  Semantic segmentation을 학습하기 위한 `label` 이미지입니다.
 - `SegmentationObject` : Instance segmentation을 학습하기 위한 `label` 이미지입니다.
@@ -49,7 +49,7 @@ Object Detection을 할때는 주로 `Annotations`, `JPEGImages`폴더가 사용
 
 ​    
 
-### 2. Image 시각화
+## 03. Image 시각화
 
 이제부터 본격적으로 Object Detection을 위한 데이터셋을 시각화하는 방법에 대해서 설명하도록 하겠습니다.
 
@@ -102,7 +102,7 @@ $ python3 load_image.py <image file path>
 
 
 
-### 3. XML 파일 구조
+## 04. XML 파일 구조
 
 xml 파일 안에는 수많은 tag들이 존재하지만 Object Detection 모델을 학습하기 위해 사용되는 tag들은 정해져있습니다. 따라서 해당 섹션에서는 필요한 tag들이 어떤 의미를 갖는지 설명하고 해당 xml을 읽어들여서 해당 tag의 값을 가져오는 python 예제 코드에 대해서 설명하도록 하겠습니다.
 
@@ -181,7 +181,7 @@ PASCAL VOC Dataset의 `Annotations`에 있는 xml파일들의 구조는 다음�
 
 ​    
 
-### 4. XML파일 load
+## 05. XML파일 load
 
 Object Detection에서 `label`을 파싱하기 위해서 python의 xml package를 이용하여 xml파일을 load하는 예제를 진행해보겠습니다.
 
@@ -277,9 +277,9 @@ XML parsing END
 
 ​        
 
-### 5. Object Detection label 시각화
+## 06. Object Detection label 시각화
 
-이제 위에서 얻은 label 정보를 이용하여 이미지에 Object Detection Box를 그려보도록 하겠습니다.
+이제 위에서 얻은 label 정보를 이용하여 이미지에 Object Detection box를 그려보도록 하겠습니다.
 
 Object Detection label 정보를 이미지에 그리는 로직 흐름은 다음과 같습니다.
 
@@ -296,7 +296,7 @@ Object Detection label 정보를 이미지에 그리는 로직 흐름은 다음�
 
 
 
-#### 5-1). os.walk 를 이용해 디렉토리의 파일 리스트를 가져오기
+### 06.01) os.walk 를 이용해 디렉토리의 파일 리스트를 가져오기
 
 os package의 walk함수를 사용하면, 특정 디렉토리의 `경로`, `폴더 리스트`, `파일 리스트`를 가지고 올 수 있습니다.
 
@@ -339,7 +339,7 @@ print("FILES : {}\n".format(ann_files))
 ``` bash
 $ python3 directory_search.py <directory>
 
->> python3 directory_search.py ./VOCdevkit/ 
+>> python3 directory_search.py ./VOCdevkit/
 ROOT : ./Annotations
 
 DIR : []
@@ -349,7 +349,7 @@ FILES : ['2008_003829.xml', '2010_004263.xml', '2010_005284.xml', '2010_004133.x
 
 
 
-#### 5-2). xml파일을 load하기
+### 06.02) xml파일을 load하기
 
 얻은 `파일리스트`를 순회하며 위에서 작성했던 스크립트 파일(`load.py`)를 이용하여 xml 파일을 로드합니다.
 
@@ -440,7 +440,7 @@ ymax : 163
 
 
 
-#### 5-3). 각 xml파일에서 얻은 값들을 이용하여 원 Image에 box정보 그리기
+### 06.03) 각 xml파일에서 얻은 값들을 이용하여 원 Image에 box정보 그리기
 
 지금까지 특정 디렉토리에 있는 파일 리스트를 가져와서 xml파일 정보를 가져오는 스크립트를 구현하였습니다.
 

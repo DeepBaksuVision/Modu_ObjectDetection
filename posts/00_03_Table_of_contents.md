@@ -1,4 +1,4 @@
-# 03). Table of contents
+# Table of contents
 
 
 
@@ -14,4 +14,3 @@
 | 8    | Faster R CNN                                            |
 
 - 이 항목은 추후 진행사항에 따라 수정될 수 있습니다.
-
