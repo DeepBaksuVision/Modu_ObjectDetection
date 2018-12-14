@@ -1,0 +1,896 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>01). PASCAL VOC · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02_02_Convert2Yolo.html" />
+    
+    
+    <link rel="prev" href="02_00_Datasets_for_Object_Detection.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >01). PASCAL VOC</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pascal-voc-dataset">PASCAL VOC Dataset</h1>
+<p>&#xBCF8; &#xCC55;&#xD130;&#xB294; Object Detection dataset &#xC911; &#xD558;&#xB098;&#xC778; PASCAL VOC dataset&#xC758; &#xAD6C;&#xC870;&#xC640; &#xC774;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; label &#xB370;&#xC774;&#xD130;&#xC640; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xADF8;&#xB824;&#xC9C0;&#xB294;&#xC9C0; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; Object Detection&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; dataloader&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="01-object-detection-label-&#xC774;&#xBBF8;&#xC9C0;&#xC5D0;-&#xC2DC;&#xAC01;&#xD654;&#xD558;&#xAE30;">01. Object Detection Label &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xAE30;</h2>
+<p>&#xD574;&#xB2F9; &#xCC55;&#xD130;&#xC5D0;&#xC11C;&#xB294; Object Detection label&#xC744; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xC5EC; &#xC2E4;&#xC81C;&#xB85C; Object detection label&#xC774; &#xC5B4;&#xB5BB;&#xAC8C; &#xAD6C;&#xC131;&#xB418;&#xC5B4;&#xC788;&#xB294;&#xC9C0; &#xC798;&#xD3B4;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xCC55;&#xD130;&#xC758; &#xAD6C;&#xC131;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li><strong>PASCAL VOC &#xD3F4;&#xB354; &#xACC4;&#xCE35; &#xAD6C;&#xC870;</strong></li>
+<li><strong>Image &#xC2DC;&#xAC01;&#xD654;</strong></li>
+<li><strong>XML &#xD30C;&#xC77C; &#xAD6C;&#xC870;</strong></li>
+<li><strong>XML&#xD30C;&#xC77C; &#xAC12; &#xB85C;&#xB4DC;</strong></li>
+<li><strong>Object Detection label &#xC2DC;&#xAC01;&#xD654;</strong></li>
+</ol>
+<p>&#x200B;    </p>
+<h2 id="02-pascal-voc-&#xD3F4;&#xB354;-&#xACC4;&#xCE35;-&#xAD6C;&#xC870;">02. PASCAL VOC &#xD3F4;&#xB354; &#xACC4;&#xCE35; &#xAD6C;&#xC870;</h2>
+<p>PASCAL VOC Dataset&#xC744; &#xB2E4;&#xC6B4;&#xBC1B;&#xC544; &#xC555;&#xCD95;&#xC744; &#xD480;&#xAC8C;&#xB418;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAD6C;&#xC870;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">VOC20XX
+&#x251C;&#x2500;&#x2500; Annotations
+&#x251C;&#x2500;&#x2500; ImageSets
+&#x251C;&#x2500;&#x2500; JPEGImages
+&#x251C;&#x2500;&#x2500; SegmentationClass
+&#x2514;&#x2500;&#x2500; SegmentationObject
+</code></pre>
+<ul>
+<li><code>Annotations</code> : <code>JPEGImages</code> &#xD3F4;&#xB354; &#xC18D; &#xC6D0;&#xBCF8; &#xC774;&#xBBF8;&#xC9C0;&#xC640; &#xAC19;&#xC740; &#xC774;&#xB984;&#xB4E4;&#xC758; <code>xml</code>&#xD30C;&#xC77C;&#xB4E4;&#xC774; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;. Object Detection&#xC744; &#xC704;&#xD55C; <code>&#xC815;&#xB2F5; &#xB370;&#xC774;&#xD130;</code>&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>ImageSets</code> : &#xC5B4;&#xB5A4; &#xC774;&#xBBF8;&#xC9C0; &#xADF8;&#xB8F9;&#xC744; <code>test</code>, <code>train</code>, <code>trainval</code>, <code>val</code>&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC778;&#xC9C0;, &#xD2B9;&#xC815; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC5B4;&#xB5A4; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xC788;&#xB294;&#xC9C0; &#xB4F1;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xD3F4;&#xB354;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>JPEGImages</code> : <code>*.jpg</code>&#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC00;&#xC9C4; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xB4E4;&#xC774; &#xBAA8;&#xC5EC;&#xC788;&#xB294; &#xD3F4;&#xB354;&#xC785;&#xB2C8;&#xB2E4;. Object Detection&#xC5D0;&#xC11C; <code>&#xC785;&#xB825; &#xB370;&#xC774;&#xD130;</code>&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>SegmentationClass</code> :  Semantic segmentation&#xC744; &#xD559;&#xC2B5;&#xD558;&#xAE30; &#xC704;&#xD55C; <code>label</code> &#xC774;&#xBBF8;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>SegmentationObject</code> : Instance segmentation&#xC744; &#xD559;&#xC2B5;&#xD558;&#xAE30; &#xC704;&#xD55C; <code>label</code> &#xC774;&#xBBF8;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<p>Object Detection&#xC744; &#xD560;&#xB54C;&#xB294; &#xC8FC;&#xB85C; <code>Annotations</code>, <code>JPEGImages</code>&#xD3F4;&#xB354;&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB378;&#xC5D0; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xB123;&#xB294; <code>&#xC785;&#xB825;&#xB370;&#xC774;&#xD130;</code>&#xC778; &#xACBD;&#xC6B0; &#xADF8;&#xB0E5; load&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB418;&#xB098;,  &#xC9C0;&#xB3C4;&#xD559;&#xC2B5;&#xC5D0; &#xD575;&#xC2EC;&#xC774; &#xB418;&#xB294; <code>&#xC815;&#xB2F5; &#xB370;&#xC774;&#xD130;</code>&#xC758; &#xACBD;&#xC6B0;&#xB294; parsing&#xC774; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC73C;&#xBBC0;&#xB85C; <code>Annotations</code>&#xC758; <code>*.xml</code> &#xAD6C;&#xC870;&#xB294; &#xC798; &#xC54C;&#xC544;&#xB450;&#xB294; &#xAC83;&#xC774; &#xC911;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h2 id="03-image-&#xC2DC;&#xAC01;&#xD654;">03. Image &#xC2DC;&#xAC01;&#xD654;</h2>
+<p>&#xC774;&#xC81C;&#xBD80;&#xD130; &#xBCF8;&#xACA9;&#xC801;&#xC73C;&#xB85C; Object Detection&#xC744; &#xC704;&#xD55C; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBA3C;&#xC800; <code>&#xC785;&#xB825; &#xB370;&#xC774;&#xD130;</code>&#xC778; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xC744; python&#xC5D0;&#xC11C; &#xB85C;&#xB4DC;&#xD558;&#xACE0;, &#xC774;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC18C;&#xAC1C;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><strong>load_image.py</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> ImageFont
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> ImageDraw
+
+image_path = sys.argv[<span class="hljs-number">1</span>]
+
+image = Image.open(image_path).convert(<span class="hljs-string">&quot;RGB&quot;</span>)
+
+plt.figure(figsize=(<span class="hljs-number">25</span>,<span class="hljs-number">20</span>))
+plt.imshow(image)
+plt.show()
+plt.close()
+</code></pre>
+<ul>
+<li>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC774;&#xBBF8;&#xC9C0;&#xC758; <code>&#xACBD;&#xB85C; + &#xD30C;&#xC77C; &#xC774;&#xB984;</code>&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>PIL</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; load&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>matplotlib.pyplot</code> &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ python3 load_image.py &lt;image file path&gt;
+
+&gt;&gt; python3 load_image.py ./VOCdevkit/JPEGImages/2007_000068.jpg
+</code></pre>
+<p>&#xD574;&#xB2F9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://user-images.githubusercontent.com/13328380/48310553-5499e780-e5d4-11e8-8f8d-70a93b4cf2ae.png" alt="result of load_image.py"></p>
+<h2 id="04-xml-&#xD30C;&#xC77C;-&#xAD6C;&#xC870;">04. XML &#xD30C;&#xC77C; &#xAD6C;&#xC870;</h2>
+<p>xml &#xD30C;&#xC77C; &#xC548;&#xC5D0;&#xB294; &#xC218;&#xB9CE;&#xC740; tag&#xB4E4;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xC9C0;&#xB9CC; Object Detection &#xBAA8;&#xB378;&#xC744; &#xD559;&#xC2B5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB418;&#xB294; tag&#xB4E4;&#xC740; &#xC815;&#xD574;&#xC838;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xD574;&#xB2F9; &#xC139;&#xC158;&#xC5D0;&#xC11C;&#xB294; &#xD544;&#xC694;&#xD55C; tag&#xB4E4;&#xC774; &#xC5B4;&#xB5A4; &#xC758;&#xBBF8;&#xB97C; &#xAC16;&#xB294;&#xC9C0; &#xC124;&#xBA85;&#xD558;&#xACE0; &#xD574;&#xB2F9; xml&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC5EC;&#xC11C; &#xD574;&#xB2F9; tag&#xC758; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB294; python &#xC608;&#xC81C; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p>PASCAL VOC Dataset&#xC758; <code>Annotations</code>&#xC5D0; &#xC788;&#xB294; xml&#xD30C;&#xC77C;&#xB4E4;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">annotation</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">folder</span>&gt;</span>VOC2007<span class="hljs-tag">&lt;/<span class="hljs-name">folder</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filename</span>&gt;</span>000001.jpg<span class="hljs-tag">&lt;/<span class="hljs-name">filename</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">database</span>&gt;</span>The VOC2007 Database<span class="hljs-tag">&lt;/<span class="hljs-name">database</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">annotation</span>&gt;</span>PASCAL VOC2007<span class="hljs-tag">&lt;/<span class="hljs-name">annotation</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">image</span>&gt;</span>flickr<span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">flickrid</span>&gt;</span>341012865<span class="hljs-tag">&lt;/<span class="hljs-name">flickrid</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">owner</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">flickrid</span>&gt;</span>Fried Camels<span class="hljs-tag">&lt;/<span class="hljs-name">flickrid</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Jinky the Fruit Bat<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">owner</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">size</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">width</span>&gt;</span>353<span class="hljs-tag">&lt;/<span class="hljs-name">width</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">height</span>&gt;</span>500<span class="hljs-tag">&lt;/<span class="hljs-name">height</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">depth</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">depth</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">size</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">segmented</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">segmented</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">object</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dog<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">pose</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">pose</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">truncated</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">truncated</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">difficult</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">difficult</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">bndbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xmin</span>&gt;</span>48<span class="hljs-tag">&lt;/<span class="hljs-name">xmin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ymin</span>&gt;</span>240<span class="hljs-tag">&lt;/<span class="hljs-name">ymin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xmax</span>&gt;</span>195<span class="hljs-tag">&lt;/<span class="hljs-name">xmax</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ymax</span>&gt;</span>371<span class="hljs-tag">&lt;/<span class="hljs-name">ymax</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">bndbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">object</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>person<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">pose</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">pose</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">truncated</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">truncated</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">difficult</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">difficult</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">bndbox</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xmin</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">xmin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ymin</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">ymin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">xmax</span>&gt;</span>352<span class="hljs-tag">&lt;/<span class="hljs-name">xmax</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ymax</span>&gt;</span>498<span class="hljs-tag">&lt;/<span class="hljs-name">ymax</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">bndbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">annotation</span>&gt;</span>
+</code></pre>
+<ul>
+<li><code>&lt;size&gt;</code> : xml&#xD30C;&#xC77C;&#xACFC; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758; width, height, channels &#xC815;&#xBCF4;&#xC5D0; &#xB300;&#xD55C; tag&#xC785;&#xB2C8;&#xB2E4;.<ul>
+<li><code>&lt;width&gt;</code> : xml&#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758; width&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>&lt;height&gt;</code> : xml&#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758; height&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>&lt;depth&gt;</code> : xml&#xD30C;&#xC77C;&#xC5D0; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758; channels&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+<li><code>&lt;object&gt;</code> : xml&#xD30C;&#xC77C;&#xACFC; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC18D;&#xC5D0; object&#xC758; &#xC815;&#xBCF4;&#xC5D0; &#xB300;&#xD55C; tag&#xC785;&#xB2C8;&#xB2E4;.<ul>
+<li><code>&lt;name&gt;</code> : &#xD074;&#xB798;&#xC2A4; &#xC774;&#xB984;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>&lt;bndbox&gt;</code> : &#xD574;&#xB2F9; object&#xC758; &#xBC14;&#xC6B4;&#xB529;&#xC0C1;&#xC790;&#xC758; &#xC815;&#xBCF4;&#xC5D0; &#xB300;&#xD55C; tag&#xC785;&#xB2C8;&#xB2E4;.<ul>
+<li><code>xmin</code> : object &#xBC14;&#xC6B4;&#xB529;&#xC0C1;&#xC790;&#xC758; &#xC67C;&#xCABD;&#xC0C1;&#xB2E8;&#xC758; x&#xCD95; &#xC88C;&#xD45C;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>ymin</code> : object &#xBC14;&#xC6B4;&#xB529;&#xC0C1;&#xC790;&#xC758; &#xC67C;&#xCABD;&#xC0C1;&#xB2E8;&#xC758; y&#xCD95; &#xC88C;&#xD45C;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>xmax</code> : object &#xBC14;&#xC6B4;&#xB529;&#xC0C1;&#xC790;&#xC758; &#xC6B0;&#xCE21;&#xD558;&#xB2E8;&#xC758; x&#xCD95; &#xC88C;&#xD45C;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>ymax</code> : object &#xBC14;&#xC6B4;&#xB529;&#xC0C1;&#xC790;&#xC758; &#xC6B0;&#xCE21;&#xD558;&#xB2E8;&#xC758; y&#xCD95; &#xC88C;&#xD45C;&#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xBC14;&#xC6B4;&#xB529; &#xBC15;&#xC2A4;&#xC5D0; &#xB300;&#xD55C; &#xC88C;&#xD45C;&#xAC12;&#xC744; &#xC2DC;&#xAC01;&#xC801;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://user-images.githubusercontent.com/13328380/48208872-23909b80-e3b7-11e8-9cf6-c9d502015823.png" alt="Bounding_box_visualization"></p>
+<p>&#x200B;    </p>
+<h2 id="05-xml&#xD30C;&#xC77C;-load">05. XML&#xD30C;&#xC77C; load</h2>
+<p>Object Detection&#xC5D0;&#xC11C; <code>label</code>&#xC744; &#xD30C;&#xC2F1;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; python&#xC758; xml package&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; xml&#xD30C;&#xC77C;&#xC744; load&#xD558;&#xB294; &#xC608;&#xC81C;&#xB97C; &#xC9C4;&#xD589;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p><strong>load.py</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> xml.etree.ElementTree <span class="hljs-keyword">as</span> Et
+<span class="hljs-keyword">from</span> xml.etree.ElementTree <span class="hljs-keyword">import</span> Element, ElementTree
+
+xml_path = sys.argv[<span class="hljs-number">1</span>]
+
+print(<span class="hljs-string">&quot;XML parsing Start\n&quot;</span>)
+xml = open(xml_path, <span class="hljs-string">&quot;r&quot;</span>)
+tree = Et.parse(xml)
+root = tree.getroot()
+
+size = root.find(<span class="hljs-string">&quot;size&quot;</span>)
+
+width = size.find(<span class="hljs-string">&quot;width&quot;</span>).text
+height = size.find(<span class="hljs-string">&quot;height&quot;</span>).text
+channels = size.find(<span class="hljs-string">&quot;depth&quot;</span>).text
+
+print(<span class="hljs-string">&quot;Image properties\nwidth : {}\nheight : {}\nchannels : {}\n&quot;</span>.format(width, height, channels))
+
+objects = root.findall(<span class="hljs-string">&quot;object&quot;</span>)
+print(<span class="hljs-string">&quot;Objects Description&quot;</span>)
+<span class="hljs-keyword">for</span> _object <span class="hljs-keyword">in</span> objects:
+    name = _object.find(<span class="hljs-string">&quot;name&quot;</span>).text
+    bndbox = _object.find(<span class="hljs-string">&quot;bndbox&quot;</span>)
+    xmin = bndbox.find(<span class="hljs-string">&quot;xmin&quot;</span>).text
+    ymin = bndbox.find(<span class="hljs-string">&quot;ymin&quot;</span>).text
+    xmax = bndbox.find(<span class="hljs-string">&quot;xmax&quot;</span>).text
+    ymax = bndbox.find(<span class="hljs-string">&quot;ymax&quot;</span>).text
+
+    print(<span class="hljs-string">&quot;class : {}\nxmin : {}\nymin : {}\nxmax : {}\nymax : {}\n&quot;</span>.format(name, xmin, ymin, xmax, ymax))
+
+print(<span class="hljs-string">&quot;XML parsing END&quot;</span>)
+</code></pre>
+<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC758; &#xB85C;&#xC9C1; &#xD750;&#xB984;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>&#xC785;&#xB825;&#xB41C; xml &#xD30C;&#xC77C; &#xC704;&#xCE58;&#xB97C; &#xBC1B;&#xC544; xml&#xD30C;&#xC77C;&#xC744; open&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>open&#xD55C; xml&#xD30C;&#xC77C;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; <code>xml.etree.ElementTree</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD30C;&#xC2F1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>xml.etree.ElementTree</code>&#xAC1D;&#xCCB4;&#xB85C;&#xBD80;&#xD130; xml&#xC758; &#xB8E8;&#xD2B8;(&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;&#xB294; <annotation> tag)&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;.</annotation></li>
+<li><code>&lt;size&gt;</code> tag&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xCC3E;&#xC740; <code>&lt;size&gt;</code> tag&#xC5D0;&#xC11C; <code>width</code>, <code>height</code>, <code>depth</code> tag&#xB97C; &#xCC3E;&#xC544;&#xC11C; &#xAC12;&#xB4E4;&#xC744; &#xBD88;&#xB7EC;&#xC635;&#xB2C8;&#xB2E4;.</li>
+<li>xml&#xC758; &#xB8E8;&#xD2B8;&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; <code>&lt;objects&gt;</code> tag&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC5EC;&#xB7EC; <code>&lt;objects&gt;</code> tags&#xC744; &#xC21C;&#xD68C;&#xD558;&#xBA74;&#xC11C; <code>&lt;name&gt;</code>, <code>&lt;bndbox&gt;</code>, <code>&lt;xmin&gt;</code>, <code>&lt;ymin&gt;</code>, <code>&lt;xmax&gt;</code>, <code>&lt;ymax&gt;</code> tag&#xB97C; &#xCC3E;&#xC544;&#xC11C; &#xAC12;&#xB4E4;&#xC744; &#xBD88;&#xB7EC;&#xC635;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xCF54;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC2E4;&#xD589;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>(&#xBA85;&#xB839;&#xC5B4;&#xB294; linux&#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.)</p>
+<pre><code class="lang-bash">$ python3 load.py &lt;xml file path&gt;
+
+ex)
+$ python3 load.py /home/ubuntu/VOCdevkit/VOC2007/Annotations/000001.xml
+
+&gt;&gt;
+XML parsing Start
+
+Image properties
+width : 353
+height : 500
+channels : 3
+
+Objects Description
+class : dog
+xmin : 48
+ymin : 240
+xmax : 195
+ymax : 371
+
+class : person
+xmin : 8
+ymin : 12
+xmax : 352
+ymax : 498
+
+XML parsing END
+</code></pre>
+<p>&#x200B;        </p>
+<h2 id="06-object-detection-label-&#xC2DC;&#xAC01;&#xD654;">06. Object Detection label &#xC2DC;&#xAC01;&#xD654;</h2>
+<p>&#xC774;&#xC81C; &#xC704;&#xC5D0;&#xC11C; &#xC5BB;&#xC740; label &#xC815;&#xBCF4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; Object Detection box&#xB97C; &#xADF8;&#xB824;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Object Detection label &#xC815;&#xBCF4;&#xB97C; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xADF8;&#xB9AC;&#xB294; &#xB85C;&#xC9C1; &#xD750;&#xB984;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>Annotations</code>&#xD3F4;&#xB354;&#xC758; &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xBD88;&#xB7EC;&#xC634;</li>
+<li><code>JPEGImages</code>&#xD3F4;&#xB354;&#xC5D0;&#xC11C; XML &#xD30C;&#xC77C;&#xACFC; &#xB300;&#xC751;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xCC3E;&#xC74C;</li>
+<li>&#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xC21C;&#xD68C;&#xB97C; &#xB3CC;&#xBA74;&#xC11C; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; label &#xC815;&#xBCF4;&#xB97C; load&#xD568;</li>
+<li>load&#xB41C; label &#xC815;&#xBCF4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; Object Detection &#xC815;&#xBCF4;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD568;</li>
+</ul>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xB85C;&#xC9C1; &#xD750;&#xB984;&#xC744; &#xC704;&#xC5D0;&#xC11C; &#xAD6C;&#xD604;&#xD55C; <code>load.py</code>&#xC640; &#xBA87;&#xAC00;&#xC9C0; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC810;&#xC9C4;&#xC801;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="0601-oswalk-&#xB97C;-&#xC774;&#xC6A9;&#xD574;-&#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758;-&#xD30C;&#xC77C;-&#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;-&#xAC00;&#xC838;&#xC624;&#xAE30;">06.01) os.walk &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xAE30;</h3>
+<p>os package&#xC758; walk&#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;, &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; <code>&#xACBD;&#xB85C;</code>, <code>&#xD3F4;&#xB354; &#xB9AC;&#xC2A4;&#xD2B8;</code>, <code>&#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p><strong>directory_search.py</strong></p>
+<pre><code class="lang-python3">import os
+import sys
+
+dataset_path = sys.argv[1]
+
+IMAGE_FOLDER = &quot;JPEGImages&quot;
+ANNOTATIONS_FOLDER = &quot;Annotations&quot;
+
+ann_root, ann_dir, ann_files = next(os.walk(os.path.join(dataset_path, ANNOTATIONS_FOLDER)))
+
+print(&quot;ROOT : {}\n&quot;.format(ann_root))
+print(&quot;DIR : {}\n&quot;.format(ann_dir))
+print(&quot;FILES : {}\n&quot;.format(ann_files))
+</code></pre>
+<p>&#xC704;&#xC758; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; PASCAL VOC &#xB370;&#xC774;&#xD130;&#xC14B; &#xD3F4;&#xB354;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><p>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; PASCAL VOC Object Detection dataset &#xACBD;&#xB85C;&#xB97C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>os.walk</code> &#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; <code>Annotations</code>&#xD3F4;&#xB354;&#xC758; <code>&#xACBD;&#xB85C;</code>, <code>&#xD3F4;&#xB354; &#xB9AC;&#xC2A4;&#xD2B8;</code>, <code>&#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;</code>&#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xC740; iterator&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>next</code>&#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; iterator&#xC758; &#xCCAB;&#xBC88;&#xC9F8; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC635;&#xB2C8;&#xB2E4;.</p>
+<p>(<code>os.walk</code> iterator&#xC758; &#xCCAB;&#xBC88;&#xC9F8; &#xAC12;&#xC740; 3&#xAC1C;&#xC758; &#xAC12;&#xC744; &#xB9AC;&#xD134;&#xD558;&#xB294;&#xB370;, &#xCC28;&#xB840;&#xB300;&#xB85C; <code>&#xACBD;&#xB85C;</code>, <code>&#xD3F4;&#xB354; &#xB9AC;&#xC2A4;&#xD2B8;</code>, <code>&#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;</code>&#xC785;&#xB2C8;&#xB2E4;.)</p>
+</li>
+<li><p>&#xC5BB;&#xC740; 3&#xAC00;&#xC9C0;&#xC758; &#xAC12;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ python3 directory_search.py &lt;directory&gt;
+
+&gt;&gt; python3 directory_search.py ./VOCdevkit/
+ROOT : ./Annotations
+
+DIR : []
+
+FILES : [<span class="hljs-string">&apos;2008_003829.xml&apos;</span>, <span class="hljs-string">&apos;2010_004263.xml&apos;</span>, <span class="hljs-string">&apos;2010_005284.xml&apos;</span>, <span class="hljs-string">&apos;2010_004133.xml&apos;</span>, <span class="hljs-string">&apos;2009_003238.xml&apos;</span>, <span class="hljs-string">&apos;2008_004646.xml&apos;</span>, <span class="hljs-string">&apos;2007_004112.xml&apos;</span>, <span class="hljs-string">&apos;2008_001482.xml&apos;</span>, <span class="hljs-string">&apos;2008_002043.xml&apos;</span>, <span class="hljs-string">&apos;2010_005498.xml&apos;</span>, ... ]
+</code></pre>
+<h3 id="0602-xml&#xD30C;&#xC77C;&#xC744;-load&#xD558;&#xAE30;">06.02) xml&#xD30C;&#xC77C;&#xC744; load&#xD558;&#xAE30;</h3>
+<p>&#xC5BB;&#xC740; <code>&#xD30C;&#xC77C;&#xB9AC;&#xC2A4;&#xD2B8;</code>&#xB97C; &#xC21C;&#xD68C;&#xD558;&#xBA70; &#xC704;&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD588;&#xB358; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;(<code>load.py</code>)&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; xml &#xD30C;&#xC77C;&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p><strong>searchNload.py</strong></p>
+<pre><code class="lang-python3">import os
+import sys
+import xml.etree.ElementTree as Et
+from xml.etree.ElementTree import Element, ElementTree
+
+dataset_path = sys.argv[1]
+
+IMAGE_FOLDER = &quot;JPEGImages&quot;
+ANNOTATIONS_FOLDER = &quot;Annotations&quot;
+
+ann_root, ann_dir, ann_files = next(os.walk(os.path.join(dataset_path, ANNOTATIONS_FOLDER)))
+
+for xml_file in ann_files:
+    xml = open(os.path.join(ann_root, xml_file), &quot;r&quot;)
+    tree = Et.parse(xml)
+    root = tree.getroot()
+
+    size = root.find(&quot;size&quot;)
+
+    width = size.find(&quot;width&quot;).text
+    height = size.find(&quot;height&quot;).text
+    channels = size.find(&quot;depth&quot;).text
+
+    print(&quot;Image properties\nwidth : {}\nheight : {}\nchannels : {}\n&quot;.format(width, height, channels))
+
+    objects = root.findall(&quot;object&quot;)
+    print(&quot;Objects Description&quot;)
+    for _object in objects:
+        name = _object.find(&quot;name&quot;).text
+        bndbox = _object.find(&quot;bndbox&quot;)
+        xmin = bndbox.find(&quot;xmin&quot;).text
+        ymin = bndbox.find(&quot;ymin&quot;).text
+        xmax = bndbox.find(&quot;xmax&quot;).text
+        ymax = bndbox.find(&quot;ymax&quot;).text
+
+        print(&quot;class : {}\nxmin : {}\nymin : {}\nxmax : {}\nymax : {}\n&quot;.format(name, xmin, ymin, xmax, ymax))
+
+    print(&quot;XML parsing END&quot;)
+</code></pre>
+<ul>
+<li><code>os.walk</code>&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5BB;&#xC740; <code>&#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;</code>&#xB97C; &#xC21C;&#xD68C;&#xD558;&#xBA74;&#xC11C;, xml&#xD30C;&#xC77C;&#xC744; load&#xD558;&#xC5EC; &#xC5BB;&#xC740; &#xAC12;&#xB4E4;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ python3 searchNload.py &lt;directory&gt;
+
+&gt;&gt; python3 searchNload.py ./VOCdevkit/
+
+Image properties
+width : 500
+height : 375
+channels : 3
+
+Objects Description
+class : car
+xmin : 489
+ymin : 106
+xmax : 500
+ymax : 142
+
+XML parsing END
+Image properties
+width : 500
+height : 286
+channels : 3
+
+Objects Description
+class : car
+xmin : 16
+ymin : 148
+xmax : 40
+ymax : 163
+
+...
+</code></pre>
+<h3 id="0603-&#xAC01;-xml&#xD30C;&#xC77C;&#xC5D0;&#xC11C;-&#xC5BB;&#xC740;-&#xAC12;&#xB4E4;&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xC5EC;-&#xC6D0;-image&#xC5D0;-box&#xC815;&#xBCF4;-&#xADF8;&#xB9AC;&#xAE30;">06.03) &#xAC01; xml&#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC5BB;&#xC740; &#xAC12;&#xB4E4;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC6D0; Image&#xC5D0; box&#xC815;&#xBCF4; &#xADF8;&#xB9AC;&#xAE30;</h3>
+<p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xC640;&#xC11C; xml&#xD30C;&#xC77C; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC774;&#xBBF8;&#xC9C0; &#xD3F4;&#xB354;&#xC5D0;&#xC11C; xml&#xD30C;&#xC77C;&#xACFC; &#xB9E4;&#xCE6D;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xBD88;&#xB7EC;&#xB4E4;&#xC5EC;&#xC640;&#xC11C; &#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; xml&#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC5BB;&#xC740; &#xC815;&#xBCF4;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC744; &#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<p><strong>draw_detection_box.py</strong></p>
+<pre><code class="lang-python3">import os
+import sys
+import matplotlib.pyplot as plt
+import xml.etree.ElementTree as Et
+from xml.etree.ElementTree import Element, ElementTree
+
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
+
+dataset_path = sys.argv[1]
+
+IMAGE_FOLDER = &quot;JPEGImages&quot;
+ANNOTATIONS_FOLDER = &quot;Annotations&quot;
+
+ann_root, ann_dir, ann_files = next(os.walk(os.path.join(dataset_path, ANNOTATIONS_FOLDER)))
+img_root, amg_dir, img_files = next(os.walk(os.path.join(dataset_path, IMAGE_FOLDER)))
+
+for xml_file in ann_files:
+
+    # XML&#xD30C;&#xC77C;&#xC640; &#xC774;&#xBBF8;&#xC9C0;&#xD30C;&#xC77C;&#xC740; &#xC774;&#xB984;&#xC774; &#xAC19;&#xC73C;&#xBBC0;&#xB85C;, &#xD655;&#xC7A5;&#xC790;&#xB9CC; &#xB9DE;&#xCDB0;&#xC11C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.
+    img_name = img_files[img_files.index(&quot;.&quot;.join([xml_file.split(&quot;.&quot;)[0], &quot;jpg&quot;]))]
+    img_file = os.path.join(img_root, img_name)
+    image = Image.open(img_file).convert(&quot;RGB&quot;)
+    draw = ImageDraw.Draw(image)
+
+    xml = open(os.path.join(ann_root, xml_file), &quot;r&quot;)
+    tree = Et.parse(xml)
+    root = tree.getroot()
+
+    size = root.find(&quot;size&quot;)
+
+    width = size.find(&quot;width&quot;).text
+    height = size.find(&quot;height&quot;).text
+    channels = size.find(&quot;depth&quot;).text
+
+    objects = root.findall(&quot;object&quot;)
+
+    for _object in objects:
+        name = _object.find(&quot;name&quot;).text
+        bndbox = _object.find(&quot;bndbox&quot;)
+        xmin = int(bndbox.find(&quot;xmin&quot;).text)
+        ymin = int(bndbox.find(&quot;ymin&quot;).text)
+        xmax = int(bndbox.find(&quot;xmax&quot;).text)
+        ymax = int(bndbox.find(&quot;ymax&quot;).text)
+
+        # Box&#xB97C; &#xADF8;&#xB9B4; &#xB54C;, &#xC67C;&#xCABD; &#xC0C1;&#xB2E8; &#xC810;&#xACFC;, &#xC624;&#xB978;&#xCABD; &#xD558;&#xB2E8; &#xC810;&#xC758; &#xC88C;&#xD45C;&#xB97C; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.
+        draw.rectangle(((xmin, ymin), (xmax, ymax)), outline=&quot;red&quot;)
+        draw.text((xmin, ymin), name)
+
+    plt.figure(figsize=(25,20))
+    plt.imshow(image)
+    plt.show()
+    plt.close()
+</code></pre>
+<ul>
+<li><p><code>1. os.walk&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xAE30;</code>&#xC640; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC73C;&#xB85C; Image&#xD3F4;&#xB354;&#xC758; &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>xml &#xD30C;&#xC77C; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xC21C;&#xD68C;&#xD558;&#xBA74;&#xC11C; xml&#xD30C;&#xC77C;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li>xml&#xD30C;&#xC77C;&#xB85C;&#xBD80;&#xD130; Object Detection label&#xC815;&#xBCF4;&#xB97C; &#xC5BB;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB85C;&#xB4DC;&#xD55C; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xC5D0; &#xD68D;&#xB4DD;&#xD55C; Object Detection label&#xC815;&#xBCF4;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ python3 searchNload.py &lt;directory&gt;
+
+&gt;&gt; python3 searchNload.py ./VOCdevkit/
+</code></pre>
+<p>&#x200B;    </p>
+<p>&#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB418;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD654;&#xBA74;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://user-images.githubusercontent.com/13328380/48310215-071a7c00-e5ce-11e8-855e-c60651251f69.png" alt="object detection label visualization"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_00_Datasets_for_Object_Detection.html" class="navigation navigation-prev " aria-label="Previous page: 02. Datasets for Object Detection">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02_02_Convert2Yolo.html" class="navigation navigation-next " aria-label="Next page: 02). Convert2Yolo 소개">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"01). PASCAL VOC","level":"1.1.3.1","depth":3,"next":{"title":"02). Convert2Yolo 소개","level":"1.1.3.2","depth":3,"path":"posts/02_02_Convert2Yolo.md","ref":"posts/02_02_Convert2Yolo.md","articles":[]},"previous":{"title":"02. Datasets for Object Detection","level":"1.1.3","depth":2,"path":"posts/02_00_Datasets_for_Object_Detection.md","ref":"posts/02_00_Datasets_for_Object_Detection.md","articles":[{"title":"01). PASCAL VOC","level":"1.1.3.1","depth":3,"path":"posts/02_01_PASCAL_VOC.md","ref":"posts/02_01_PASCAL_VOC.md","articles":[]},{"title":"02). Convert2Yolo 소개","level":"1.1.3.2","depth":3,"path":"posts/02_02_Convert2Yolo.md","ref":"posts/02_02_Convert2Yolo.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/02_01_PASCAL_VOC.md","mtime":"2018-12-14T06:10:32.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T06:19:16.695Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

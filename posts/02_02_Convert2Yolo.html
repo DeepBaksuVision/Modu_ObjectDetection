@@ -1,0 +1,638 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02). Convert2Yolo 소개 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_00_common_utils.html" />
+    
+    
+    <link rel="prev" href="02_01_PASCAL_VOC.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >02). Convert2Yolo 소개</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="convert2yolo-&#xC18C;&#xAC1C;">convert2Yolo &#xC18C;&#xAC1C;</h1>
+<p><a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; &#xAC01;&#xC885; datasets&#xB4E4;&#xC744; YOLO[You Only Look Once]&#xC800;&#xC790;&#xAC00; &#xB9CC;&#xB4E0; <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xAC00; &#xC0AC;&#xC6A9;&#xD558;&#xB294; label format&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC8FC;&#xB294; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBCF8; &#xBB38;&#xC11C;&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; Object Detection &#xAD6C;&#xD604;&#xCCB4;&#xC758; Dataloader&#xB294; <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; &#xD574;&#xB2F9; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xAD6C;&#xC131;&#xB418;&#xC5B4;&#xC788;&#xACE0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xC9C0; &#xC219;&#xC9C0;&#xD574;&#xC57C; Dataloader&#xB97C; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h2 id="01-&#xC0AC;&#xC6A9;&#xBC95;">01. &#xC0AC;&#xC6A9;&#xBC95;</h2>
+<p><a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xC758; README&#xC5D0; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC04;&#xB2E8;&#xD788; &#xC815;&#xB9AC;&#xB418;&#xC5B4;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD574;&#xB2F9; &#xB0B4;&#xC6A9;&#xC744; &#xC815;&#xB9AC;&#xD574;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h3 id="0101-&#xC9C0;&#xC6D0;&#xD558;&#xB294;-&#xB370;&#xC774;&#xD130;&#xC14B;">01.01) &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xC14B;</h3>
+<p><a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; &#xD604;&#xC7AC; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>COCO</li>
+<li>VOC</li>
+<li>UDACITY</li>
+<li>KITTI</li>
+</ul>
+<p>&#xD574;&#xB2F9; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC774; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC9C1;&#xC811; &#xD30C;&#xC2F1;&#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;, <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xC5D0; &#xD574;&#xB2F9; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xD30C;&#xC2F1;&#xD558;&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;, &#xC0C8;&#xB85C;&#xC6B4; &#xD234;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xC774;&#xB97C; &#xD574;&#xACB0;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#x200B;    </p>
+<h3 id="0102-&#xC758;&#xC874;&#xC131;-&#xD328;&#xD0A4;&#xC9C0;-&#xC124;&#xCE58;">01.02) &#xC758;&#xC874;&#xC131; &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58;</h3>
+<p>&#xBA3C;&#xC800; <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; &#xC5EC;&#xB7EC; &#xC758;&#xC874;&#xC131; &#xD328;&#xD0A4;&#xC9C0; &#xD234;&#xC744; &#xD544;&#xC694;&#xB85C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD574;&#xB2F9; &#xCF54;&#xB4DC;&#xB97C; &#xD074;&#xB860;&#xD55C; &#xB2E4;&#xC74C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC758;&#xC874;&#xC131; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xC124;&#xCE58;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ mkdir convert2Yolo
+$ <span class="hljs-built_in">cd</span> convert2Yolo
+$ git init
+$ git remote add origin https://github.com/ssaru/convert2Yolo.git
+$ git pull origin master
+$ pip3 install -r requirements.txt
+</code></pre>
+<p>&#x200B;    </p>
+<h3 id="0103-&#xD30C;&#xB77C;&#xBBF8;&#xD130;">01.03) &#xD30C;&#xB77C;&#xBBF8;&#xD130;</h3>
+<p><a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xC885;&#xB958;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>--datasets</code></li>
+<li><code>--img_path</code></li>
+<li><code>--label</code></li>
+<li><code>--convert_output_path</code></li>
+<li><code>--img_type</code></li>
+<li><code>--manipast_path</code></li>
+<li><code>--cla_list_file</code></li>
+</ul>
+<p>&#x200B;    </p>
+<p><strong><code>--datasets</code></strong> : &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xC5B4;&#xB5A4; dataset&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xB370;&#xC774;&#xD130;&#xC14B; &#xD30C;&#xC2F1;&#xC744; &#xC9C4;&#xD589;&#xD560;&#xAC74;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; mode flag&#xC785;&#xB2C8;&#xB2E4;. &#xC704;&#xC5D0;&#xC11C;&#xB3C4; &#xC5B8;&#xAE09;&#xD588;&#xB4EF;&#xC774; <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; <code>COCO</code>, <code>VOC</code>, <code>UDACITY</code>, <code>KITTI</code> &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xBBC0;&#xB85C; &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB3C4;  <code>COCO</code>, <code>VOC</code>, <code>UDACITY</code>, <code>KITTI</code>&#xC911;&#xC5D0; &#xD558;&#xB098;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --datasets VOC
+</code></pre>
+<p>&#x200B;    </p>
+<p><strong><code>--img_path</code></strong> : &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; &#xC774;&#xBBF8;&#xC9C0; &#xD3F4;&#xB354; &#xACBD;&#xB85C;&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC774; <code>PASCAL VOC</code>&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD588;&#xC744; &#xB54C;, &#xC774;&#xBBF8;&#xC9C0; &#xD3F4;&#xB354;&#xB294; <code>VOC20XX/JPEGImages</code>&#xC5D0; &#xC788;&#xC744;&#xD14C;&#xB2C8; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --img_path VOC20XX/JPEGImages/
+</code></pre>
+<p>&#x200B;    </p>
+<p><strong><code>--label</code></strong> : &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; &#xB808;&#xC774;&#xBE14; &#xD3F4;&#xB354; &#xACBD;&#xB85C;&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC774; <code>PASCAL VOC</code>&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD588;&#xC744; &#xB54C;, &#xB808;&#xC774;&#xBE14; &#xD3F4;&#xB354;&#xB294; <code>VOC20XX/Annotations</code>&#xC5D0; &#xC788;&#xC744;&#xD14C;&#xB2C8; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --label VOC20XX/Annotations/
+</code></pre>
+<p>&#xC5B4;&#xB5A4; &#xB370;&#xC774;&#xD130;&#xC14B;&#xB4E4;&#xC740; &#xB808;&#xC774;&#xBE14;&#xC774; &#xBCF5;&#xC218;&#xC758; &#xD30C;&#xC77C;&#xC774; &#xC544;&#xB2CC; <code>*.json</code>, <code>*.csv</code> &#xD655;&#xC7A5;&#xC790;&#xB97C; &#xAC16;&#xB294; &#xB2E8;&#xC77C;&#xD30C;&#xC77C;&#xC778; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xD45C;&#xC801;&#xC73C;&#xB85C; <code>COCO</code>, <code>UDACITY</code>&#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xAC00; &#xB300;&#xD45C;&#xC801;&#xC778;&#xB370;, &#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; <code>--label</code>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB97C; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --label ./UDACITY/label.csv
+</code></pre>
+<p>&#x200B;    </p>
+<p><strong><code>--convert_output_path</code></strong> : &#xBCC0;&#xD658;&#xB41C; &#xB808;&#xC774;&#xBE14;&#xD30C;&#xC77C;&#xC774; &#xC800;&#xC7A5;&#xB420; &#xD3F4;&#xB354; &#xACBD;&#xB85C;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xD3F4;&#xB354;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAC70;&#xB098; &#xC774;&#xBBF8; &#xC788;&#xB294; &#xD3F4;&#xB354;&#xB97C; &#xC9C0;&#xC815;&#xD574;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --convert_output_path ./
+</code></pre>
+<p>&#x200B;    </p>
+<p><strong><code>--img_type</code></strong> : <code>--img_path</code> &#xD3F4;&#xB354;&#xC5D0; &#xC788;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xD655;&#xC7A5;&#xC790;&#xAC00; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xBA85;&#xC2DC;&#xD574;&#xC8FC;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xB294; <code>*.jpg</code>, <code>*.png</code>&#xD30C;&#xC77C;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --img_<span class="hljs-built_in">type</span> <span class="hljs-string">&quot;.jpg&quot;</span>
+or
+$ --img_<span class="hljs-built_in">type</span> <span class="hljs-string">&quot;.png&quot;</span>
+</code></pre>
+<p>&#x200B;    </p>
+<p><strong><code>--manipast_path</code></strong> : <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD559;&#xC2B5;&#xD560; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB370;&#xC774;&#xD130;&#xC14B;&#xC758; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC5B4;&#xB514;&#xC788;&#xB294;&#xC9C0; &#xAC01; &#xC774;&#xBBF8;&#xC9C0;&#xB9C8;&#xB2E4; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xAC00; &#xC801;&#xD600;&#xC788;&#xB294; <code>*.txt</code>&#xD30C;&#xC77C;&#xC744; &#xC694;&#xAD6C;&#xD558;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xB97C; &#xC704;&#xD55C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC774;&#xC9C0;&#xB9CC;, &#xBD88;&#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xC0DD;&#xB7B5;&#xD560; &#xC218; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; &#xBB34;&#xC870;&#xAC74; &#xC801;&#xC5B4;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --minipast_path ./
+</code></pre>
+<p>&#x200B;     </p>
+<p><strong><code>--cls_list_file</code></strong> :  &#xD574;&#xB2F9; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xB610;&#xD55C; <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xC5D0;&#xC11C; &#xD544;&#xC694;&#xD55C; &#xD30C;&#xC77C;&#xC785;&#xB2C8;&#xB2E4;. <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xC5D0;&#xC11C;&#xB294; &#xD074;&#xB798;&#xC2A4; &#xBAA9;&#xB85D;&#xC744; <code>*.names</code>&#xD30C;&#xC77C;&#xC744; &#xCC38;&#xC870;&#xD558;&#xC5EC; &#xD559;&#xC2B5;&#xD558;&#xACE0;, &#xCD94;&#xB860;&#xD558;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC758; &#xD3EC;&#xB9F7;&#xC740; <a href="https://github.com/pjreddie/darknet/blob/master/data/voc.names" target="_blank">&#xB9C1;&#xD06C;</a>&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ --cls_list_file voc.names
+</code></pre>
+<p>&#x200B;    </p>
+<h3 id="0104-&#xC608;&#xC81C;-&#xCF54;&#xB4DC;">01.04) &#xC608;&#xC81C; &#xCF54;&#xB4DC;</h3>
+<p>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC5D0; &#xB300;&#xD55C; &#xB0B4;&#xC6A9;&#xC744; &#xC219;&#xC9C0;&#xD588;&#xB2E4;&#xBA74;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xD2B9;&#xC815; dataset&#xC744; <a href="https://pjreddie.com/darknet/" target="_blank">darknet &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xC5D0;&#xC11C; &#xD544;&#xC694;&#xB85C;&#xD558;&#xB294; &#xB808;&#xC774;&#xBE14; &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ python3 example.py --datasets [COCO/VOC/KITTI/UDACITY] --img_path &lt;image_path&gt; --label &lt;label path or annotation file&gt; --convert_output_path &lt;output path&gt; --img_<span class="hljs-built_in">type</span> [<span class="hljs-string">&quot;.jpg&quot;</span> / <span class="hljs-string">&quot;.png&quot;</span>] --manipast_path &lt;output manipast file path&gt; --cls_list_file &lt;*.names file path&gt;
+
+&gt;&gt; python3 example.py --datasets KITTI --img_path ./example/kitti/images/ --label ./example/kitti/labels/ --convert_output_path ./ --img_<span class="hljs-built_in">type</span> <span class="hljs-string">&quot;.jpg&quot;</span> --manipast_path ./ --cls_list_file names.txt
+</code></pre>
+<p>&#x200B;    </p>
+<h2 id="02-&#xBCC0;&#xD658;-&#xBC29;&#xC2DD;">02. &#xBCC0;&#xD658; &#xBC29;&#xC2DD;</h2>
+<p><a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xC758; &#xBCC0;&#xD658;&#xBC29;&#xC2DD;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC744; &#xB530;&#xB985;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li>&#xB370;&#xC774;&#xD130; Load (<code>parsing</code>)</li>
+<li><code>dictionary</code>&#xD615;&#xD0DC;&#xC758; &#xACF5;&#xD1B5;&#xB41C; label format&#xC73C;&#xB85C; &#xBCC0;&#xACBD; (<code>generate</code>)</li>
+<li>yolo format&#xC73C;&#xB85C; &#xBCC0;&#xACBD; (<code>generate</code>)</li>
+<li>&#xC800;&#xC7A5; (<code>save</code>)</li>
+</ol>
+<p><code>dictionary</code>&#xD615;&#xD0DC;&#xC758; &#xACF5;&#xD1B5;&#xB41C; &#xD30C;&#xC77C; &#xD3EC;&#xB9F7;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;filename&quot;</span> :      
+                {                  
+                    <span class="hljs-string">&quot;size&quot;</span> :
+                                {
+                                    <span class="hljs-string">&quot;width&quot;</span> : &lt;string&gt;
+                                    &quot;height&quot; : &lt;string&gt;
+                                    &quot;depth&quot; : &lt;string&gt;
+                                }
+
+                    &quot;objects&quot; :
+                                {
+                                    &quot;num_obj&quot; : &lt;int&gt;
+                                    &quot;&lt;index&gt;&quot; :
+                                                {
+                                                    &quot;name&quot; : &lt;string&gt;
+                                                    &quot;bndbox&quot; :
+                                                                {
+                                                                    &quot;xmin&quot; : &lt;float&gt;
+                                                                    &quot;ymin&quot; : &lt;float&gt;
+                                                                    &quot;xmax&quot; : &lt;float&gt;
+                                                                    &quot;ymax&quot; : &lt;float&gt;
+                                                                }
+                                                }
+                                    ...
+
+
+                                }
+                }
+...
+}
+</code></pre>
+<ul>
+<li><code>filename</code>&#xC740; &#xD655;&#xC7A5;&#xC790;&#xAC00; &#xC81C;&#xAC70;&#xB41C; image file name&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>size</code>&#xB294; image&#xC758; &#xD574;&#xC0C1;&#xB3C4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>objects</code>&#xB294; &#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xC788;&#xB294; &#xAC1D;&#xCCB4; &#xC804;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>num_obj</code>&#xB294; <code>objects</code>&#xC758; &#xAC1C;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>&lt;index&gt;</code>&#xB294; <code>objects</code>&#xC5D0;&#xC11C; &#xD2B9;&#xC815; object &#xC77C;&#xBD80;&#xB97C; &#xD45C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>bndbox</code>&#xB294; object&#xC758; box &#xC88C;&#xD45C;&#xC815;&#xBCF4;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xD658;&#xBC29;&#xC2DD;&#xC744; &#xC774;&#xD574;&#xD588;&#xB2E4;&#xBA74;, <code>VOC</code> &#xB370;&#xC774;&#xD130;&#xC14B;&#xC744; <code>YOLO</code>&#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xB294; &#xACFC;&#xC815;&#xC5D0; &#xB300;&#xD55C; &#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xB354; &#xC790;&#xC138;&#xD558;&#xAC8C; <a href="https://github.com/ssaru/convert2Yolo" target="_blank">convert2Yolo</a>&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;.</p>
+<pre><code class="lang-python">voc = VOC()
+yolo = YOLO(os.path.abspath(config[<span class="hljs-string">&quot;cls_list&quot;</span>]))
+
+flag, data = voc.parse(config[<span class="hljs-string">&quot;label&quot;</span>])
+
+<span class="hljs-keyword">if</span> flag == <span class="hljs-keyword">True</span>:
+
+    flag, data = yolo.generate(data)
+    <span class="hljs-keyword">if</span> flag == <span class="hljs-keyword">True</span>:
+        flag, data = yolo.save(data, config[<span class="hljs-string">&quot;output_path&quot;</span>], config[<span class="hljs-string">&quot;img_path&quot;</span>] ,
+                               config[<span class="hljs-string">&quot;img_type&quot;</span>], config[<span class="hljs-string">&quot;manipast_path&quot;</span>])
+
+        <span class="hljs-keyword">if</span> flag == <span class="hljs-keyword">False</span>:
+            print(<span class="hljs-string">&quot;Saving Result : {}, msg : {}&quot;</span>.format(flag, data))
+
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&quot;YOLO Generating Result : {}, msg : {}&quot;</span>.format(flag, data))
+
+
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">&quot;VOC Parsing Result : {}, msg : {}&quot;</span>.format(flag, data))
+</code></pre>
+<ul>
+<li><p><code>VOC</code>&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>YOLO</code>&#xAC1D;&#xCCB4;&#xB97C; <code>cls_list</code>&#xD30C;&#xC77C; (<code>*.name</code>)&#xD30C;&#xC77C;&#xC744; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>voc</code>&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; parsing&#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>(&#xC774; &#xACFC;&#xC815;&#xC5D0;&#xC11C; parsing&#xC774; &#xC2E4;&#xD328;&#xD55C;&#xB2E4;&#xBA74; data&#xAC12;&#xC740; <code>error message</code>&#xAC00; &#xB418;&#xBA70;, <code>flag</code>&#xB294; <code>False</code>&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>(parsing&#xC774; &#xC644;&#xB8CC;&#xB41C; <code>data</code>&#xB294; <code>dictionary</code>&#xD615;&#xD0DC;&#xC758; &#xACF5;&#xD1B5; &#xD3EC;&#xB9F7;&#xC785;&#xB2C8;&#xB2E4;.)</p>
+</li>
+<li><p><code>yolo</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC774;&#xB97C; yolo format&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p>yolo format&#xC73C;&#xB85C; &#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#xD574;&#xB2F9; &#xB0B4;&#xC6A9;&#xC758; &#xC0AC;&#xC6A9;&#xC740; 3&#xC7A5; <code>Common utils</code>&#xC758; <code>dataloader</code>&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC608;&#xC815;&#xC774;&#xBBC0;&#xB85C;, &#xCF54;&#xB4DC;&#xC758; &#xD750;&#xB984;&#xC774; &#xB9DE;&#xB294;&#xC9C0; &#xD55C;&#xBC88; &#xC9C1;&#xC811; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xBA74;&#xC11C; &#xC774;&#xD574;&#xD574;&#xBCF4;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_01_PASCAL_VOC.html" class="navigation navigation-prev " aria-label="Previous page: 01). PASCAL VOC">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_00_common_utils.html" class="navigation navigation-next " aria-label="Next page: 03. Common Utils">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02). Convert2Yolo 소개","level":"1.1.3.2","depth":3,"next":{"title":"03. Common Utils","level":"1.1.4","depth":2,"path":"posts/03_00_common_utils.md","ref":"posts/03_00_common_utils.md","articles":[{"title":"01). DataLoader","level":"1.1.4.1","depth":3,"path":"posts/03_01_dataloader.md","ref":"posts/03_01_dataloader.md","articles":[]},{"title":"02). Augmentation","level":"1.1.4.2","depth":3,"path":"posts/03_04_augmentation.md","ref":"posts/03_04_augmentation.md","articles":[]},{"title":"03). Visdom","level":"1.1.4.3","depth":3,"path":"posts/03_05_visdom.md","ref":"posts/03_05_visdom.md","articles":[]},{"title":"04). Torch summary","level":"1.1.4.4","depth":3,"path":"posts/03_04_torchsummary.md","ref":"posts/03_04_torchsummary.md","articles":[]}]},"previous":{"title":"01). PASCAL VOC","level":"1.1.3.1","depth":3,"path":"posts/02_01_PASCAL_VOC.md","ref":"posts/02_01_PASCAL_VOC.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/02_02_Convert2Yolo.md","mtime":"2018-12-14T06:10:32.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T06:19:16.695Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

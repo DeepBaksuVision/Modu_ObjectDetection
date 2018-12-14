@@ -1,0 +1,503 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>03). Visdom · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_04_torchsummary.html" />
+    
+    
+    <link rel="prev" href="03_04_augmentation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    모두를 위한 Object Detection(Object Detection for All)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="00_00_preface.html">
+            
+                <a href="00_00_preface.html">
+            
+                    
+                    00. preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="00_01_Author.html">
+            
+                <a href="00_01_Author.html">
+            
+                    
+                    01). Author
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="00_02_Revision.html">
+            
+                <a href="00_02_Revision.html">
+            
+                    
+                    02). Revision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="00_03_Table_of_contents.html">
+            
+                <a href="00_03_Table_of_contents.html">
+            
+                    
+                    03). Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="01_00_What_is_Object_Detection.html">
+            
+                <a href="01_00_What_is_Object_Detection.html">
+            
+                    
+                    01. Object Detection 이란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="02_00_Datasets_for_Object_Detection.html">
+            
+                <a href="02_00_Datasets_for_Object_Detection.html">
+            
+                    
+                    02. Datasets for Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="02_01_PASCAL_VOC.html">
+            
+                <a href="02_01_PASCAL_VOC.html">
+            
+                    
+                    01). PASCAL VOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="02_02_Convert2Yolo.html">
+            
+                <a href="02_02_Convert2Yolo.html">
+            
+                    
+                    02). Convert2Yolo 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="03_00_common_utils.html">
+            
+                <a href="03_00_common_utils.html">
+            
+                    
+                    03. Common Utils
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="03_01_dataloader.html">
+            
+                <a href="03_01_dataloader.html">
+            
+                    
+                    01). DataLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="03_04_augmentation.html">
+            
+                <a href="03_04_augmentation.html">
+            
+                    
+                    02). Augmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.4.3" data-path="03_05_visdom.html">
+            
+                <a href="03_05_visdom.html">
+            
+                    
+                    03). Visdom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.4" data-path="03_04_torchsummary.html">
+            
+                <a href="03_04_torchsummary.html">
+            
+                    
+                    04). Torch summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                <a href="04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html">
+            
+                    
+                    04. You Only Look Once: Unified, Real-Time Object Detection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="04_01_Review_of_YOLO_Paper.html">
+            
+                <a href="04_01_Review_of_YOLO_Paper.html">
+            
+                    
+                    01). You Only Look Once 논문리뷰
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="04_02_Model.html">
+            
+                <a href="04_02_Model.html">
+            
+                    
+                    02). Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >03). Visdom</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xD559;&#xC2B5;-&#xACFC;&#xC815;-&#xC2DC;&#xAC01;&#xD654;&#xD558;&#xAE30;">&#xD559;&#xC2B5; &#xACFC;&#xC815; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xAE30;</h1>
+<p>&#xC774;&#xBC88; &#xC7A5;&#xC5D0;&#xC11C;&#xB294; PyTorch&#xC5D0;&#xC11C; &#xD559;&#xC2B5; &#xACFC;&#xC815;&#xC744; &#xC2DC;&#xAC01;&#xD654;&#xD560; &#xC218; &#xC788;&#xB294; &#xD234;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. Tensorflow&#xC758; Tensorboard&#xCC98;&#xB7FC; PyTorch&#xC5D0;&#xC11C;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC720;&#xC6A9;&#xD55C; &#xB3C4;&#xAD6C;&#xB4E4;&#xC774; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xBC88;&#xC5D0;&#xB294; Visdom&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.  </p>
+<h2 id="01-visdom">01. Visdom</h2>
+<p>Visdom&#xC740; PyTorch&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC2DC;&#xAC01;&#xD654; &#xB3C4;&#xAD6C; &#xC911; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://camo.githubusercontent.com/d69475a01f9f327fc42931a21df8134d1fbdfc19/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f2d62714839555843772d42452f574c3255736472726241492f41414141414141416e59632f656d727877436d6e7257345f434c54797955747442305359524a2d693443436951434c63422f73302f53637265656e2b53686f742b323031372d30332d30362b61742b31302e35312e30322b414d2e706e67253232766973646f6d5f626967253232" alt="visdom"></p>
+<p>Visdom&#xC758; &#xC124;&#xCE58;&#xB294; <a href="https://github.com/facebookresearch/visdom#setup" target="_blank">Visdom &#xBB38;&#xC11C;</a> &#xB97C; &#xD655;&#xC778;&#xBC14;&#xB78D;&#xB2C8;&#xB2E4;. Visdom&#xC740; &#xC790;&#xC138;&#xD55C; API&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; API&#xAC00; &#xBCC4;&#xB3C4;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC774;&#xC720;&#xB294; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC04;&#xB2E8;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;.  Visdom&#xC758; Github repository&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; <a href="https://github.com/facebookresearch/visdom#api" target="_blank">&#xAC04;&#xB2E8;&#xD55C; API&#xBB38;&#xC11C;</a>&#xC640; <a href="https://github.com/facebookresearch/visdom/blob/master/example/demo.py" target="_blank">&#xC608;&#xC81C;&#xCF54;&#xB4DC;</a>&#xB97C; &#xC219;&#xC9C0;&#xD558;&#xBA74; &#xB204;&#xAD6C;&#xB098; &#xBC14;&#xB85C; &#xC790;&#xC2E0;&#xC758; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; Visdom&#xC744; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="02-&#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;-&#xC801;&#xC6A9;">02. &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC801;&#xC6A9;</h2>
+<p>&#xC774;&#xC81C; &#xBCF8;&#xACA9;&#xC801;&#xC73C;&#xB85C; &#xC6B0;&#xB9AC; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC801;&#xC6A9;&#xD574;&#xBD05;&#xC2DC;&#xB2E4;. YOLO&#xC640; &#xAC19;&#xC740; multi-task learning&#xC740; &#xACC4;&#xC0B0;&#xD574;&#xC57C; &#xD560; &#xB85C;&#xC2A4;&#xAC00; &#xB9CE;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC804;&#xCCB4; &#xB85C;&#xC2A4;&#xB9CC; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xC88B;&#xC9C0;&#xB9CC; &#xAC01; &#xB85C;&#xC2A4;&#xB4E4;&#xC744; &#xAC1C;&#xBCC4;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD574; &#xC904; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> USE_VISDOM:
+    viz = visdom.Visdom(use_incoming_socket=<span class="hljs-keyword">False</span>)
+    vis_title = <span class="hljs-string">&apos;Yolo V1 Deepbaksu_vision (feat. martin, visionNoob) PyTorch on &apos;</span> + <span class="hljs-string">&apos;VOC&apos;</span>
+    vis_legend = [<span class="hljs-string">&apos;Train Loss&apos;</span>]
+    iter_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;Total Loss&apos;</span>, vis_title, vis_legend)
+    coord1_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;coord1&apos;</span>, vis_title, vis_legend)
+    size1_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;size1&apos;</span>, vis_title, vis_legend)
+    noobjectness1_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;noobjectness1&apos;</span>, vis_title, vis_legend)
+    objectness1_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;objectness1&apos;</span>, vis_title, vis_legend)
+    obj_cls_plot = create_vis_plot(viz, <span class="hljs-string">&apos;Iteration&apos;</span>, <span class="hljs-string">&apos;obj_cls&apos;</span>, vis_title, vis_legend)
+};
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C;&#xB294; visdom &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8; &#xB2E4;&#xC74C; &#xC0AC;&#xC6A9;&#xBC95;&#xC740; matplotlib&#xC640; &#xAC19;&#xC740; &#xB2E4;&#xB978; &#xC2DC;&#xAC01;&#xD654; &#xD234;&#xACFC; &#xC544;&#xC8FC; &#xC720;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;. title, legend&#xB97C; &#xC815;&#xC758;&#xD558;&#xACE0;, &#xAC01; &#xB85C;&#xC2A4;&#xB97C; &#xCD9C;&#xB825;&#xD55C; plot &#xAC1D;&#xCCB4;&#xB97C; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;. plot &#xAC1D;&#xCCB4;&#xB97C; create_vis_plot() &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.   </p>
+<p><img src="https://user-images.githubusercontent.com/15168540/49014603-08e66100-f1c4-11e8-9fdc-bbf79db994b0.png" alt="image">
+create_visdom() &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; visdom &#xC11C;&#xBC84;&#xC5D0; plot&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> USE_VISDOM:
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), loss.item(), iter_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), obj_coord1_loss, coord1_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), obj_size1_loss, size1_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), obj_class_loss, obj_cls_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), noobjness1_loss, noobjectness1_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+    update_vis_plot(viz, (epoch + <span class="hljs-number">1</span>) * total_step + (i + <span class="hljs-number">1</span>), objness1_loss, objectness1_plot, <span class="hljs-keyword">None</span>, <span class="hljs-string">&apos;append&apos;</span>)
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xD559;&#xC2B5; &#xACFC;&#xC815;&#xC744; Visdom&#xC5D0; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xACC4;&#xC0B0;&#xD55C; loss&#xB97C; &#xC55E;&#xC11C; &#xC120;&#xC5B8;&#xD55C; plot &#xAC1D;&#xCCB4;&#xC5D0; &#xBFCC;&#xB824;&#xC8FC;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xB294; update_vis_plot() &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="https://user-images.githubusercontent.com/15168540/49014571-ebb19280-f1c3-11e8-965f-0ef3100bb977.png" alt="image">
+update_vis_plot()&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; Visdom &#xC11C;&#xBC84;&#xC5D0;&#xC11C; loss&#xAC00; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h1 id="references">REFERENCES</h1>
+<p>[1] <a href="https://github.com/facebookresearch/visdom" target="_blank">https://github.com/facebookresearch/visdom</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_04_augmentation.html" class="navigation navigation-prev " aria-label="Previous page: 02). Augmentation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_04_torchsummary.html" class="navigation navigation-next " aria-label="Next page: 04). Torch summary">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"03). Visdom","level":"1.1.4.3","depth":3,"next":{"title":"04). Torch summary","level":"1.1.4.4","depth":3,"path":"posts/03_04_torchsummary.md","ref":"posts/03_04_torchsummary.md","articles":[]},"previous":{"title":"02). Augmentation","level":"1.1.4.2","depth":3,"path":"posts/03_04_augmentation.md","ref":"posts/03_04_augmentation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/03_05_visdom.md","mtime":"2018-12-14T06:10:32.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-14T06:19:16.695Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
