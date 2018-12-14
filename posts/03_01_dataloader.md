@@ -480,3 +480,13 @@ def detection_collate(batch):
 ``batch[1]``는 list로 레이블 정보인 `[class, x, y, w, h]`를 담고 있습니다. YOLO는 정규화된 바운딩 박스를 사용합니다. 바운딩 박스의 중심점인 (x, y)는 (x, y)가 속한 그리드 셀에서의 상대적인 위치로 나타내며, 정규화시킨 값이므로 범위는 [0-1) 입니다. 바운딩박스의 너비와 높이인 (w, h)는 이미지 사이즈로 정규화시킨 값이며, 범위는 [0,1)입니다.
 
 ![image](https://user-images.githubusercontent.com/15168540/49686609-42ab5600-fb3a-11e8-9430-5e1f04d5b94c.png)
+
+
+
+
+
+
+
+----
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.

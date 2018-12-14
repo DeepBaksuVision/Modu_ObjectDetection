@@ -283,3 +283,9 @@ VOC 2012 결과에서 YOLO는 57.9% mAP를 달성함
 - [sogangori - YOLO, Object Detection Network](http://blog.naver.com/PostView.nhn?blogId=sogangori&logNo=220993971883&parentCategoryNo=15&categoryNo=&viewDate=&isShowPopularPosts=true&from=search)
 - [Arc Lab - [논문 요약 12] You Only Look Once: Unified, Real-Time Object Detection](http://arclab.tistory.com/167)
 - [Wonju Seo - You Only Look Once : Unified Real-Time Object Detection](http://wewinserv.tistory.com/79)
+
+
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
