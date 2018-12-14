@@ -43,9 +43,9 @@ Object Recognition을 하기 위해서는 해당 이미지 혹은 영상에 Obje
 
 ​    
 
-일반적으로 Object Detection 알고리즘은 찾고자하는 Object의 특징(feature)를 사전에 추출하고 주어진 영상 내에서 해당 특징를 검출(detection)하는 접근을 주로 사용합니다.
+일반적으로 Object Detection 알고리즘은 찾고자 하는 Object의 특징(feature)을 사전에 추출하고 주어진 영상 내에서 해당 특징를 검출(detection)하는 접근을 주로 사용합니다.
 
-전통적으로 영상처리에서 사용했던 Object Detection 알고리즘은 특징 엔지니어링(Feature Engineering)기법을 통하여 수학적으로 혹은 실용적으로 검증된 특징을 추출(Feature Extraction) 하여 특징들의 분포(Distribution)에서 경계 결정(Boundary Decision)을 찾는 방법을 주로 사용했습니다. 전통적인 특징 추출(Feature Extraction) 방법은 Haar-like feature, HOG(Histogram of Oriented Gradient), SIFT(Scale Invariant Feature Transform), LBP(Local Binary Pattern), MCT(Modified Census Transform) 등이 있습니다. 
+전통적으로 영상처리에서 사용했던 Object Detection 알고리즘은 특징 엔지니어링(Feature Engineering)기법을 통하여 수학적으로 혹은 실용적으로 검증된 특징을 추출(Feature Extraction)하여 특징들의 분포(Distribution)에서 경계 결정(Boundary Decision)을 찾는 방법을 주로 사용했습니다. 전통적인 특징 추출(Feature Extraction) 방법은 Haar-like feature, HOG(Histogram of Oriented Gradient), SIFT(Scale Invariant Feature Transform), LBP(Local Binary Pattern), MCT(Modified Census Transform) 등이 있습니다.
 
 특징 추출(Feature Extraction) 후, 특징들의 분포(Distribution)에서 경계 결정(Boundary Decision)하는 알고리즘은  SVM(Support Vector Machine), Adaboost 등의 같은 검출 알고리즘(Classifier)을 사용하여 어떤 특징(Feature)의 분포가 객체(Object)를 표현하는지 그렇지 않은지를 구분하는 것을 통해서 객체(Object)를 검출하였습니다.
 
@@ -59,7 +59,7 @@ Object Recognition을 하기 위해서는 해당 이미지 혹은 영상에 Obje
 
 ​        
 
-결론적으로 Object Detection Algorithms은 영상에서 전처리등을 통해서 노이즈를 제거하거나, 이미지를 선명하게 만든 후에 해당 이미지에서 특징들을 추출하고, 이 특징들을 이용하여 Object Detection에 대해 분류(Classifier)하는 파이프라인(pipe line)을 따릅니다.
+결론적으로 Object Detection Algorithms은 영상에서 전처리 등을 통해서 노이즈를 제거하거나, 이미지를 선명하게 만든 후에 해당 이미지에서 특징들을 추출하고, 이 특징들을 이용하여 Object Detection에 대해 분류(Classifier)하는 파이프라인(pipe line)을 따릅니다.
 
 ​    
 
@@ -71,7 +71,7 @@ Object Detection Algorithms에 대해서 대략적으로 요약하면 다음과 
 
 ​     
 
-최근에는 딥 러닝 중 CNN(Convolutional Neural Network)을 기반으로한 다양한 Detection 및 Recognition 알고리즘이 발전되어왔습니다. 최근 딥러닝 알고리즘에서의 Object Detection 알고리즘은 Object Detection과 Recognition을 통합하여 처리하고있습니다. 본 ebook에서는 고전의 Object Detection Algorithms을 다루는 것보다, 현재 트렌드인 딥러닝을 이용한 Object Detection에 대해서 소개할 예정이며, 해당 Object Detection Algorithm의 구현체를 공개할 예정입니다.
+최근에는 딥 러닝 중 CNN(Convolutional Neural Network)을 기반으로 한 다양한 Detection 및 Recognition 알고리즘이 발전되어왔습니다. 최근 딥러닝 알고리즘에서의 Object Detection 알고리즘은 Object Detection과 Recognition을 통합하여 처리하고 있습니다. 본 ebook에서는 고전의 Object Detection Algorithms을 다루는 것보다, 현재 트렌드인 딥러닝을 이용한 Object Detection을 소개할 예정이며, 해당 Object Detection Algorithm의 구현체를 공개할 예정입니다.
 
 
 
