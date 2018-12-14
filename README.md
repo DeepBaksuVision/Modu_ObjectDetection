@@ -1,4 +1,4 @@
-# 모두를 위한 Object Detection(Object Detection for All)
+# [모두를 위한 Object Detection(Object Detection for All)](https://deepbaksuvision.github.io/Modu_ObjectDetection/)
 
 
 
@@ -7,6 +7,13 @@
 ![object_detection](https://user-images.githubusercontent.com/13328380/49785835-250e0480-fd65-11e8-87b9-fd74459ade47.jpg)
 
 
+
+## Authorship
+This project is equally contributed by [Chanhee Jeong](https://github.com/chjeong530), [Donghyeon Hwang](https://github.com/ssaru), and [Jaewon Lee](https://github.com/insurgent92).
+
+
+## Copyright
+See [LICENSE](./LICENSE) for details.
 
 ----
 
