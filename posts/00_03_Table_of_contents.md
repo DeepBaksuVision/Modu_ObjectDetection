@@ -2,13 +2,13 @@
 
 
 
-| 순서 | 내용                                                         |
-| :--: | ------------------------------------------------------------ |
-|  1   | [Object Detection이란?](posts/01_00_What_is_Object_Detection.html) |
-|  2   | [Datasets for Object Detection](posts/02_00_Datasets_for_Object_Detection.html) |
-|  3   | [Common Utils](posts/03_00_common_utils.html)                |
-|  4   | [You Only Look Once: unified, real-time Object Detection](posts/04_00_You_Only_Look_Once_Unified_Real_Time_Object_Detection.html) |
-|  5   | YOLO9000                                                     |
+| 순서 | 내용                                                    |
+| :--: | ------------------------------------------------------- |
+|  1   | Object Detection이란?                                   |
+|  2   | Datasets for Object Detection                           |
+|  3   | Common Utils                                            |
+|  4   | You Only Look Once: unified, real-time Object Detection |
+|  5   | YOLO9000                                                |
 
 - 이 항목은 추후 진행사항에 따라 수정될 수 있습니다.
 
