@@ -1,6 +1,6 @@
 # 04). Augmentation
 
-이번 장에서는 Object Detection 모델 학습 시 필요한 Data Augmentation 기법을 기술합니다. 기존의 Image Classification 문제에서 사용하는 다양한 Data Augmentation 방법을 거의 유사하게 사용합니다. Object Detection 문제에서는 하지만 이미지 뿐만 아니라 Bounding Box도 적절하게 변환해야 합니다. 
+이번 장에서는 Object Detection 모델 학습 시 필요한 Data Augmentation 기법을 기술합니다. 기존의 Image Classification 문제에서 사용하는 다양한 Data Augmentation 방법을 거의 유사하게 사용합니다. Object Detection 문제에서는 하지만 이미지뿐만 아니라 Bounding Box도 적절하게 변환해야 합니다. 
 
 ## imgaug library
 [imgaug](https://imgaug.readthedocs.io/en/latest/index.html)는 기계학습 모델 학습 시 Image augmentation 기법을 제공하는 아주 강력한 파이썬 라이브러리입니다. 기본적인 image augmentation과 keypoints, bounding boxes, heatmaps등 다양한 문제에 data augmentation을 적용할 수 있도록 편리한 기능들을 제공합니다. 
@@ -36,7 +36,7 @@ seq = iaa.SomeOf(2, [
     iaa.Affine(rotate=45),
     iaa.Sharpen(alpha=0.5)
 ```
-imgaug를 이용하면 object detection 모델을 학습 시 data augmentation을 아주 손쉽게 추가할 수 있습니다. Multiply, Affine, AdditiveGaussianNoise등 다양한 augmenation 방법을 간단히 리스트에 추가하는 방식으로 사용할 수 있습니다. (사용가능한 augmentation 명세는 [imgaug API](https://imgaug.readthedocs.io/en/latest/source/api.html)를 참고하시기 바랍니다) 
+imgaug를 이용하면 object detection 모델을 학습 시 data augmentation을 아주 손쉽게 추가할 수 있습니다. Multiply, Affine, AdditiveGaussianNoise 등 다양한 Augmentation 방법을 간단히 리스트에 추가하는 방식으로 사용할 수 있습니다. (사용 가능한 augmentation 명세는 [imgaug API](https://imgaug.readthedocs.io/en/latest/source/api.html)를 참고하시기 바랍니다) 
 
 ```python
 composed = transforms.Compose([Augmenter(seq)])
@@ -64,7 +64,7 @@ def augmentImage(image, normed_lxywhs, image_width, image_height, seq):
 
 ![image](https://user-images.githubusercontent.com/15168540/49096223-7c17d200-f2ad-11e8-9c3c-a982d0ace5c8.png)
 
-`VOC` 클래스의 파라미터인 transform은 데이터 전처리를 당담하고 있습니다. transform을 사용하면 아래의 예시처럼 `torchvision.transforms`에서 제공하는 다양한 전처리 기법을 사용할 수 있습니다. 
+`VOC` 클래스의 파라미터인 transform은 데이터 전처리를 담당하고 있습니다. transform을 사용하면 아래의 예시처럼 `torchvision.transforms`에서 제공하는 다양한 전처리 기법을 사용할 수 있습니다. 
 
 ```python
 import torchvision.transforms as transforms
@@ -74,7 +74,7 @@ transform = transforms.Compose(
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 ```
 
-하지만 우리는 그것보다 훨씬 더 강력한 `imgaug` 라이브러리를 사용합니다. `Augmenter(seq)`는 seq에서 명세한 data augmentation을 수행하는 `Augmenter` 클래스입니다. `dataloader` 클래스에서 `transform` 함수가 호출될때마다 `Augmenter` 클래스는 Decorator로 동작합니다. 
+하지만 우리는 그것보다 훨씬 더 강력한 `imgaug` 라이브러리를 사용합니다. `Augmenter(seq)`는 seq에서 명세한 data augmentation을 수행하는 `Augmenter` 클래스입니다. `dataloader` 클래스에서 `transform` 함수가 호출될 때마다 `Augmenter` 클래스는 Decorator로 동작합니다. 
 
 ```python
 # train.py

@@ -1,6 +1,6 @@
 # Model
 
-이번 장에서는 YOLO 모델 구조 및 objective function을 설명하고, 해당 내용을 PyTorch 코드레벨로 설명하겠습니다.
+이번 장에서는 YOLO 모델 구조 및 objective function을 설명하고, 해당 내용을 PyTorch 코드 레벨로 설명하겠습니다.
 
 **실제 코드는 [DeepBaksuVision/You_Only_Look_Once](https://github.com/DeepBaksuVision/You_Only_Look_Once)에서 확인할 수 있습니다.**
 
@@ -14,7 +14,7 @@
 
 ## 01. YOLO class
 
-YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다. (완전히 동일하지는 않으나, 유사하게 모델을 작성하였습니다)
+YOLO의 원 코드인 [Darknet](https://github.com/pjreddie/darknet)의 [yolov1.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg) 를 살펴보면서 YOLO의 PyTorch model을 다음과 같이 구현하였습니다 (완전히 동일하지는 않으나, 유사하게 모델을 작성하였습니다).
 
 
 
@@ -157,15 +157,15 @@ class YOLOv1(nn.Module):
 
 **초기화**
 
-- You Only Look Once 논문에서는 ImageNet을 이용하여 classification network를 pre-train후 4개의 Convolutional Layer를 4개와 2개의 FC를 추가하면서 이를 randomly initialization을 수행합니다.
+- You Only Look Once 논문에서는 ImageNet을 이용하여 classification network를 pre-train 후 4개의 Convolutional Layer를 4개와 2개의 FC를 추가하면서 이를 randomly initialization을 수행합니다.
 - 본 구현체는 pre-train 과정을 생략하며, 생략된 pre-train으로 인해 네트워크의 수렴 속도 및 안정성이 떨어진 것을 보강하기 위하여 Convolutional Layer는 HE initialization을 채택하며 FC Layer는 논문에 있는 그대로 randomly initialization을 수행합니다.
 
 ​        
 
 **Batch Normalization**
 
-- YOLO논문에서는 Batch Normalization에 대한 내용은 언급되어있지 않습니다. 그 당시의  [YOLO 모델](https://github.com/pjreddie/darknet/tree/8c5364f58569eaeb5582a4915b36b24fc5570c76/cfg)을 확인해봐도 Batch Normalization을 확인할 수 없습니다. (arxiv 기준 batch normalization이 15.02, YOLO가 2015.06 입니다. 최근 [Darknet](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg)을 확인해보면 기존 YOLO 모델에는 batch normalization이 적용되어있는 것을 확인할 수 있습니다.)
-- 본 구현체에서는 논문에는 언급되어있지 않지만 수렴 속도 및 안정성을 증가시키기 위해 batch normalization을 적용하였습니다.
+- YOLO 논문에서는 Batch Normalization에 대한 내용은 언급되어있지 않습니다. 그 당시의  [YOLO 모델](https://github.com/pjreddie/darknet/tree/8c5364f58569eaeb5582a4915b36b24fc5570c76/cfg)을 확인해봐도 Batch Normalization을 확인할 수 없습니다(arxiv 기준 batch normalization이 15.02, YOLO가 2015.06입니다. 최근 [Darknet](https://github.com/pjreddie/darknet/blob/master/cfg/yolov1.cfg)을 확인해보면 기존 YOLO 모델에는 batch normalization이 적용되어있는 것을 확인할 수 있습니다). 
+- 본 구현체에서는 논문에는 언급되어있지 않지만, 수렴 속도 및 안정성을 증가시키기 위해 batch normalization을 적용하였습니다.
 
 ​    
 
@@ -192,7 +192,7 @@ for m in self.modules():
 
 YOLO model 설계가 완료되었다면, Forward() 함수를 작성합니다.
 
-마지막에 출력 텐서의 0번째, 10~30까지 `Sigmoid`함수를 준 이유는 0번째 인덱스는 `objectness`를 의미하는 엘리먼트고, 5~25까지의 인덱스는 `class probability`를 의미하기 때문에 해당 값은 확률값을 가져야하기 때문입니다.
+마지막에 출력 텐서의 0번째, 10~30까지 `Sigmoid`함수를 준 이유는 0번째 인덱스는 `objectness`를 의미하는 엘리먼트고, 5~25까지의 인덱스는 `class probability`를 의미하기 때문에 해당 값은 확률값을 가져야 하기 때문입니다.
 
 
 
@@ -324,7 +324,7 @@ def detection_loss_4_yolo(output, target, device):
 
 
 
-다시한번 YOLO의 output tensor를 확인해보겠습니다.
+다시 한번 YOLO의 output tensor를 확인해보겠습니다.
 
 ![YOLO output tensor](https://user-images.githubusercontent.com/15168540/48966993-9a679e80-f01d-11e8-8f78-66a7135859eb.png)
 
@@ -338,9 +338,9 @@ def detection_loss_4_yolo(output, target, device):
 
 
 
-Cost value는 YOLO model에서 얻은 output tensor값을 이용하여 계산하게됩니다.
+Cost value는 YOLO model에서 얻은 output tensor값을 이용하여 계산하게 됩니다.
 
-Objective function에서 사용되는 몇가지 파라미터들은 다음과 같이 설정했습니다.
+Objective function에서 사용되는 몇 가지 파라미터들은 다음과 같이 설정했습니다.
 
 - `lambda coord` : 5
 
@@ -427,15 +427,15 @@ objness1_loss = torch.sum(objness_label * torch.pow(objness1_output - objness_la
 
 
 
-코드를 유심히 본 독자들은 눈치챘을 수도 있겠습니다. YOLO 논문의 Objective function에는 output tensor와 label tensor에 `sqrt`를 적용했지만 코드상에는 label tensor에만 `sqrt`를 놓고 output tensor값은 그대로 사용합니다.
+코드를 유심히 본 독자들은 눈치챘을 수도 있겠습니다. YOLO 논문의 Objective function에는 output tensor와 label tensor에 `sqrt`를 적용했지만, 코드상에는 label tensor에만 `sqrt`를 놓고 output tensor 값은 그대로 사용합니다.
 
 
 
-팀프로젝트를 진행하면서 YOLO를 학습하려고 했을 때 Objective function을 그대로 적용했으나 weights initialization 및 초기 학습시 네트워크가 불안정하면서 output tensor값이 음수가 발생하는 경우가 있습니다. 이 때, Cost값이 `Nan`으로 뜨게되고 학습이 안되는 현상을 발견하였습니다.
+팀 프로젝트를 진행하면서 YOLO를 학습하려고 했을 때 Objective function을 그대로 적용했으나 weights initialization 및 초기 학습 시 네트워크가 불안정하면서 output tensor값이 음수가 발생하는 경우가 있습니다. 이때, Cost가 `Nan`이 뜨고 되고 학습이 안 되는 현상을 발견하였습니다.
 
 
 
-해당 사항에 대해서 팀원끼리 논의 및 원 코드를 확인한 결과 저자 코드에서 위와같이 label에만 `sqrt`값을 사용하고 output tensor에는 `sqrt`를 적용하지 않는 것을 확인하고 원저자 코드의 흐름을 따르게 되었습니다.
+해당 사항에 대해서 팀원끼리 논의 및 원 코드를 확인한 결과 저자 코드에서 위와 같이 label에만 `sqrt`값을 사용하고 output tensor에는 `sqrt`를 적용하지 않는 것을 확인하고 원저자 코드의 흐름을 따르게 되었습니다.
 
 
 
